@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { ArrowUpRight, Languages, Menu, X } from 'lucide-react';
-import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
-import logoImg from '../../assets/logo.png';
-import { languageOptions, useLocalization } from '../../lib/i18n';
+import { useState } from "react";
+import { ArrowUpRight, Languages, Menu, X } from "lucide-react";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import logoImg from "../../assets/logo.png";
+import { languageOptions, useLocalization } from "../../lib/i18n";
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +10,7 @@ export const Navbar: React.FC = () => {
   const { scrollY } = useScroll();
   const { locale, setLocale, t } = useLocalization();
 
-  useMotionValueEvent(scrollY, 'change', (latest) => {
+  useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
     const isScrollingDown = latest > previous;
 
@@ -20,15 +20,19 @@ export const Navbar: React.FC = () => {
     }
   });
 
-  const currentLanguageIndex = languageOptions.findIndex((option) => option.locale === locale);
-  const currentLanguage = languageOptions[currentLanguageIndex] ?? languageOptions[0];
-  const nextLanguage = languageOptions[(currentLanguageIndex + 1) % languageOptions.length];
+  const currentLanguageIndex = languageOptions.findIndex(
+    (option) => option.locale === locale,
+  );
+  const currentLanguage =
+    languageOptions[currentLanguageIndex] ?? languageOptions[0];
+  const nextLanguage =
+    languageOptions[(currentLanguageIndex + 1) % languageOptions.length];
 
   const navLinks = [
-    { name: t('nav.home'), href: '#home' },
-    { name: t('nav.process'), href: '#process' },
-    { name: t('nav.testimonials'), href: '#testimonials' },
-    { name: t('nav.apply'), href: '#cta' },
+    { name: t("nav.home"), href: "#home" },
+    { name: t("nav.process"), href: "#process" },
+    { name: t("nav.testimonials"), href: "#testimonials" },
+    { name: t("nav.apply"), href: "#cta" },
   ];
 
   return (
@@ -38,12 +42,12 @@ export const Navbar: React.FC = () => {
       transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
       className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 py-4 pointer-events-none"
     >
-      <nav
-        className="max-w-7xl mx-auto bg-[#F9F8F4]/80 backdrop-blur-md border border-white/20 rounded-[10px] shadow-luxury px-4 sm:px-6 py-2.5 flex items-center justify-between pointer-events-auto transition-all duration-300"
-      >
-        
-        <a href="#home" className="relative flex items-center group rounded-[10px] border border-[#9B7A5B]/35
-px-2 py-1 transition-colors duration-300 hover:border-[#0F9598]/45">
+      <nav className="max-w-7xl mx-auto bg-[#F9F8F4]/80 backdrop-blur-md border border-white/20 rounded-[10px] shadow-luxury px-4 sm:px-6 py-2.5 flex items-center justify-between pointer-events-auto transition-all duration-300">
+        <a
+          href="#home"
+          className="relative flex items-center group rounded-[10px] border border-[#9B7A5B]/35
+px-2 py-1 transition-colors duration-300 hover:border-[#0F9598]/45"
+        >
           <span className="absolute -inset-x-5 -inset-y-3 rounded-[10px] bg-[#0F9598]/24 blur-2xl opacity-95 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-100" />
           <img
             src={logoImg}
@@ -85,12 +89,18 @@ px-2 py-1 transition-colors duration-300 hover:border-[#0F9598]/45">
             className="flex items-stretch gap-[8px] group"
           >
             <span className="h-12 bg-[#0F9598] text-white px-5 text-xs sm:text-sm font-semibold tracking-wide flex items-center rounded-[10px] shadow-sm group-hover:bg-[#1C1B19] transition-all duration-300">
-              {t('nav.apply')}
+              {t("nav.apply")}
             </span>
 
-            <span className="h-12 w-12 bg-white text-[#0F9598] border border-white/80 flex items-center justify-center rounded-[10px] shadow-sm transition-colors duration-300 group-hover:bg-[#F9F8F4] group-hover:text-[#1C1B19]">
+            <span className=" hidden md:flex h-12 w-12 bg-white text-[#0F9598] border border-white/80 flex items-center justify-center rounded-[10px] shadow-sm transition-colors duration-300 group-hover:bg-[#F9F8F4] group-hover:text-[#1C1B19]">
               <motion.span
-                variants={{ rest: { rotate: 0 }, hover: { rotate: 50, transition: { duration: 0.42, ease: [0.22, 1, 0.36, 1] } } }}
+                variants={{
+                  rest: { rotate: 0 },
+                  hover: {
+                    rotate: 50,
+                    transition: { duration: 0.42, ease: [0.22, 1, 0.36, 1] },
+                  },
+                }}
                 className="flex items-center justify-center"
               >
                 <ArrowUpRight className="w-4 h-4 stroke-[2.3]" />
@@ -101,7 +111,7 @@ px-2 py-1 transition-colors duration-300 hover:border-[#0F9598]/45">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 rounded-[10px] text-[#1C1B19] hover:text-white hover:bg-[#1C1B19] transition-all duration-300"
-            aria-label={t('nav.toggleMenu')}
+            aria-label={t("nav.toggleMenu")}
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
