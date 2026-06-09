@@ -63,17 +63,17 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3">
         
         {/* Column 1 - Logo */}
-        <div className="py-12 md:py-16 px-6 sm:px-12 flex flex-col items-start justify-center text-left">
-          {/* Brand Logo (Enlarged size) */}
+        <div className="py-8 md:py-12 px-6 sm:px-12 flex flex-col items-start justify-start text-left">
+          {/* Brand Logo */}
           <img
             src={logoImg}
             alt="WuMa Matchmaking"
-            className="h-24 sm:h-28 w-auto object-contain filter brightness-95"
+            className="h-20 sm:h-24 w-auto object-contain filter brightness-95"
           />
         </div>
 
         {/* Column 2 - Social Links */}
-        <div className="py-12 md:py-16 px-6 sm:px-12 flex flex-col items-start justify-center text-left">
+        <div className="py-8 md:py-12 px-6 sm:px-12 flex flex-col items-start justify-start text-left">
           {/* Vertical Social Links list */}
           <div className="flex flex-col gap-4 font-sans text-xs sm:text-sm text-zinc-700 font-medium">
             {socialLinks.map((link) => (
@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Column 3 - Contact Us */}
-        <div className="py-12 md:py-16 px-6 sm:px-12 flex flex-col items-start justify-center text-left">
+        <div className="py-8 md:py-12 px-6 sm:px-12 flex flex-col items-start justify-start text-left">
           <div className="space-y-4 w-full">
             <h4 className="text-[11px] font-sans font-bold tracking-[0.2em] uppercase text-[#053C42]">
               Contact Us
@@ -117,7 +117,7 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* Sub-footer bottom bar */}
-      <div className="py-6 px-6 sm:px-12 bg-[#FAF7F2]">
+      <div className="py-4 px-6 sm:px-12 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-sans tracking-wide text-zinc-500 font-medium">
           <p>©{currentYear} WuMa-Match, Inc. All Rights Reserved.</p>
           <a

@@ -6,17 +6,32 @@ export const StatsBanner: React.FC = () => {
     {
       metric: '80%',
       label: 'Relationship-Ready Singles',
-      bullets: ['Carefully vetted members', 'Serious intent focus'],
+      bullets: [
+        'Thoroughly vetted single members',
+        'Focused on long-term commitment',
+        'Background & identity verified',
+        'Highly motivated relationship intent'
+      ],
     },
     {
       metric: '1M+',
       label: 'Rated Dating Service',
-      bullets: ['On TrustPilot', 'Extensive Network'],
+      bullets: [
+        '98% client satisfaction rate',
+        'Accredited professional network',
+        'Featured in leading publications',
+        'Trusted by top professionals'
+      ],
     },
     {
       metric: '#1',
       label: 'Matchmaker in America',
-      bullets: ['For Tawkify-matched couples', 'Trusted by many'],
+      bullets: [
+        '100% human-curated introductions',
+        'Confidential executive search',
+        'No public profiles or databases',
+        'Bespoke matchmaking experience'
+      ],
     },
   ];
 
@@ -44,10 +59,10 @@ export const StatsBanner: React.FC = () => {
             >
               {/* Top Section */}
               <div>
-                <span className="block font-serif text-4xl sm:text-5xl font-light text-[#053C42] mb-2 tracking-tight">
+                <span className="block font-serif text-4xl sm:text-5xl font-light text-[#0F8A96] mb-2 tracking-tight">
                   {card.metric}
                 </span>
-                <span className="block text-xs sm:text-sm text-[#053C42] font-semibold tracking-wide mb-4">
+                <span className="block text-xs sm:text-sm text-[#0F8A96] font-semibold tracking-wide mb-4">
                   {card.label}
                 </span>
               </div>

@@ -21,14 +21,14 @@ export const HeroSection: React.FC = () => {
           alt="WuMa Matchmaking Blurred"
           className="absolute inset-0 w-full h-full object-cover object-[center_32%] filter blur-[8px] scale-[1.02] pointer-events-none select-none"
           style={{
-            WebkitMaskImage: 'linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 75%)',
-            maskImage: 'linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 75%)',
+            WebkitMaskImage: 'linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 70%)',
+            maskImage: 'linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 70%)',
           }}
         />
 
-        {/* Soft dark overlays restricted to bottom-left to maintain natural photo colors while keeping white text legible */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        {/* Black color overlay (solid 30% + vertical gradient) on top of the image and blur */}
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-black/10" />
       </div>
 
       {/* Hero Content Container - Pushed to the bottom */}
@@ -63,11 +63,11 @@ export const HeroSection: React.FC = () => {
 
             {/* Button 2: Learn More (Light) */}
             <a href="#about" className="flex items-stretch gap-[3px] group hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
-              <span className="h-12 bg-gradient-to-b from-white to-[#F5F5F7] text-zinc-900 border border-zinc-200/80 px-6 text-xs sm:text-sm font-medium tracking-wide flex items-center rounded-[14px] shadow-[0_4px_12px_rgba(0,0,0,0.08)] group-hover:from-[#F9F9FB] group-hover:to-[#EDEDF0] transition-all duration-300">
+              <span className="h-12 bg-gradient-to-b from-white to-[#F5F5F7] text-[#1C1C1F] border border-zinc-200/80 px-6 text-xs sm:text-sm font-medium tracking-wide flex items-center rounded-[14px] shadow-[0_4px_12px_rgba(0,0,0,0.08)] group-hover:from-[#F9F9FB] group-hover:to-[#EDEDF0] transition-all duration-300">
                 Learn More
               </span>
               <span className="h-12 w-12 bg-gradient-to-b from-[#2E2E30] to-[#1C1C1F] text-white flex items-center justify-center rounded-[14px] shadow-[0_4px_12px_rgba(0,0,0,0.15)] group-hover:from-[#252527] group-hover:to-[#121214] transition-all duration-300">
-                <ArrowDownRight className="w-4 h-4 text-zinc-300 stroke-[2.2]" />
+                <ArrowDownRight className="w-4 h-4 text-white stroke-[2.2]" />
               </span>
             </a>
 

@@ -18,12 +18,12 @@ export const Navbar: React.FC = () => {
         className="max-w-7xl mx-auto bg-[#FAF7F2]/80 backdrop-blur-md border border-white/20 rounded-full shadow-luxury px-4 sm:px-6 py-2.5 flex items-center justify-between pointer-events-auto transition-all duration-300"
       >
         
-        {/* Left: Logo */}
-        <a href="#home" className="flex items-center group">
+        {/* Left: Logo wrapped in brand teal background */}
+        <a href="#home" className="flex items-center group bg-[#0F8A96] px-4 py-2 rounded-full shadow-md transition-all duration-300 hover:bg-[#0E7A85] pointer-events-auto">
           <img
             src={logoImg}
             alt="WuMa Matchmaking"
-            className="h-8 sm:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            className="h-6 sm:h-7 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
         </a>
 
