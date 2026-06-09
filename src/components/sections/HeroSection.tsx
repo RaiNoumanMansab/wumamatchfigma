@@ -170,7 +170,7 @@ export const HeroSection: React.FC = () => {
     <section
       ref={heroRef}
       id="home"
-      className="relative z-0 h-[200svh] min-h-screen bg-[#F9F8F4]"
+      className="relative z-0 h-[200svh] min-h-screen bg-[#F9F8F4] pb-12 md:pb-0"
     >
       <div className="sticky top-0 h-screen overflow-hidden bg-[#1C1B19]">
         <div className="relative h-full w-full overflow-hidden">
