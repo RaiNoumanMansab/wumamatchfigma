@@ -36,18 +36,16 @@ export const HeroSection: React.FC = () => {
         
         {/* Description Text on top */}
         <div className="max-w-xl mb-6 text-left">
-          <p className="text-sm sm:text-base text-zinc-200/90 font-sans leading-relaxed drop-shadow-sm">
+          <p className="text-sm sm:text-base lg:text-lg text-zinc-200/90 font-sans leading-relaxed drop-shadow-sm">
             WuMa is an exclusive platform dedicated to serious, marriage-oriented individuals. No swiping. No casual interactions. Only verified profiles and structured introductions.
           </p>
         </div>
 
         {/* Row with Heading on left, Buttons on right */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 w-full">
-          <div className="max-w-2xl text-left">
-            <h1 className="font-serif font-normal text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight drop-shadow-md">
-              Intentional<br />
-              connections for a<br />
-              lifetime.
+          <div className="max-w-3xl text-left">
+            <h1 className="font-serif font-normal text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight drop-shadow-md">
+              Intentional connections for a lifetime.
             </h1>
           </div>
 
