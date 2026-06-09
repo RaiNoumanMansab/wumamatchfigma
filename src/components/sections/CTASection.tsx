@@ -1,44 +1,70 @@
-import React from 'react';
-import { PhoneCall } from 'lucide-react';
+import React from "react";
+import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { useLocalization } from "../../lib/i18n";
 
 export const CTASection: React.FC = () => {
+  const { t } = useLocalization();
+
   return (
-    <section id="cta" className="bg-[#071415] py-16 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
-      {/* Background blur decorative circles */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-[#0F8A96]/10 blur-[80px] pointer-events-none" />
+    <section
+      id="cta"
+      className="bg-[#071415] py-16 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
+    >
+      <div className="absolute inset-0 bg-radial-teal opacity-30 mix-blend-screen pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
-        
         {/* Inner light card */}
-        <div className="bg-[#FAF7F2] rounded-3xl border border-[#D4A853]/20 p-6 sm:p-8 md:p-10 text-center shadow-luxury flex flex-col items-center justify-center gap-6 relative overflow-hidden">
-          
-          {/* Subtle gold corner accents */}
-          <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-[#D4A853]/25 rounded-tl-3xl pointer-events-none" />
-          <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-[#D4A853]/25 rounded-br-3xl pointer-events-none" />
-
+        <motion.div
+          // whileHover={{ y: -4, transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] } }}
+          className="bg-gradient-to-br from-[#F9F8F4] to-[#F9F8F4] rounded-[10px] border border-[#9B7A5B]/25 p-8 sm:p-12 md:p-14 text-center shadow-luxury flex flex-col items-center justify-center gap-8 relative overflow-hidden group"
+        >
           {/* Heading */}
-          <div className="space-y-3 max-w-2xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-[#053C42] leading-tight font-serif">
-              Ready to Find Your Soulmate? Let WuMa-Match Guide You to Your Perfect Partner.
+          <div className="space-y-5 max-w-2xl mx-auto relative z-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-[#1C1B19] [line-height:1.18] font-serif">
+              {t('cta.heading')}
             </h2>
-            <p className="text-zinc-500 text-[10px] sm:text-xs tracking-wider uppercase font-semibold">
-              Begin your bespoke journey today. Confidentiality guaranteed.
+
+            <p className="max-w-xl mx-auto text-[#1C1B19]/68 text-sm sm:text-base font-light leading-relaxed">
+              {t('cta.description')}
             </p>
+
+            {/* <p className="text-[#1C1B19]/70 text-[10px] sm:text-xs tracking-wider uppercase font-bold">
+    Confidentiality guaranteed. Bespoke introductions only.
+  </p> */}
           </div>
 
           {/* Button */}
-          <div>
-            <a
+          <div className="relative z-10 flex items-center gap-2.5">
+            <motion.a
               href="tel:+123456789"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full text-xs font-bold tracking-[0.25em] uppercase text-white bg-[#0F8A96] hover:bg-[#0D7984] hover:scale-105 transition-all duration-300 shadow-glow-teal hover:shadow-[0_0_30px_rgba(15,138,150,0.6)]"
+              initial="rest"
+              animate="rest"
+              whileHover="hover"
+              whileTap={{ scale: 0.98 }}
+              className="flex items-stretch gap-[8px] group"
             >
-              <PhoneCall className="w-3.5 h-3.5 text-[#D4A853]" />
-              Book A Call
-            </a>
+              <span className="h-12 bg-[#0F9598] text-white px-7 text-xs sm:text-sm font-semibold tracking-wide flex items-center rounded-[10px] shadow-[0_14px_30px_rgba(15,149,152,0.28)] hover:bg-[#1C1B19] transition-all duration-300">
+                {t('cta.button')}
+              </span>
+
+              <span className="h-12 w-12 bg-white text-[#0F9598] border border-[#0F9598]/25 flex items-center justify-center rounded-[10px] shadow-[0_14px_30px_rgba(255,255,255,0.14)] transition-colors duration-300 group-hover:bg-[#F9F8F4] group-hover:text-[#1C1B19] group-hover:border-[#1C1B19]/20 group-hover:shadow-[0_18px_34px_rgba(255,255,255,0.2)]">
+                <motion.span
+                  variants={{
+                    rest: { rotate: 0 },
+                    hover: {
+                      rotate: 50,
+                      transition: { duration: 0.42, ease: [0.22, 1, 0.36, 1] },
+                    },
+                  }}
+                  className="flex items-center justify-center"
+                >
+                  <ArrowUpRight className="w-4 h-4 stroke-[2.3]" />
+                </motion.span>
+              </span>
+            </motion.a>
           </div>
-
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );
