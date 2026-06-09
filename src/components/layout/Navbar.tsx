@@ -72,7 +72,7 @@ px-2 py-1 transition-colors duration-300 hover:border-[#0F9598]/45"
           <button
             type="button"
             onClick={() => setLocale(nextLanguage.locale)}
-            className="hidden sm:inline-flex h-10 items-center gap-2 rounded-[10px] border border-[#0F9598]/16 bg-white/55 px-3 text-[10px] font-bold uppercase tracking-[0.14em] text-[#1C1B19]/72 shadow-sm transition-all duration-300 hover:border-[#0F9598]/35 hover:bg-white hover:text-[#0F9598]"
+            className="inline-flex h-10 items-center gap-2 rounded-[10px] border border-[#0F9598]/16 bg-white/55 px-3 text-[10px] font-bold uppercase tracking-[0.14em] text-[#1C1B19]/72 shadow-sm transition-all duration-300 hover:border-[#0F9598]/35 hover:bg-white hover:text-[#0F9598]"
             aria-label={`Switch language to ${nextLanguage.label}`}
             title={currentLanguage.label}
           >
@@ -135,7 +135,7 @@ px-2 py-1 transition-colors duration-300 hover:border-[#0F9598]/45"
               {link.name}
             </a>
           ))}
-          <button
+          {/* <button
             type="button"
             onClick={() => setLocale(nextLanguage.locale)}
             className="inline-flex h-10 items-center gap-2 rounded-[10px] border border-[#0F9598]/16 bg-white/65 px-3 text-[10px] font-bold uppercase tracking-[0.14em] text-[#1C1B19]/72 shadow-sm transition-all duration-300 hover:border-[#0F9598]/35 hover:bg-white hover:text-[#0F9598] sm:hidden"
@@ -143,7 +143,7 @@ px-2 py-1 transition-colors duration-300 hover:border-[#0F9598]/45"
           >
             <Languages className="h-3.5 w-3.5 text-[#0F9598]" />
             {currentLanguage.shortLabel}
-          </button>
+          </button> */}
         </motion.div>
       )}
     </motion.div>
