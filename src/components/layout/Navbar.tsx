@@ -72,7 +72,7 @@ px-2 py-1 transition-colors duration-300 hover:border-[#0F9598]/45"
           <button
             type="button"
             onClick={() => setLocale(nextLanguage.locale)}
-            className="inline-flex h-10 items-center gap-2 rounded-[10px] border border-[#0F9598]/16 bg-white/55 px-3 text-[10px] font-bold uppercase tracking-[0.14em] text-[#1C1B19]/72 shadow-sm transition-all duration-300 hover:border-[#0F9598]/35 hover:bg-white hover:text-[#0F9598]"
+            className="inline-flex h-10 items-center gap-2 rounded-[10px] border border-[#0F9598]/16 md:bg-white/55 px-3 text-[10px] font-bold uppercase tracking-[0.14em] text-[#1C1B19]/72 shadow-sm transition-all duration-300 hover:border-[#0F9598]/35 hover:bg-white hover:text-[#0F9598]"
             aria-label={`Switch language to ${nextLanguage.label}`}
             title={currentLanguage.label}
           >
@@ -113,7 +113,7 @@ px-2 py-1 transition-colors duration-300 hover:border-[#0F9598]/45"
             className="md:hidden p-2 rounded-[10px] text-[#1C1B19] hover:text-white hover:bg-[#1C1B19] transition-all duration-300"
             aria-label={t("nav.toggleMenu")}
           >
-            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-7 h-7" />}
           </button>
         </div>
       </nav>
