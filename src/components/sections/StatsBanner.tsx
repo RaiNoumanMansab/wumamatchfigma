@@ -94,6 +94,7 @@ import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { useLocalization } from '../../lib/i18n';
+import { FeaturedSection } from './FeaturedSection';
 
 const statsCardsContainer: Variants = {
   hidden: {},
@@ -136,6 +137,8 @@ export const StatsBanner: React.FC = () => {
       <div className="pointer-events-none absolute inset-0 bg-radial-teal opacity-20" />
 
       <div className="relative z-10 mx-auto max-w-7xl text-center">
+        <FeaturedSection />
+
         <h2 className="mb-3 font-serif text-3xl font-light text-[#053C42] [line-height:1.18] sm:text-4xl md:text-5xl">
           {t('stats.heading')}
         </h2>

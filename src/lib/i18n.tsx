@@ -60,6 +60,9 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       },
     ],
 
+    'featured.eyebrow': 'As Seen In',
+    'featured.heading': 'Featured by voices shaping modern relationships.',
+
     'why.eyebrow': 'OUR APPROACH',
     'why.cta': 'Apply Now',
     'why.headlineParts': [
@@ -235,6 +238,9 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       },
     ],
 
+    'featured.eyebrow': '媒体报道',
+    'featured.heading': '受到现代关系领域声音的关注。',
+
     'why.eyebrow': '我们的方式',
     'why.cta': '立即申请',
     'why.headlineParts': [
@@ -335,6 +341,9 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
         bullets: ['身份與真實性篩選', '分享前完成契合度評估', '任何揭示前都需雙方同意'],
       },
     ],
+
+    'featured.eyebrow': '媒體報導',
+    'featured.heading': '受到現代關係領域聲音的關注。',
 
     'why.eyebrow': '我們的方式',
     'why.cta': '立即申請',

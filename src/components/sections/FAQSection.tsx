@@ -3,7 +3,7 @@ import { Plus, Minus } from 'lucide-react';
 import { useLocalization } from '../../lib/i18n';
 
 export const FAQSection: React.FC = () => {
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
+  const [openIdx, setOpenIdx] = useState<number | null>(0);
   const { get, t } = useLocalization();
   const faqs = get<Array<{ q: string; a: string }>>('faq.items');
 
