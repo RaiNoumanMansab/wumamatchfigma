@@ -55,15 +55,10 @@ export const FeaturedSection: React.FC = () => {
 
   return (
     <div className="relative mx-auto w-full max-w-5xl overflow-hidden text-center sm:mb-6">
-      {/* <div className="pointer-events-none absolute inset-x-0 top-2 z-0 mx-auto h-40 max-w-4xl" /> */}
 
       <p className="relative z-10 mb-2 text-[11px] font-bold uppercase tracking-[0.22em] text-[#9B7A5B]">
         {t('featured.eyebrow')}
       </p>
-
-      {/* <h3 className="mx-auto mb-7 max-w-2xl font-serif text-2xl font-light text-[#9B7A5B] [line-height:1.16] sm:text-3xl">
-        {t('featured.heading')}
-      </h3> */}
 
       <div className="relative z-10 mx-auto h-[104px] max-w-4xl overflow-hidden sm:h-[126px]">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#FAF7F2] to-transparent sm:w-20" />
