@@ -472,7 +472,7 @@ const splitIntoSafeWords = (text: string) => {
 
   if (!trimmedText) return [];
 
-  const hasSpaces = /\s/.test(trimmedText);
+  const hasSpaces = /\s/.test(trimmedText); //checks for any whitespace character /\s/.test(trimmedText), which is more robust than just checking for ' '.
 
   if (!hasSpaces) {
     return [trimmedText];
