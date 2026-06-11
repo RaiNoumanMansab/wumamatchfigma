@@ -459,7 +459,7 @@ const fallbackHeadlineParts: HeadlinePart[] = [
   },
   {
     text: 'unforgettable',
-    className: 'text-[#9B7A5B] font-normal',
+    className: 'text-brand-accentGold font-normal',
   },
   {
     text: ', blending psychology, intuition, and deep vetting to deliver connections that actually move the needle.',
@@ -523,7 +523,7 @@ export const WhyWuMaSection: React.FC = () => {
     <section
       ref={sectionRef}
       id="about"
-      className="bg-[#071415] py-24 px-6 sm:px-12 lg:px-20 relative overflow-hidden"
+      className="bg-brand-darkTeal py-24 px-6 sm:px-12 lg:px-20 relative overflow-hidden"
     >
       {/* Background radial glows */}
       <div className="absolute inset-0 bg-radial-teal opacity-30 mix-blend-screen pointer-events-none" />
@@ -608,7 +608,7 @@ export const WhyWuMaSection: React.FC = () => {
                       },
                     },
                   }}
-                  className="h-12 bg-[#0F9598] text-white px-7 text-xs sm:text-sm font-semibold tracking-wide flex items-center rounded-[10px] shadow-[0_14px_30px_rgba(15,149,152,0.28)] group-hover:bg-[#1C1B19] transition-colors duration-300"
+                  className="h-12 bg-brand-teal text-white px-7 text-xs sm:text-sm font-semibold tracking-wide flex items-center rounded-[10px] shadow-[0_14px_30px_rgb(var(--color-brand-teal)/0.28)] group-hover:bg-brand-charcoal transition-colors duration-300"
                 >
                   {t('why.cta') || 'Apply Now'}
                 </motion.span>
@@ -626,7 +626,7 @@ export const WhyWuMaSection: React.FC = () => {
                       },
                     },
                   }}
-                  className="h-12 w-12 bg-white text-[#0F9598] border border-white/80 flex items-center justify-center rounded-[10px] shadow-[0_14px_30px_rgba(255,255,255,0.14)] transition-colors duration-300 group-hover:bg-[#F9F8F4] group-hover:text-[#1C1B19] group-hover:shadow-[0_18px_34px_rgba(255,255,255,0.2)]"
+                  className="h-12 w-12 bg-white text-brand-teal border border-white/80 flex items-center justify-center rounded-[10px] shadow-[0_14px_30px_rgba(255,255,255,0.14)] transition-colors duration-300 group-hover:bg-brand-cream group-hover:text-brand-charcoal group-hover:shadow-[0_18px_34px_rgba(255,255,255,0.2)]"
                 >
                   <motion.span
                     variants={{

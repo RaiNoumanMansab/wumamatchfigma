@@ -14,18 +14,18 @@ export const FAQSection: React.FC = () => {
   return (
     <section
       id="faq"
-      className="bg-[#F9F8F4] py-14 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
+      className="bg-brand-cream py-14 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto relative z-10">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* Left Column: Heading and Subtitle (Aligned Higher) */}
-          <div className="lg:col-span-5 text-left self-start lg:pt-2 lg:border-r lg:border-[#1C1B19]/18 lg:pr-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#1C1B19] mb-4 font-serif [line-height:1.18]">
+          <div className="lg:col-span-5 text-left self-start lg:pt-2 lg:border-r lg:border-brand-charcoal/18 lg:pr-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-brand-charcoal mb-4 font-serif [line-height:1.18]">
               {t('faq.heading')}
             </h2>
-            <p className="text-[#1C1B19]/70 text-xs sm:text-sm md:text-base font-light [line-height:1.35] max-w-md">
+            <p className="text-brand-charcoal/70 text-xs sm:text-sm md:text-base font-light [line-height:1.35] max-w-md">
               {t('faq.description')}
             </p>
           </div>
@@ -37,19 +37,19 @@ export const FAQSection: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-[10px] border border-[#0F9598]/15 hover:border-[#0F9598]/30 overflow-hidden shadow-soft hover:shadow-luxury transition-all duration-300"
+                  className="bg-white rounded-[10px] border border-brand-teal/15 hover:border-brand-teal/30 overflow-hidden shadow-soft hover:shadow-luxury transition-all duration-300"
                 >
                   {/* Trigger button */}
                   <button
                     onClick={() => toggle(idx)}
                     className="w-full px-5 sm:px-6 py-3.5 sm:py-4 flex items-center justify-between gap-4 text-left group"
                   >
-                    <span className="font-sans font-bold text-sm sm:text-base text-[#1C1B19] group-hover:text-[#0F9598] transition-colors duration-300 [line-height:1.18]">
+                    <span className="font-sans font-bold text-sm sm:text-base text-brand-charcoal group-hover:text-brand-teal transition-colors duration-300 [line-height:1.18]">
                       {faq.q}
                     </span>
                     
                     {/* Teal Square-Rounded Icon Button */}
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-[10px] bg-[#0F9598] group-hover:bg-[#1C1B19] text-white flex items-center justify-center shrink-0 shadow-sm transition-all duration-300">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-[10px] bg-brand-teal group-hover:bg-brand-charcoal text-white flex items-center justify-center shrink-0 shadow-sm transition-all duration-300">
                       {isOpen ? (
                         <Minus className="w-4 h-4 text-white stroke-[2.5]" />
                       ) : (
@@ -64,7 +64,7 @@ export const FAQSection: React.FC = () => {
                       isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <div className="px-5 sm:px-6 pb-4 pt-3 text-[#1C1B19]/70 text-sm font-light [line-height:1.35] border-t border-[#0F9598]/10">
+                    <div className="px-5 sm:px-6 pb-4 pt-3 text-brand-charcoal/70 text-sm font-light [line-height:1.35] border-t border-brand-teal/10">
                       {faq.a}
                     </div>
                   </div>

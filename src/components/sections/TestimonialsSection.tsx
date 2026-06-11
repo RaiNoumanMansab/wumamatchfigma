@@ -286,20 +286,20 @@ export const TestimonialsSection: React.FC = () => {
       initial="hidden"
       whileInView="visible"
       viewport={viewportOnce}
-      className="bg-[#F9F8F4] pt-16 pb-6 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
+      className="bg-brand-cream pt-16 pb-6 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto relative z-10 text-center">
         {/* Header */}
         <div className="max-w-3xl mx-auto mb-12">
-          <span className="block text-[10px] tracking-[0.25em] text-[#9B7A5B] uppercase font-sans font-semibold mb-3">
+          <span className="block text-[10px] tracking-[0.25em] text-brand-gold uppercase font-sans font-semibold mb-3">
             {t("testimonials.eyebrow")}
           </span>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#1C1B19] mb-3 font-serif leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-brand-charcoal mb-3 font-serif leading-tight">
             {t("testimonials.heading")}
           </h2>
 
-          <p className="text-[#1C1B19]/70 text-xs sm:text-sm md:text-base font-light leading-relaxed">
+          <p className="text-brand-charcoal/70 text-xs sm:text-sm md:text-base font-light leading-relaxed">
             {t("testimonials.description")}
           </p>
         </div>
@@ -320,7 +320,7 @@ export const TestimonialsSection: React.FC = () => {
                 key={idx}
                 variants={cardReveal}
                 whileHover={softLift}
-                className="w-[285px] sm:w-[320px] shrink-0 aspect-[3/4] rounded-[10px] overflow-hidden border border-[#0F9598]/15 shadow-soft hover:shadow-luxury hover:border-[#0F9598]/40 transition-all duration-500 relative group snap-start bg-white"
+                className="w-[285px] sm:w-[320px] shrink-0 aspect-[3/4] rounded-[10px] overflow-hidden border border-brand-teal/15 shadow-soft hover:shadow-luxury hover:border-brand-teal/40 transition-all duration-500 relative group snap-start bg-white"
               >
                 {/* Card Background Image */}
                 <img
@@ -331,29 +331,29 @@ export const TestimonialsSection: React.FC = () => {
                 />
 
                 {/* Soft Image Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1C1B19]/55 via-[#1C1B19]/8 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal/55 via-brand-charcoal/8 to-transparent" />
 
                 {/* Fixed Height Review Overlay Card */}
-                <div className="absolute bottom-4 left-4 right-4 h-[205px] bg-white/95 backdrop-blur-sm rounded-[10px] p-5 border border-[#0F9598]/10 shadow-lg flex flex-col items-start text-left group-hover:shadow-xl transition-all duration-300">
+                <div className="absolute bottom-4 left-4 right-4 h-[205px] bg-white/95 backdrop-blur-sm rounded-[10px] p-5 border border-brand-teal/10 shadow-lg flex flex-col items-start text-left group-hover:shadow-xl transition-all duration-300">
                   <div className="flex items-center gap-0.5 mb-3">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className="w-4 h-4 fill-[#9B7A5B] text-[#9B7A5B]"
+                        className="w-4 h-4 fill-brand-gold text-brand-gold"
                       />
                     ))}
                   </div>
 
-                  <p className="text-[#1C1B19]/72 text-xs sm:text-[13px] font-light leading-relaxed mb-4 line-clamp-4">
+                  <p className="text-brand-charcoal/72 text-xs sm:text-[13px] font-light leading-relaxed mb-4 line-clamp-4">
                     “{testimonial.review}”
                   </p>
 
-                  <div className="w-full pt-3 border-t border-[#0F9598]/10 mt-auto">
-                    <h4 className="font-sans font-bold text-sm text-[#1C1B19] tracking-wide mb-1.5">
+                  <div className="w-full pt-3 border-t border-brand-teal/10 mt-auto">
+                    <h4 className="font-sans font-bold text-sm text-brand-charcoal tracking-wide mb-1.5">
                       {testimonial.name}
                     </h4>
 
-                    <div className="flex items-center gap-1.5 text-[10px] tracking-wider text-[#1C1B19]/58 font-semibold uppercase">
+                    <div className="flex items-center gap-1.5 text-[10px] tracking-wider text-brand-charcoal/58 font-semibold uppercase">
                       <span>{testimonial.role}</span>
                       <span>•</span>
                       <span>{testimonial.brand}</span>
@@ -375,8 +375,8 @@ export const TestimonialsSection: React.FC = () => {
               className={[
                 "group h-12 w-12 border flex items-center justify-center rounded-[10px] transition-all duration-300",
                 isAtStart
-                  ? "bg-transparent text-[#1C1B19]/20 border-[#1C1B19]/10 shadow-none opacity-35 cursor-not-allowed pointer-events-none"
-                  : "bg-white text-[#0F9598] border-[#0F9598]/12 shadow-soft hover:bg-[#F9F8F4] hover:text-[#1C1B19] hover:border-[#0F9598]/28 cursor-pointer",
+                  ? "bg-transparent text-brand-charcoal/20 border-brand-charcoal/10 shadow-none opacity-35 cursor-not-allowed pointer-events-none"
+                  : "bg-white text-brand-teal border-brand-teal/12 shadow-soft hover:bg-brand-cream hover:text-brand-charcoal hover:border-brand-teal/28 cursor-pointer",
               ].join(" ")}
             >
               <ChevronLeft
@@ -396,8 +396,8 @@ export const TestimonialsSection: React.FC = () => {
               className={[
                 "group h-12 w-12 border flex items-center justify-center rounded-[10px] transition-all duration-300",
                 isAtEnd
-                  ? "bg-transparent text-[#1C1B19]/20 border-[#1C1B19]/10 shadow-none opacity-35 cursor-not-allowed pointer-events-none"
-                  : "bg-white text-[#0F9598] border-[#0F9598]/12 shadow-soft hover:bg-[#F9F8F4] hover:text-[#1C1B19] hover:border-[#0F9598]/28 cursor-pointer",
+                  ? "bg-transparent text-brand-charcoal/20 border-brand-charcoal/10 shadow-none opacity-35 cursor-not-allowed pointer-events-none"
+                  : "bg-white text-brand-teal border-brand-teal/12 shadow-soft hover:bg-brand-cream hover:text-brand-charcoal hover:border-brand-teal/28 cursor-pointer",
               ].join(" ")}
             >
               <ChevronRight

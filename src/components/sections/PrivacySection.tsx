@@ -168,17 +168,17 @@ export const PrivacySection: React.FC = () => {
   const translatedPoints = get<Array<{ title: string; desc: string }>>('privacy.points');
   const points = [
     {
-      icon: <Shield className="w-5 h-5 text-[#0F9598]" />,
+      icon: <Shield className="w-5 h-5 text-brand-teal" />,
       title: translatedPoints[0].title,
       desc: translatedPoints[0].desc,
     },
     {
-      icon: <EyeOff className="w-5 h-5 text-[#0F9598]" />,
+      icon: <EyeOff className="w-5 h-5 text-brand-teal" />,
       title: translatedPoints[1].title,
       desc: translatedPoints[1].desc,
     },
     {
-      icon: <Search className="w-5 h-5 text-[#0F9598]" />,
+      icon: <Search className="w-5 h-5 text-brand-teal" />,
       title: translatedPoints[2].title,
       desc: translatedPoints[2].desc,
     },
@@ -201,24 +201,24 @@ export const PrivacySection: React.FC = () => {
   return (
     <section
       id="privacy"
-      className="bg-[#F9F8F4] py-16 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
+      className="bg-brand-cream py-16 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Column - Copy & Points */}
           <div className="lg:col-span-7 space-y-6 text-left lg:w-[80%]">
             <div className="space-y-3">
-              <span className="block text-[10px] tracking-[0.25em] text-[#9B7A5B] uppercase font-sans font-semibold">
+              <span className="block text-[10px] tracking-[0.25em] text-brand-gold uppercase font-sans font-semibold">
                 {t('privacy.eyebrow')}
               </span>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#1C1B19] leading-[1.18] font-serif"
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-brand-charcoal leading-[1.18] font-serif"
               style={{ lineHeight: 1.18 }}
               >
                 {t('privacy.heading')}
               </h2>
 
-              <p className="text-[#1C1B19]/70 text-sm sm:text-base [line-height:1.35] font-light max-w-xl">
+              <p className="text-brand-charcoal/70 text-sm sm:text-base [line-height:1.35] font-light max-w-xl">
                 {t('privacy.description')}
               </p>
             </div>
@@ -228,18 +228,18 @@ export const PrivacySection: React.FC = () => {
               {points.map((pt, idx) => (
                 <div
                   key={idx}
-                  className="flex gap-4 group rounded-[14px] border border-[#0F9598]/15 bg-white/35 px-4 py-3.5 transition-all duration-300 hover:border-[#0F9598]/30 hover:bg-white/55"
+                  className="flex gap-4 group rounded-[14px] border border-brand-teal/15 bg-white/35 px-4 py-3.5 transition-all duration-300 hover:border-brand-teal/30 hover:bg-white/55"
                 >
-                  <div className="w-9 h-9 rounded-[10px] bg-[#0F9598]/8 border border-[#0F9598]/20 flex items-center justify-center shrink-0 group-hover:bg-[#0F9598]/15 group-hover:border-[#0F9598]/30 transition-all duration-300">
+                  <div className="w-9 h-9 rounded-[10px] bg-brand-teal/8 border border-brand-teal/20 flex items-center justify-center shrink-0 group-hover:bg-brand-teal/15 group-hover:border-brand-teal/30 transition-all duration-300">
                     {pt.icon}
                   </div>
 
                   <div>
-                    <h3 className="font-sans font-bold text-xs sm:text-sm text-[#1C1B19] tracking-wide mb-1">
+                    <h3 className="font-sans font-bold text-xs sm:text-sm text-brand-charcoal tracking-wide mb-1">
                       {pt.title}
                     </h3>
 
-                    <p className="text-[#1C1B19]/58 text-xs sm:text-sm font-light [line-height:1.35]">
+                    <p className="text-brand-charcoal/58 text-xs sm:text-sm font-light [line-height:1.35]">
                       {pt.desc}
                     </p>
                   </div>
@@ -250,9 +250,9 @@ export const PrivacySection: React.FC = () => {
 
           {/* Right Column - Confidential Profiles */}
           <div className="lg:col-span-5 w-full flex flex-col items-center justify-center">
-            <div className="privacy-scroll-window relative w-full max-w-sm h-[400px] md:h-[520px] overflow-hidden rounded-[10px] border border-[#0F9598]/14 bg-white/58 p-4 shadow-[0_24px_70px_rgba(28,27,25,0.1)] backdrop-blur-md">
-              <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-[#F9F8F4] to-transparent z-20 pointer-events-none" />
-              <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#F9F8F4] to-transparent z-20 pointer-events-none" />
+            <div className="privacy-scroll-window relative w-full max-w-sm h-[400px] md:h-[520px] overflow-hidden rounded-[10px] border border-brand-teal/14 bg-white/58 p-4 shadow-[0_24px_70px_rgb(var(--color-brand-charcoal)/0.1)] backdrop-blur-md">
+              <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-brand-cream to-transparent z-20 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-brand-cream to-transparent z-20 pointer-events-none" />
 
               <div
                 className="privacy-marquee-track flex flex-col gap-5"
@@ -261,18 +261,18 @@ export const PrivacySection: React.FC = () => {
                 {scrollingProfiles.map((profile, index) => (
                   <div
                     key={index}
-                    className="relative w-full h-[350px] shrink-0 rounded-[10px] overflow-hidden shadow-[0_18px_45px_rgba(28,27,25,0.12)] border border-[#0F9598]/12 bg-white p-4 flex flex-col justify-between"
+                    className="relative w-full h-[350px] shrink-0 rounded-[10px] overflow-hidden shadow-[0_18px_45px_rgb(var(--color-brand-charcoal)/0.12)] border border-brand-teal/12 bg-white p-4 flex flex-col justify-between"
                   >
-                    <div className="relative h-[216px] w-full rounded-[10px] overflow-hidden bg-[#F9F8F4] flex items-center justify-center group">
+                    <div className="relative h-[216px] w-full rounded-[10px] overflow-hidden bg-brand-cream flex items-center justify-center group">
                       <img
                         src={profile.img}
                         alt={t('privacy.profileAlt')}
                         className="w-full h-full object-cover filter blur-[22px] scale-110 pointer-events-none select-none"
                       />
 
-                      <div className="absolute inset-0 bg-[#1C1B19]/34 flex flex-col items-center justify-center p-4 text-center">
-                        <div className="w-10 h-10 rounded-[10px] bg-[#F9F8F4] flex items-center justify-center shadow-lg border border-[#9B7A5B]/30 mb-2.5 animate-gentle-float">
-                          <Lock className="w-4 h-4 text-[#9B7A5B]" />
+                      <div className="absolute inset-0 bg-brand-charcoal/34 flex flex-col items-center justify-center p-4 text-center">
+                        <div className="w-10 h-10 rounded-[10px] bg-brand-cream flex items-center justify-center shadow-lg border border-brand-gold/30 mb-2.5 animate-gentle-float">
+                          <Lock className="w-4 h-4 text-brand-gold" />
                         </div>
 
                         <span className="text-[10px] tracking-[0.2em] font-bold text-white uppercase block mb-1">
@@ -288,24 +288,24 @@ export const PrivacySection: React.FC = () => {
                     {/* Profile Metadata */}
                     <div className="flex flex-col gap-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-[10px] font-bold text-[#1C1B19] tracking-wider uppercase bg-[#1C1B19]/5 px-2 py-0.5 rounded font-sans">
+                        <span className="text-[10px] font-bold text-brand-charcoal tracking-wider uppercase bg-brand-charcoal/5 px-2 py-0.5 rounded font-sans">
                           ID: {profile.id}
                         </span>
 
-                        <span className="text-[9px] font-bold text-[#0F9598] tracking-[0.15em] uppercase">
+                        <span className="text-[9px] font-bold text-brand-teal tracking-[0.15em] uppercase">
                           {profile.tag}
                         </span>
                       </div>
 
                       <div className="flex items-center justify-between">
-                        <span className="bg-[#9B7A5B]/15 text-[#9B7A5B] text-[9px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-[8px] border border-[#9B7A5B]/30 font-sans">
+                        <span className="bg-brand-gold/15 text-brand-gold text-[9px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-[8px] border border-brand-gold/30 font-sans">
                           {profile.status}
                         </span>
                       </div>
 
-                      <div className="space-y-1.5 pt-2 border-t border-[#0F9598]/10">
-                        <div className="h-2.5 w-full bg-[#1C1B19]/10 rounded" />
-                        <div className="h-2.5 w-4/5 bg-[#1C1B19]/10 rounded" />
+                      <div className="space-y-1.5 pt-2 border-t border-brand-teal/10">
+                        <div className="h-2.5 w-full bg-brand-charcoal/10 rounded" />
+                        <div className="h-2.5 w-4/5 bg-brand-charcoal/10 rounded" />
                       </div>
                     </div>
                   </div>

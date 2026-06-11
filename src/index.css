@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-brand-teal: 12 185 180;       /* #0CB9B4 */
+  --color-brand-gold: 155 122 91;       /* #9B7A5B */
+  --color-brand-cream: 243 246 248;     /* #F3F6F8 */
+  --color-brand-charcoal: 22 28 45;     /* #161C2D */
+  --color-brand-dark-teal: 19 22 37;     /* #131625 */
+  --color-accent-gold: 212 168 83;      /* #D4A853 */
+  --color-brand-teal-deep: 14 42 61;     /* #0E2A3D */
+  --color-brand-teal-mid: 10 163 158;    /* #0AA39E */
+  --color-white: 255 255 255;           /* #FFFFFF */
+}
+
 @layer base {
   *, *::before, *::after {
     box-sizing: border-box;
@@ -12,8 +24,8 @@
   }
 
   body {
-    background-color: #F9F8F4;
-    color: #1C1B19;
+    background-color: rgb(var(--color-brand-cream));
+    color: rgb(var(--color-brand-charcoal));
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -24,12 +36,12 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
     line-height: 1.15;
-    color: #1C1B19;
+    color: rgb(var(--color-brand-charcoal));
   }
 
   ::selection {
-    background-color: #0F9598;
-    color: #FFFFFF;
+    background-color: rgb(var(--color-brand-teal));
+    color: rgb(var(--color-white));
   }
 }
 
@@ -90,9 +102,9 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(155, 122, 91, 0.15) 40%,
-    rgba(155, 122, 91, 0.25) 50%,
-    rgba(155, 122, 91, 0.15) 60%,
+    rgb(var(--color-brand-gold) / 0.15) 40%,
+    rgb(var(--color-brand-gold) / 0.25) 50%,
+    rgb(var(--color-brand-gold) / 0.15) 60%,
     transparent 100%
   );
   background-size: 200% auto;
@@ -131,27 +143,27 @@
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(15, 149, 152, 0.12);
-  box-shadow: 0 8px 32px rgba(15, 149, 152, 0.04);
+  border: 1px solid rgb(var(--color-brand-teal) / 0.12);
+  box-shadow: 0 8px 32px rgb(var(--color-brand-teal) / 0.04);
 }
 
 .glass-card:hover {
-  border-color: rgba(15, 149, 152, 0.3);
-  box-shadow: 0 12px 40px rgba(15, 149, 152, 0.08);
+  border-color: rgb(var(--color-brand-teal) / 0.3);
+  box-shadow: 0 12px 40px rgb(var(--color-brand-teal) / 0.08);
 }
 
 /* ────────────────────────────────────────────────
    Gold gradient text utility
    ──────────────────────────────────────────────── */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #9B7A5B 0%, #9B7A5B 50%, #9B7A5B 100%);
+  background: linear-gradient(135deg, rgb(var(--color-brand-gold)) 0%, rgb(var(--color-brand-gold)) 50%, rgb(var(--color-brand-gold)) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-teal-gradient {
-  background: linear-gradient(135deg, #0F9598 0%, #9B7A5B 60%, #0F9598 100%);
+  background: linear-gradient(135deg, rgb(var(--color-brand-teal)) 0%, rgb(var(--color-brand-gold)) 60%, rgb(var(--color-brand-teal)) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -163,7 +175,7 @@
 .section-rule {
   width: 48px;
   height: 2px;
-  background: linear-gradient(90deg, #0F9598, #9B7A5B);
+  background: linear-gradient(90deg, rgb(var(--color-brand-teal)), rgb(var(--color-brand-gold)));
   border-radius: 2px;
   margin: 0 auto 1.25rem;
 }
@@ -172,9 +184,9 @@
    Custom scrollbar
    ──────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: #F9F8F4; }
-::-webkit-scrollbar-thumb { background: #9B7A5B; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #0F9598; }
+::-webkit-scrollbar-track { background: rgb(var(--color-brand-cream)); }
+::-webkit-scrollbar-thumb { background: rgb(var(--color-brand-gold)); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgb(var(--color-brand-teal)); }
 
 .scrollbar-none::-webkit-scrollbar {
   display: none;
@@ -188,8 +200,8 @@
    Pricing card glow on hover
    ──────────────────────────────────────────────── */
 @keyframes softPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(15, 149, 152, 0); }
-  50%       { box-shadow: 0 0 25px 4px rgba(15, 149, 152, 0.15); }
+  0%, 100% { box-shadow: 0 0 0 0 rgb(var(--color-brand-teal) / 0); }
+  50%       { box-shadow: 0 0 25px 4px rgb(var(--color-brand-teal) / 0.15); }
 }
 
 .plan-featured {
@@ -204,7 +216,7 @@
   display: block;
   height: 2px;
   width: 100%;
-  background: linear-gradient(90deg, #0F9598, #9B7A5B);
+  background: linear-gradient(90deg, rgb(var(--color-brand-teal)), rgb(var(--color-brand-gold)));
   border-radius: 1px;
   margin-top: 2px;
 }

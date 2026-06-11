@@ -23,8 +23,8 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
     'nav.apply': 'Apply Now',
     'nav.toggleMenu': 'Toggle menu',
 
-    'hero.kicker': 'Private matchmaking for verified people.',
-    'hero.heading': 'Private introductions for a life built together.',
+    'hero.kicker': 'Carefully selected. Personally guided.',
+    'hero.heading': 'Discreet matchmaking for committed individuals.',
     'hero.cta': 'Start Your Journey',
     'hero.alt': 'WuMa Matchmaking',
 
