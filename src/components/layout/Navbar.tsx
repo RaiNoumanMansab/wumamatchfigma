@@ -79,6 +79,7 @@ export const Navbar: React.FC = () => {
               src="/images/logo.png"
               alt="WuMa Matchmaking"
               className="h-[clamp(60px,5.0vw,72px)] md:h-[clamp(44px,4.8vw,72px)] w-auto object-contain"
+              loading="lazy"
             />
           </a>
 

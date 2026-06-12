@@ -133,6 +133,7 @@ export const HeroSection: React.FC = () => {
               src="/images/Image20260611133747.png"
               alt={t("hero.alt")}
               className="w-full h-full object-cover object-[80%_8%]"
+              loading="eager"
             />
           </div>
         </div>
@@ -147,6 +148,7 @@ export const HeroSection: React.FC = () => {
           src="/images/Image20260611133747.png"
           alt={t("hero.alt")}
           className="w-full h-full object-cover object-[80%_8%]"
+          loading="eager"
         />
       </div>
     </section>

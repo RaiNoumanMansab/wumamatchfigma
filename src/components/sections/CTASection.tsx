@@ -20,7 +20,7 @@ export const CTASection: React.FC = () => {
         >
           {/* Heading */}
           <div className="space-y-4 max-w-2xl mx-auto relative z-10">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-brand-charcoal tracking-tight font-serif leading-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-medium text-brand-charcoal tracking-tight font-serif leading-tight">
               {t('cta.heading')}
             </h2>
 
