@@ -46,7 +46,7 @@ const fallbackHeadlineParts: HeadlinePart[] = [
   },
   {
     text: '“good enough”',
-    className: 'italic text-brand-gold font-serif',
+    className: 'italic text-brand-gold font-sans',
   },
   {
     text: 'to',
@@ -54,7 +54,7 @@ const fallbackHeadlineParts: HeadlinePart[] = [
   },
   {
     text: 'unforgettable',
-    className: 'text-brand-teal font-semibold',
+    className: 'font-semibold',
   },
   {
     text: ', blending psychology, intuition, and deep vetting to deliver connections that actually move the needle.',
@@ -92,7 +92,9 @@ export const WhyWuMaSection: React.FC = () => {
       let overridenClass = 'text-brand-charcoal font-sans font-medium';
       
       if (part.className.includes('italic')) {
-        overridenClass = 'italic text-brand-charcoal font-serif';
+        overridenClass = part.className.includes('font-sans')
+          ? 'italic text-brand-charcoal font-sans'
+          : 'italic text-brand-charcoal font-serif';
       }
 
       // Preserve special text colors (gold and teal accents)

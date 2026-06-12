@@ -73,9 +73,9 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
     'why.cta': 'Apply Now',
     'why.headlineParts': [
       { text: 'We help ambitious singles go from', className: 'text-white' },
-      { text: '“good enough”', className: 'italic text-brand-gold' },
+      { text: '“good enough”', className: 'italic text-brand-gold font-sans' },
       { text: 'to', className: 'text-white' },
-      { text: 'unforgettable', className: 'text-brand-teal font-normal' },
+      { text: 'unforgettable', className: 'font-semibold' },
       {
         text: ', blending psychology, intuition, and deep vetting to deliver connections that actually move the needle.',
         className: 'text-white',
@@ -290,9 +290,9 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
     'why.cta': '立即申请',
     'why.headlineParts': [
       { text: '我们帮助优秀单身人士从', className: 'text-white' },
-      { text: '“还不错”', className: 'italic text-brand-gold' },
+      { text: '“还不错”', className: 'italic text-brand-gold font-sans' },
       { text: '走向', className: 'text-white' },
-      { text: '难以忘怀', className: 'text-brand-teal font-normal' },
+      { text: '难以忘怀', className: 'font-semibold' },
       { text: '，结合心理学、直觉与深度筛选，促成真正有分量的连接。', className: 'text-white' },
     ],
 
@@ -429,9 +429,9 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
     'why.cta': '立即申請',
     'why.headlineParts': [
       { text: '我們幫助優秀單身人士從', className: 'text-white' },
-      { text: '「還不錯」', className: 'italic text-brand-gold' },
+      { text: '「還不錯」', className: 'italic text-brand-gold font-sans' },
       { text: '走向', className: 'text-white' },
-      { text: '難以忘懷', className: 'text-brand-teal font-normal' },
+      { text: '難以忘懷', className: 'font-semibold' },
       { text: '，結合心理學、直覺與深度篩選，促成真正有份量的連結。', className: 'text-white' },
     ],
 

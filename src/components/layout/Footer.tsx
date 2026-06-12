@@ -68,7 +68,7 @@ export const Footer: React.FC = () => {
         <div className="py-14 sm:py-16 px-7 sm:px-12 lg:pr-16 flex flex-col items-start justify-between gap-10 text-left border-b lg:border-b-0 lg:border-r border-brand-teal/12 min-h-[360px]">
           <div>
             <img
-              src="/images/Logo.svg"
+              src="/images/logo.png"
               alt={t('hero.alt')}
               className="h-20 sm:h-24 w-auto object-contain drop-shadow-[0_0_24px_rgb(var(--color-brand-teal)/0.18)] mb-7"
             />

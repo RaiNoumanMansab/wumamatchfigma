@@ -76,7 +76,7 @@ export const Navbar: React.FC = () => {
             className="relative flex items-center transition-transform duration-300 hover:scale-[1.02] -ml-1.5"
           >
             <img
-              src="/images/Logo.svg"
+              src="/images/logo.png"
               alt="WuMa Matchmaking"
               className="h-[clamp(44px,4.8vw,72px)] w-auto object-contain"
             />

@@ -12,7 +12,7 @@ export const ProcessSection: React.FC = () => {
       id="process"
       className="bg-brand-cream py-16 sm:py-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden border-t border-brand-teal/10"
     >
-      <div className="absolute inset-0 bg-radial-teal opacity-10 pointer-events-none" />
+
 
       <div className="max-w-6xl mx-auto relative z-10 text-center">
         {/* Section Header */}

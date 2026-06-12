@@ -259,3 +259,12 @@
     scroll-behavior: auto;
   }
 }
+
+/* Explicit font-family utility overrides to guarantee correct font rendering */
+.font-sans {
+  font-family: 'Roboto', sans-serif !important;
+}
+.font-serif {
+  font-family: 'Poppins', sans-serif !important;
+}
+

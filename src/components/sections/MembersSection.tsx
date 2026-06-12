@@ -99,34 +99,37 @@ export const MembersSection: React.FC = () => {
                 VERIFIED
               </div>
 
-              {/* Centered Blurred Avatar Circle */}
-              <div className="relative w-32 h-32 mx-auto mb-5 rounded-full overflow-hidden border border-brand-teal/10 bg-brand-cream flex items-center justify-center">
-                <img
-                  src={member.image}
-                  alt="Member profile"
-                  className="w-full h-full object-cover blur-[5px] scale-110 select-none"
-                />
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/15">
-                  <Lock className="w-5 h-5 text-brand-gold mb-1" />
-                  <span className="text-[9px] font-sans font-bold uppercase tracking-[0.16em] text-brand-gold">
-                    JOIN TO VIEW
-                  </span>
+              {/* Centered Avatar and Badge Wrapper */}
+              <div className="relative w-32 h-32 mx-auto mb-8">
+                {/* Centered Blurred Avatar Circle */}
+                <div className="w-full h-full rounded-full overflow-hidden border border-brand-teal/10 bg-brand-cream flex items-center justify-center relative">
+                  <img
+                    src={member.image}
+                    alt="Member profile"
+                    className="w-full h-full object-cover blur-[5px] scale-110 select-none"
+                  />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/15">
+                    <Lock className="w-5 h-5 text-brand-gold mb-1" />
+                    <span className="text-[9px] font-sans font-bold uppercase tracking-[0.16em] text-brand-gold">
+                      JOIN TO VIEW
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              {/* Premium / Basic Badge */}
-              <div className="mb-4">
-                {member.badgeType === 'PREMIUM' ? (
-                  <div className="inline-flex items-center justify-center gap-1 rounded-full border border-brand-gold/30 bg-brand-gold/5 px-4 py-1 text-[9px] font-sans font-bold uppercase tracking-wider text-brand-gold">
-                    <Crown className="w-3 h-3 text-brand-gold" />
-                    PREMIUM VERIFIED
-                  </div>
-                ) : (
-                  <div className="inline-flex items-center justify-center gap-1 rounded-full border border-brand-teal/30 bg-brand-teal/5 px-4 py-1 text-[9px] font-sans font-bold uppercase tracking-wider text-brand-teal">
-                    <Shield className="w-3 h-3 text-brand-teal" />
-                    BASIC VERIFIED
-                  </div>
-                )}
+                {/* Premium / Basic Badge Overlapping the Bottom */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-10 whitespace-nowrap">
+                  {member.badgeType === 'PREMIUM' ? (
+                    <div className="inline-flex items-center justify-center gap-1 rounded-full border border-brand-gold/30 bg-white px-4 py-1 text-[9px] font-sans font-bold uppercase tracking-wider text-brand-gold shadow-md">
+                      <Crown className="w-3 h-3 text-brand-gold" />
+                      PREMIUM VERIFIED
+                    </div>
+                  ) : (
+                    <div className="inline-flex items-center justify-center gap-1 rounded-full border border-brand-teal/30 bg-white px-4 py-1 text-[9px] font-sans font-bold uppercase tracking-wider text-brand-teal shadow-md">
+                      <Shield className="w-3 h-3 text-brand-teal" />
+                      BASIC VERIFIED
+                    </div>
+                  )}
+                </div>
               </div>
 
               {/* Blurred Personal Details Block */}
@@ -153,7 +156,7 @@ export const MembersSection: React.FC = () => {
 
               {/* Bio Paragraph (Clear and readable) */}
               <div className="my-4 flex-grow flex items-center justify-center">
-                <p className="text-[11px] font-normal leading-relaxed text-brand-charcoal/70 text-center px-4 h-16 overflow-hidden">
+                <p className="text-[11px] font-normal leading-relaxed text-brand-charcoal/70 text-center px-4">
                   {member.bio}
                 </p>
               </div>
