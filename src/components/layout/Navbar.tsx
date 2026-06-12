@@ -136,7 +136,7 @@ export const Navbar: React.FC = () => {
       transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
       className="fixed top-0 left-0 right-0 z-50 w-full bg-gradient-to-r from-brand-teal via-[#5ECFCB] to-brand-cream border-b border-brand-teal/10 shadow-sm"
     >
-      <nav className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-3 flex items-center justify-between">
+      <nav className="max-w-[var(--container-max-width)] mx-auto px-6 sm:px-8 lg:px-12 py-3 flex items-center justify-between">
         <div className="flex items-center gap-20 md:gap-32 lg:gap-44">
           {/* Logo with Gold Skyline */}
           <a
