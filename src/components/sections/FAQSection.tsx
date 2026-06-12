@@ -22,10 +22,10 @@ export const FAQSection: React.FC = () => {
           
           {/* Left Column: Heading and Subtitle (Aligned Higher) */}
           <div className="lg:col-span-5 text-left self-start lg:pt-2 lg:border-r lg:border-brand-charcoal/18 lg:pr-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-brand-charcoal mb-4 font-serif [line-height:1.18]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-brand-charcoal mb-4 font-serif leading-tight tracking-tight">
               {t('faq.heading')}
             </h2>
-            <p className="text-brand-charcoal/70 text-xs sm:text-sm md:text-base font-light [line-height:1.35] max-w-md">
+            <p className="text-brand-charcoal/70 text-sm sm:text-base font-light leading-relaxed max-w-md">
               {t('faq.description')}
             </p>
           </div>

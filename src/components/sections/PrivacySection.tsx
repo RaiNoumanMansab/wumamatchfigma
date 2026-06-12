@@ -208,17 +208,15 @@ export const PrivacySection: React.FC = () => {
           {/* Left Column - Copy & Points */}
           <div className="lg:col-span-7 space-y-6 text-left lg:w-[80%]">
             <div className="space-y-3">
-              <span className="block text-[10px] tracking-[0.25em] text-brand-gold uppercase font-sans font-semibold">
+              <span className="block text-xs tracking-[0.25em] text-brand-gold uppercase font-sans font-bold">
                 {t('privacy.eyebrow')}
               </span>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-brand-charcoal leading-[1.18] font-serif"
-              style={{ lineHeight: 1.18 }}
-              >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-brand-charcoal leading-tight tracking-tight font-serif">
                 {t('privacy.heading')}
               </h2>
 
-              <p className="text-brand-charcoal/70 text-sm sm:text-base [line-height:1.35] font-light max-w-xl">
+              <p className="text-brand-charcoal/70 text-sm sm:text-base leading-relaxed font-light max-w-xl">
                 {t('privacy.description')}
               </p>
             </div>

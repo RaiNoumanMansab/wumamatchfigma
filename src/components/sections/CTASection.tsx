@@ -9,59 +9,36 @@ export const CTASection: React.FC = () => {
   return (
     <section
       id="cta"
-      className="bg-brand-darkTeal py-16 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
+      className="bg-[#09111e] py-16 sm:py-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-radial-teal opacity-30 mix-blend-screen pointer-events-none" />
+      <div className="absolute inset-0 bg-radial-teal opacity-20 pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Inner light card */}
         <motion.div
-          // whileHover={{ y: -4, transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] } }}
-          className="bg-gradient-to-br from-brand-cream to-brand-cream rounded-[10px] border border-brand-gold/25 p-8 sm:p-12 md:p-14 text-center shadow-luxury flex flex-col items-center justify-center gap-8 relative overflow-hidden group"
+          className="bg-brand-cream rounded-[20px] border border-brand-teal/5 p-8 sm:p-12 md:p-16 text-center shadow-xl flex flex-col items-center justify-center gap-6 relative overflow-hidden"
         >
           {/* Heading */}
-          <div className="space-y-5 max-w-2xl mx-auto relative z-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-brand-charcoal [line-height:1.18] font-serif">
+          <div className="space-y-4 max-w-2xl mx-auto relative z-10">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-charcoal tracking-tight font-sans leading-tight">
               {t('cta.heading')}
             </h2>
 
-            <p className="max-w-xl mx-auto text-brand-charcoal/68 text-sm sm:text-base font-light leading-relaxed">
+            <p className="max-w-xl mx-auto text-brand-charcoal/78 text-sm sm:text-base font-light leading-relaxed font-sans">
               {t('cta.description')}
             </p>
-
-            {/* <p className="text-[#1C1B19]/70 text-[10px] sm:text-xs tracking-wider uppercase font-bold">
-    Confidentiality guaranteed. Bespoke introductions only.
-  </p> */}
           </div>
 
           {/* Button */}
-          <div className="relative z-10 flex items-center gap-2.5">
+          <div className="relative z-10 mt-2">
             <motion.a
               href="tel:+123456789"
-              initial="rest"
-              animate="rest"
-              whileHover="hover"
+              whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="flex items-stretch gap-[8px] group"
+              className="inline-flex items-center gap-2 bg-[#0CB9B4] text-white px-6 py-3 rounded-[8px] text-xs font-bold tracking-wider uppercase hover:bg-brand-charcoal transition-colors duration-300 shadow-md"
             >
-              <span className="h-12 bg-brand-teal text-white px-7 text-xs sm:text-sm font-semibold tracking-wide flex items-center rounded-[10px] shadow-[0_14px_30px_rgb(var(--color-brand-teal)/0.28)] hover:bg-brand-charcoal transition-all duration-300">
-                {t('cta.button')}
-              </span>
-
-              <span className="h-12 w-12 bg-white text-brand-teal border border-brand-teal/25 flex items-center justify-center rounded-[10px] shadow-[0_14px_30px_rgb(var(--color-white)/0.14)] transition-colors duration-300 group-hover:bg-brand-cream group-hover:text-brand-charcoal group-hover:border-brand-charcoal/20 group-hover:shadow-[0_18px_34px_rgb(var(--color-white)/0.2)]">
-                <motion.span
-                  variants={{
-                    rest: { rotate: 0 },
-                    hover: {
-                      rotate: 50,
-                      transition: { duration: 0.42, ease: [0.22, 1, 0.36, 1] },
-                    },
-                  }}
-                  className="flex items-center justify-center"
-                >
-                  <ArrowUpRight className="w-4 h-4 stroke-[2.3]" />
-                </motion.span>
-              </span>
+              <span>{t('cta.button') || 'Book A Call'}</span>
+              <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
             </motion.a>
           </div>
         </motion.div>

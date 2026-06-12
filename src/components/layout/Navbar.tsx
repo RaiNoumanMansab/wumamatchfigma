@@ -1,11 +1,12 @@
-import { useState } from "react";
-import { ArrowUpRight, Languages, Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Languages, Menu, X } from "lucide-react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { languageOptions, useLocalization } from "../../lib/i18n";
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const { scrollY } = useScroll();
   const { locale, setLocale, t } = useLocalization();
 
@@ -19,6 +20,30 @@ export const Navbar: React.FC = () => {
     }
   });
 
+  // Track the active section dynamically on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["home", "process", "testimonials", "cta"];
+      const scrollPosition = window.scrollY + 120; // offset for navbar height
+
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // run initially
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const currentLanguageIndex = languageOptions.findIndex(
     (option) => option.locale === locale,
   );
@@ -28,10 +53,10 @@ export const Navbar: React.FC = () => {
     languageOptions[(currentLanguageIndex + 1) % languageOptions.length];
 
   const navLinks = [
-    { name: t("nav.home"), href: "#home" },
-    { name: t("nav.process"), href: "#process" },
-    { name: t("nav.testimonials"), href: "#testimonials" },
-    { name: t("nav.apply"), href: "#cta" },
+    { name: t("nav.home"), href: "#home", id: "home" },
+    { name: t("nav.process"), href: "#process", id: "process" },
+    { name: t("nav.testimonials"), href: "#testimonials", id: "testimonials" },
+    { name: t("nav.apply"), href: "#cta", id: "cta" },
   ];
 
   return (
@@ -39,109 +64,127 @@ export const Navbar: React.FC = () => {
       initial={{ opacity: 0, y: -18 }}
       animate={isHidden ? { opacity: 0, y: -92 } : { opacity: 1, y: 0 }}
       transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 py-4 pointer-events-none"
+      className="fixed top-0 left-0 right-0 z-50 w-full bg-gradient-to-r from-brand-teal via-[#5ECFCB] to-brand-cream border-b border-brand-teal/10 shadow-sm"
     >
-      <nav className="max-w-7xl mx-auto bg-brand-cream/80 backdrop-blur-md border border-white/20 rounded-[10px] shadow-luxury px-4 sm:px-6 py-2.5 flex items-center justify-between pointer-events-auto transition-all duration-300">
-        <a
-          href="#home"
-          className="relative flex items-center group rounded-[10px] p-1 transition-all duration-300"
-        >
-          <span className="absolute -inset-x-5 -inset-y-3 rounded-[10px] bg-brand-teal/24 blur-2xl opacity-95 mix-blend-multiply transition-opacity duration-300 group-hover:opacity-100" />
-          <img
-            src="/images/Image20260611132035.png"
-            alt="WuMa Matchmaking"
-            className="relative h-14 w-auto object-contain drop-shadow-[0_8px_22px_rgb(var(--color-brand-teal)/0.38)] transition-transform duration-300 group-hover:scale-105 sm:h-16"
-          />
-        </a>
+      <nav className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-20 md:gap-32 lg:gap-44">
+          {/* Logo with Gold Skyline */}
+          <a
+            href="#home"
+            className="relative flex items-center transition-transform duration-300 hover:scale-[1.02] -ml-1.5"
+          >
+            <img
+              src="/images/Image20260611130244.png"
+              alt="WuMa Matchmaking"
+              className="h-[52px] sm:h-[68px] w-auto object-contain"
+            />
+          </a>
 
-        <div className="hidden md:flex items-center gap-6 lg:gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-xs font-semibold text-brand-charcoal hover:text-brand-teal transition-colors duration-300 py-1"
-            >
-              {link.name}
-            </a>
-          ))}
+          {/* Navigation Links */}
+          <div className="hidden md:flex items-center gap-7 lg:gap-9">
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.id;
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={`text-[11px] lg:text-[12px] font-bold tracking-widest uppercase transition-all duration-300 py-1.5 border-b-2 ${
+                    isActive
+                      ? "border-brand-gold text-black"
+                      : "border-transparent text-black/75 hover:text-black hover:border-black/25"
+                  }`}
+                >
+                  {link.name}
+                </a>
+              );
+            })}
+          </div>
         </div>
 
+        {/* Right Action Button */}
         <div className="flex items-center gap-3">
+          {/* Language Switcher */}
           <button
             type="button"
             onClick={() => setLocale(nextLanguage.locale)}
-            className="inline-flex h-10 items-center gap-2 rounded-[10px]  px-3 text-[10px] font-bold uppercase tracking-[0.14em] text-brand-charcoal/72  transition-all duration-300 hover:border-brand-teal/35 hover:bg-white hover:text-brand-teal"
+            className="inline-flex h-9 items-center gap-2 rounded-lg px-2 text-[10px] font-bold uppercase tracking-[0.14em] text-brand-darkTeal/72 transition-all duration-300 hover:bg-white/40 hover:text-brand-darkTeal"
             aria-label={`Switch language to ${nextLanguage.label}`}
             title={currentLanguage.label}
           >
-            <Languages className="h-3.5 w-3.5 text-brand-teal" />
+            <Languages className="h-3.5 w-3.5 text-brand-darkTeal/80" />
             {currentLanguage.shortLabel}
           </button>
 
+          {/* Apply Now Button with Arrow */}
           <motion.a
             href="#cta"
-            initial="rest"
-            animate="rest"
-            whileHover="hover"
-            whileTap={{ scale: 0.98 }}
-            className="flex items-stretch gap-[8px] group"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="hidden sm:inline-flex h-10 items-center justify-center bg-brand-teal text-white px-5 font-bold text-[11px] tracking-widest uppercase rounded-lg hover:bg-brand-teal/90 transition-colors duration-300 shadow-sm"
           >
-            <span className="h-12 bg-brand-teal text-white px-5 text-xs sm:text-sm font-semibold tracking-wide flex items-center rounded-[10px] shadow-sm group-hover:bg-brand-charcoal transition-all duration-300">
-              {t("nav.apply")}
-            </span>
-
-            <span className="hidden md:flex h-12 w-12 bg-white text-brand-teal border border-white/80 items-center justify-center rounded-[10px] shadow-sm transition-colors duration-300 group-hover:bg-brand-cream group-hover:text-brand-charcoal">
-              <motion.span
-                variants={{
-                  rest: { rotate: 0 },
-                  hover: {
-                    rotate: 50,
-                    transition: { duration: 0.42, ease: [0.22, 1, 0.36, 1] },
-                  },
-                }}
-                className="flex items-center justify-center"
-              >
-                <ArrowUpRight className="w-4 h-4 stroke-[2.3]" />
-              </motion.span>
-            </span>
+            {t("nav.apply").toUpperCase()} ↗
           </motion.a>
 
+          {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-[10px] text-brand-charcoal hover:text-white hover:bg-brand-charcoal transition-all duration-300"
+            className="md:hidden p-2 rounded-lg text-brand-darkTeal hover:bg-white/30 transition-colors duration-300"
             aria-label={t("nav.toggleMenu")}
           >
-            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-7 h-7" />}
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </nav>
 
+      {/* Mobile Drawer menu */}
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0, y: -8, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
           transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-2 max-w-7xl mx-auto bg-brand-cream/95 backdrop-blur-md border border-white/30 rounded-[10px] p-6 shadow-luxury flex flex-col items-center gap-4 md:hidden pointer-events-auto"
+          className="w-full bg-brand-cream border-t border-brand-teal/10 px-6 py-6 shadow-md flex flex-col gap-4 md:hidden"
         >
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="text-xs font-bold tracking-wider text-brand-charcoal hover:text-brand-teal transition-colors duration-300 py-1"
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={`text-[11px] font-bold tracking-widest uppercase transition-all duration-300 py-2 ${
+                  isActive
+                    ? "text-black pl-2 border-l-2 border-brand-gold"
+                    : "text-black/75 hover:text-black pl-2 border-l-2 border-transparent"
+                }`}
+              >
+                {link.name}
+              </a>
+            );
+          })}
+
+          <div className="h-px bg-brand-teal/10 my-1" />
+
+          <div className="flex items-center justify-between gap-4">
+            <button
+              type="button"
+              onClick={() => {
+                setLocale(nextLanguage.locale);
+                setIsOpen(false);
+              }}
+              className="inline-flex h-9 items-center gap-2 rounded-lg border border-brand-teal/20 bg-white px-3 text-[10px] font-bold uppercase tracking-[0.14em] text-brand-charcoal transition-all duration-300 hover:border-brand-teal"
             >
-              {link.name}
+              <Languages className="h-3.5 w-3.5 text-brand-teal" />
+              {currentLanguage.label}
+            </button>
+
+            <a
+              href="#cta"
+              onClick={() => setIsOpen(false)}
+              className="inline-flex h-9 items-center justify-center bg-brand-teal text-white px-4 font-bold text-[10px] tracking-widest uppercase rounded-lg shadow-sm"
+            >
+              {t("nav.apply").toUpperCase()} ↗
             </a>
-          ))}
-          {/* <button
-            type="button"
-            onClick={() => setLocale(nextLanguage.locale)}
-            className="inline-flex h-10 items-center gap-2 rounded-[10px] border border-[#0F9598]/16 bg-white/65 px-3 text-[10px] font-bold uppercase tracking-[0.14em] text-[#1C1B19]/72 shadow-sm transition-all duration-300 hover:border-[#0F9598]/35 hover:bg-white hover:text-[#0F9598] sm:hidden"
-            aria-label={`Switch language to ${nextLanguage.label}`}
-          >
-            <Languages className="h-3.5 w-3.5 text-[#0F9598]" />
-            {currentLanguage.shortLabel}
-          </button> */}
+          </div>
         </motion.div>
       )}
     </motion.div>

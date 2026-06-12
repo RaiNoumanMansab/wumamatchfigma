@@ -1,9 +1,10 @@
 import { Navbar } from './components/layout/Navbar.tsx';
 import { HeroSection } from './components/sections/HeroSection.tsx';
+import { FeaturedSection } from './components/sections/FeaturedSection.tsx';
 import { StatsBanner } from './components/sections/StatsBanner.tsx';
-import { WhyWuMaSection } from './components/sections/WhyWuMaSection.tsx';
-import { PrivacySection } from './components/sections/PrivacySection.tsx';
+import { MembersSection } from './components/sections/MembersSection.tsx';
 import { ProcessSection } from './components/sections/ProcessSection.tsx';
+import { WhyWuMaSection } from './components/sections/WhyWuMaSection.tsx';
 import { TestimonialsSection } from './components/sections/TestimonialsSection.tsx';
 import { FAQSection } from './components/sections/FAQSection.tsx';
 import { CTASection } from './components/sections/CTASection.tsx';
@@ -16,12 +17,13 @@ function App() {
       <Navbar />
 
       {/* Main Sections */}
-      <main className="flex-grow">
+      <main className="flex-grow bg-brand-cream">
         <HeroSection />
+        <FeaturedSection />
         <StatsBanner />
-        <WhyWuMaSection />
-        <PrivacySection />
+        <MembersSection />
         <ProcessSection />
+        <WhyWuMaSection />
         <TestimonialsSection />
         <FAQSection />
         <CTASection />
@@ -34,3 +36,4 @@ function App() {
 }
 
 export default App;
+

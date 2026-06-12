@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
               alt={t('hero.alt')}
               className="h-20 sm:h-24 w-auto object-contain drop-shadow-[0_0_24px_rgb(var(--color-brand-teal)/0.18)] mb-7"
             />
-            <p className="text-sm sm:text-base text-brand-charcoal/78 font-light [line-height:1.35] max-w-md">
+            <p className="text-sm sm:text-base text-brand-charcoal/78 font-light leading-relaxed max-w-md">
               {t('footer.description')}
             </p>
           </div>

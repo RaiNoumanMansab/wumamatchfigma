@@ -23,9 +23,10 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
     'nav.apply': 'Apply Now',
     'nav.toggleMenu': 'Toggle menu',
 
-    'hero.kicker': 'Carefully selected. Personally guided.',
-    'hero.heading': 'Discreet matchmaking for committed individuals.',
-    'hero.cta': 'Start Your Journey',
+    'hero.kicker': 'PRIVATE MATCHMAKING',
+    'hero.heading': 'Private introductions for a life built together.',
+    'hero.description': 'Connect with carefully selected matches who share your values, goals, and vision for the future. Our private introduction process is designed to help you build a meaningful relationship that lasts.',
+    'hero.cta': 'Start Your Application',
     'hero.alt': 'WuMa Matchmaking',
 
     'stats.heading': 'Find Success With WuMa',
@@ -103,28 +104,61 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       { tag: 'Vetted Member', id: 'WM-7392', status: 'Verified' },
     ],
 
-    'process.heading': 'Our Human-Centric Matchmaking Process',
+    'process.kicker': 'HOW IT WORKS',
+    'process.heading': 'A Clear Path to Find Your Love',
     'process.steps': [
       {
-        title: 'Discovery',
-        desc: 'We learn your values, lifestyle, family goals, and non-negotiables through a private consultation.',
+        title: 'Join & Verify',
+        desc: 'Create your profile, set your preferences, and complete identity verification. This step ensures that every person you may meet inside the system is real - no fake profiles, no hidden identities, no uncertainty.',
         stepNum: '01',
       },
       {
-        title: 'Curation',
-        desc: 'Your matchmaker reviews vetted candidates and narrows the search to people with serious intent.',
+        title: 'Speak with a Matchmaker',
+        desc: "After verification, a dedicated matchmaker will reach out to you personally. She will get to know your background, experiences, and aspirations in detail.\n\nThis is not a form or a checklist; it's a real conversation designed to understand you clearly before any introduction is made.",
         stepNum: '02',
       },
       {
-        title: 'Introduction',
-        desc: 'Profiles are shared privately, and introductions move forward only after mutual approval.',
+        title: 'Receive Curated Matches',
+        desc: "Based on the conversation, your matchmaker begins a careful selection process.\n\nInstead of showing you endless profiles, you'll be introduced to a small number of matches that are aligned with your goals, lifestyle, and long-term compatibility.\n\nEach introduction is intentional. No random suggestions. No guessing. No time wasted.",
         stepNum: '03',
       },
       {
-        title: 'Guidance',
-        desc: 'After each introduction, feedback and support help refine the next step with care.',
+        title: 'Meet with Intention',
+        desc: "When a match is presented, both sides are prepared before any contact is made.\n\nYour matchmaker helps coordinate the introduction, sets expectations, and ensures the process remains respectful and focused.\n\nThere's no random messaging, no awkward first moves, and no uncertainty about intentions. Every meeting is for the same reason - a serious relationship.",
         stepNum: '04',
       },
+      {
+        title: 'Build a Real Relationship',
+        desc: "As the connection develops, your matchmaker remains available to support the process when needed.\n\nYou're not navigating dating alone - guide rules help you move forward with confidence, avoid misunderstandings, and stay aligned on long-term goals.\n\nThe focus is simple: building a stable, committed relationship that leads to marriage.",
+        stepNum: '05',
+      },
+    ],
+    'members.eyebrow': 'FEATURED MEMBERS',
+    'members.heading': 'Meet Some of Our Members',
+    'members.description': 'All members are identity-verified. Photos and sensitive details are blurred for public visitors.',
+    'members.cta': 'Browse All Members',
+    'members.cards': [
+      {
+        name: 'Sarah, 29',
+        badge: 'Vetted Member',
+        occupation: 'Software Engineer',
+        location: 'New York, NY',
+        bio: 'Sarah is an ambitious tech professional who loves traveling, hiking, and exploring new culinary experiences. She is looking for an honest and relationship-minded partner.'
+      },
+      {
+        name: 'John, 31',
+        badge: 'VIP Vetted',
+        occupation: 'Investment Banker',
+        location: 'San Francisco, CA',
+        bio: 'John is a dedicated professional who values family, intelligence, and a healthy lifestyle. He enjoys running, reading, and sailing on weekends.'
+      },
+      {
+        name: 'Emily, 27',
+        badge: 'Vetted Member',
+        occupation: 'Graphic Designer',
+        location: 'Vancouver, BC',
+        bio: 'Emily is a creative soul who enjoys art galleries, acoustic concerts, and photography. She wants to connect with someone who shares her passion for life and creativity.'
+      }
     ],
 
     'testimonials.eyebrow': 'Client Stories',
@@ -213,9 +247,10 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
     'nav.apply': '立即申请',
     'nav.toggleMenu': '打开菜单',
 
-    'hero.kicker': '为通过验证的人士提供私密婚恋匹配。',
+    'hero.kicker': '私密婚恋匹配',
     'hero.heading': '为共同建立的人生，安排私密介绍。',
-    'hero.cta': '开启旅程',
+    'hero.description': '与分享您的价值观、目标和未来愿景的精选对象建立联系。我们的私密介绍流程旨在帮助您建立一段持久的有意义关系。',
+    'hero.cta': '开始您的申请',
     'hero.alt': 'WuMa 婚恋匹配',
 
     'stats.heading': '与 WuMa 一起收获结果',
@@ -228,8 +263,8 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       },
       {
         metric: '1:1',
-        label: '专属匹配',
-        bullets: ['匹配前进行专属咨询', '真人评估生活方式与价值观', '介绍围绕真实意向设计'],
+        label: '专属人工匹配',
+        bullets: ['匹配前提供专属深度咨询', '对生活方式与价值观的人工审核', '围绕真实意向展开的介绍'],
       },
       {
         metric: '4',
@@ -268,12 +303,41 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       { tag: '已筛选会员', id: 'WM-7392', status: '已验证' },
     ],
 
-    'process.heading': '以人为本的婚恋匹配流程',
+    'process.kicker': '工作原理',
+    'process.heading': '寻找真爱的清晰路径',
     'process.steps': [
-      { title: '了解', desc: '通过私密咨询了解你的价值观、生活方式、家庭目标与关键需求。', stepNum: '01' },
-      { title: '甄选', desc: '专属顾问审阅已验证候选人，并缩小到真正认真投入的人选。', stepNum: '02' },
-      { title: '介绍', desc: '档案会被私密分享，只有在双方同意后才推进介绍。', stepNum: '03' },
-      { title: '陪伴', desc: '每次介绍后，我们通过反馈与支持，细致优化下一步。', stepNum: '04' },
+      { title: '加入并验证', desc: '创建您的档案，设置您的偏好，并完成身份验证。这一步确保您在系统内遇到的每个人都是真实的——没有虚假档案，没有隐藏身份，没有不确定性。', stepNum: '01' },
+      { title: '与专属顾问交流', desc: '验证通过后，专属顾问会亲自与您联系。她将深入了解您的背景、经历和愿望。\n\n这不是一份表格或清单，而是一次真实的对话，旨在任何介绍开始前清晰地了解您。', stepNum: '02' },
+      { title: '接收甄选匹配', desc: '基于这次对话，您的顾问会开始认真的筛选流程。\n\n我们不会向您展示无尽的档案，而是向您介绍少数几位在目标、生活方式和长期契合度上与您一致的配对。\n\n每一次介绍都是有意的。没有随机建议，没有猜测，没有时间浪费。', stepNum: '03' },
+      { title: '带着意向见面', desc: '当配对呈现时，在建立任何联系之前双方都已做好了准备。\n\n您的顾问协助协调介绍、设定预期，并确保流程保持尊重和专注。\n\n没有随机消息，没有尴尬的第一步，也没有对意向的不确定。每一次见面都是为了同一个原因——一份认真的关系。', stepNum: '04' },
+      { title: '建立真实的关系', desc: '随着联系的发展，您的顾问会在需要时继续提供支持。\n\n您不是独自在恋爱中摸索——引导规则可帮助您充满信心地向前迈进，避免误解，并保持与长期目标一致。\n\n焦点很简单：建立稳定、承诺并走向婚姻的关系。', stepNum: '05' },
+    ],
+    'members.eyebrow': '推荐会员',
+    'members.heading': '会见我们的部分会员',
+    'members.description': '所有会员均已进行身份验证。照片和敏感信息已对公共访客模糊处理。',
+    'members.cta': '浏览所有会员',
+    'members.cards': [
+      {
+        name: 'Sarah, 29',
+        badge: '已验证会员',
+        occupation: '软件工程师',
+        location: '纽约',
+        bio: 'Sarah 是一位充满干劲的科技界专业人士，热爱旅游、徒步并探索美食。她正在寻找一位诚实且以认真关系为目标的伴侣。'
+      },
+      {
+        name: 'John, 31',
+        badge: 'VIP 专属',
+        occupation: '投资银行家',
+        location: '旧金山',
+        bio: 'John 是一位敬业的专业人士，重视家庭、智慧与健康的生活方式。他喜欢跑步、阅读，周末喜欢帆船运动。'
+      },
+      {
+        name: 'Emily, 27',
+        badge: '已验证会员',
+        occupation: '平面设计师',
+        location: '温哥华',
+        bio: 'Emily 是一位富有创意的人，喜欢艺术画廊、原声音乐会和摄影。她希望与分享她对生活与创造力热忱的人建立连接。'
+      }
     ],
 
     'testimonials.eyebrow': '客户故事',
@@ -317,9 +381,10 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
     'nav.apply': '立即申請',
     'nav.toggleMenu': '開啟選單',
 
-    'hero.kicker': '為通過驗證的人士提供私密婚戀配對。',
+    'hero.kicker': '私密婚戀配對',
     'hero.heading': '為共同建立的人生，安排私密介紹。',
-    'hero.cta': '開啟旅程',
+    'hero.description': '與分享您的價值觀、目標和未來願景的精選對象建立聯繫。我們的私密介紹流程旨在幫助您建立一段持久的有意義關係。',
+    'hero.cta': '開始您的申請',
     'hero.alt': 'WuMa 婚戀配對',
 
     'stats.heading': '與 WuMa 一起收穫結果',
@@ -332,8 +397,8 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       },
       {
         metric: '1:1',
-        label: '專屬配對',
-        bullets: ['配對前進行專屬諮詢', '真人評估生活方式與價值觀', '介紹圍繞真實意向設計'],
+        label: '專屬人工配對',
+        bullets: ['配對前提供專屬深度諮詢', '對生活方式與價值觀的人工審核', '圍繞真實意向展開的介紹'],
       },
       {
         metric: '4',
@@ -372,12 +437,61 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       { tag: '已篩選會員', id: 'WM-7392', status: '已驗證' },
     ],
 
-    'process.heading': '以人為本的婚戀配對流程',
+    'process.kicker': '工作原理',
+    'process.heading': '尋找真愛的清晰路徑',
     'process.steps': [
-      { title: '了解', desc: '透過私密諮詢了解你的價值觀、生活方式、家庭目標與關鍵需求。', stepNum: '01' },
-      { title: '甄選', desc: '專屬顧問審閱已驗證候選人，並縮小到真正認真投入的人選。', stepNum: '02' },
-      { title: '介紹', desc: '檔案會被私密分享，只有在雙方同意後才推進介紹。', stepNum: '03' },
-      { title: '陪伴', desc: '每次介紹後，我們透過回饋與支持，細緻優化下一步。', stepNum: '04' },
+      {
+        title: '加入並驗證',
+        desc: '創建您的個人檔案，設置您的偏好，並完成身份驗證。這一步確保您在系統內遇到的每個人都是真實的——沒有虛假檔案，沒有隱藏身份，沒有不確定性。',
+        stepNum: '01',
+      },
+      {
+        title: '與專屬顧問交流',
+        desc: '驗證通過後，專屬顧問會親自與您聯繫。她將深入了解您的背景、經歷和願望。\n\n這不是一份表格或清單，而是一次真實的對話，旨在任何介紹開始前清晰地了解您。',
+        stepNum: '02',
+      },
+      {
+        title: '接收甄選配對',
+        desc: '基於這次對話，您的顧問會開始認真的篩選流程。\n\n我們不會向您展示無盡的檔案，而是向您介紹少數幾位在目標、生活方式和長期契合度上與您一致的配對。\n\n每一次介紹都是有意的。沒有隨機建議，沒有猜測，沒有時間浪費。',
+        stepNum: '03',
+      },
+      {
+        title: '帶著意向見面',
+        desc: '當配對呈現時，在建立任何聯繫之前雙方都已做好了準備。\n\n您的顧問協助協調介紹、設定預期，並確保流程保持尊重和專注。\n\n沒有隨機消息，沒有尷尬的第一步，也沒有對意向的不確定。每一次見面都是為了同一個原因——一份認真的關係。',
+        stepNum: '04',
+      },
+      {
+        title: '建立真實的關係',
+        desc: '隨著聯繫的發展，您的顧問會在需要時繼續提供支持。\n\n您不是獨自在戀愛中摸索——引導規則可幫助您充滿信心地向前邁進，避免誤解，並保持與長期目標一致。\n\n焦點很簡單：建立穩定、承諾並走向婚姻的關係。',
+        stepNum: '05',
+      },
+    ],
+    'members.eyebrow': '推薦會員',
+    'members.heading': '會見我們的部分會員',
+    'members.description': '所有會員均已進行身份驗證。照片和敏感信息已對公共訪客模糊處理。',
+    'members.cta': '瀏覽所有會員',
+    'members.cards': [
+      {
+        name: 'Sarah, 29',
+        badge: '已驗證會員',
+        occupation: '軟體工程師',
+        location: '紐約',
+        bio: 'Sarah 是一位充滿幹勁的科技界專業人士，熱愛旅遊、徒步並探索美食。她正在尋找一位誠實且以認真關係為目標的伴侶。'
+      },
+      {
+        name: 'John, 31',
+        badge: 'VIP 專屬',
+        occupation: '投資銀行家',
+        location: '舊金山',
+        bio: 'John 世紀業的專業人士，重視家庭、智慧與健康的生活方式。他喜歡跑步、閱讀，週末喜歡帆船運動。'
+      },
+      {
+        name: 'Emily, 27',
+        badge: '已驗證會員',
+        occupation: '平面設計師',
+        location: '溫哥華',
+        bio: 'Emily 是一位富有創意的人，喜歡藝術畫廊、原聲音樂會和攝影。她希望與分享她對生活與創造力熱忱的人建立連結。'
+      }
     ],
 
     'testimonials.eyebrow': '客戶故事',

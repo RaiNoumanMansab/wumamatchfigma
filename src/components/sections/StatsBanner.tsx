@@ -90,11 +90,9 @@
 
 
 import React from 'react';
-import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { useLocalization } from '../../lib/i18n';
-import { FeaturedSection } from './FeaturedSection';
 
 const statsCardsContainer: Variants = {
   hidden: {},
@@ -130,22 +128,20 @@ export const StatsBanner: React.FC = () => {
   return (
     <section
       id="stats"
-      className="relative z-30 -mt-[100svh] overflow-hidden rounded-t-[10px] bg-brand-cream px-6 py-14 shadow-[0_-46px_120px_rgb(var(--color-brand-charcoal)/0.2)] sm:px-8 lg:px-12"
+      className="relative z-25 overflow-hidden bg-[#EEEEE9] px-6 py-14 sm:px-8 lg:px-12"
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-brand-cream via-brand-cream/96 to-transparent" />
-
-      <div className="pointer-events-none absolute inset-0 bg-radial-teal opacity-20" />
+      <div className="pointer-events-none absolute inset-0 bg-radial-teal opacity-10" />
 
       <div className="relative z-10 mx-auto max-w-7xl text-center">
-        <FeaturedSection />
+        <div className="mb-10 max-w-3xl mx-auto">
+          <h2 className="mb-4 font-sans font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-brand-charcoal leading-tight">
+            {t('stats.heading')}
+          </h2>
 
-        <h2 className="mb-3 font-serif text-3xl font-light text-brand-tealDeep [line-height:1.18] sm:text-4xl md:text-5xl">
-          {t('stats.heading')}
-        </h2>
-
-        <p className="mx-auto mb-10 max-w-3xl text-xs font-light [line-height:1.35] text-zinc-600 sm:text-sm md:text-base">
-          {t('stats.description')}
-        </p>
+          <p className="mx-auto text-sm sm:text-base font-normal text-brand-charcoal/70 leading-relaxed">
+            {t('stats.description')}
+          </p>
+        </div>
 
         <motion.div
           variants={statsCardsContainer}
@@ -159,18 +155,18 @@ export const StatsBanner: React.FC = () => {
               key={idx}
               variants={statsCardReveal}
               whileHover={{
-                y: -8,
-                scale: 1.015,
+                y: -6,
+                scale: 1.01,
                 transition: { duration: 0.28, ease: 'easeOut' },
               }}
-              className="flex flex-col justify-start rounded-[10px] border border-brand-tealMid/14 bg-white/88 p-7 text-left shadow-[0_14px_38px_rgb(var(--color-brand-teal-deep)/0.08)] backdrop-blur-sm transition-shadow duration-300 hover:shadow-[0_22px_54px_rgb(var(--color-brand-teal-mid)/0.16)] sm:p-8"
+              className="flex flex-col justify-start rounded-[16px] border border-[#4A4541] bg-[#FFFFFF01] p-8 text-left shadow-[0_14px_38px_rgb(var(--color-brand-charcoal)/0.03)] backdrop-blur-sm transition-all duration-300 hover:shadow-[0_20px_48px_rgb(var(--color-brand-charcoal)/0.06)] hover:border-brand-gold/30"
             >
               <div className="mb-7">
-                <span className="mb-3 block font-serif text-5xl font-light leading-none tracking-tight text-brand-tealDeep sm:text-6xl">
+                <span className="mb-2 block font-serif text-5xl font-normal leading-none tracking-tight text-brand-charcoal sm:text-6xl">
                   {card.metric}
                 </span>
 
-                <span className="block text-xs font-bold uppercase tracking-[0.16em] text-brand-tealMid">
+                <span className="block text-[11px] font-bold uppercase tracking-[0.16em] text-brand-gold">
                   {card.label}
                 </span>
               </div>
@@ -179,13 +175,11 @@ export const StatsBanner: React.FC = () => {
                 {card.bullets.map((bullet, bIdx) => (
                   <li
                     key={bIdx}
-                    className="flex items-start gap-3 text-xs font-medium text-zinc-700 sm:text-[13px]"
+                    className="flex items-start gap-3 text-xs sm:text-[13px] font-normal text-brand-charcoal/80"
                   >
-                    <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-[8px] bg-brand-tealMid/10">
-                      <Check className="h-3.5 w-3.5 text-brand-tealMid" />
-                    </span>
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-gold" />
 
-                    <span className="font-light [line-height:1.35] text-zinc-700">
+                    <span className="leading-relaxed">
                       {bullet}
                     </span>
                   </li>

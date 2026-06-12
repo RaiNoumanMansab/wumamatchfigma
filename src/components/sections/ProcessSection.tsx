@@ -1,59 +1,84 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { softLift } from '../../lib/motion';
-import { ArrowRight } from 'lucide-react';
 import { useLocalization } from '../../lib/i18n';
+import { sectionReveal, viewportOnce } from '../../lib/motion';
 
 export const ProcessSection: React.FC = () => {
   const { get, t } = useLocalization();
-  const steps = get<Array<{ title: string; desc: string; stepNum: string }>>('process.steps');
+  const steps = get<Array<{ title: string; desc: string; stepNum: string }>>('process.steps') || [];
 
   return (
     <section
       id="process"
-      className="bg-brand-darkTeal  py-16 sm:py-20 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
+      className="bg-brand-cream py-16 sm:py-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden border-t border-brand-teal/10"
     >
-      <div className="absolute inset-0 bg-radial-teal opacity-30 mix-blend-screen pointer-events-none" />
+      <div className="absolute inset-0 bg-radial-teal opacity-10 pointer-events-none" />
 
-      <div className="max-w-[112rem] mx-auto relative z-10 text-left">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white mb-10 sm:mb-14 font-serif tracking-tight [line-height:1.18]">
-          {t('process.heading')}
-        </h2>
+      <div className="max-w-6xl mx-auto relative z-10 text-center">
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto mb-16 sm:mb-20">
+          <span className="block text-xs tracking-[0.25em] text-brand-gold uppercase font-sans font-bold mb-3">
+            {t('process.kicker') || 'HOW IT WORKS'}
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-brand-charcoal mb-4 leading-tight tracking-tight">
+            {t('process.heading') || 'A Clear Path to Find Your Love'}
+          </h2>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
-          {steps.map((step, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={softLift}
-              // className="min-h-[300px] lg:min-h-[380px] bg-[#071415]  border border-white/18 hover:border-[#0F9598]/70 rounded-[10px] p-6 sm:p-7 lg:p-8 text-left transition-all duration-500 flex flex-col group relative overflow-hidden shadow-[0_18px_60px_rgba(28,27,25,0.35)] hover:shadow-[0_26px_80px_rgba(15,149,152,0.16)]"
-              className="min-h-[300px] lg:min-h-[380px] bg-transparent  border border-white/18 hover:border-brand-teal/70 rounded-[10px] p-6 sm:p-7 lg:p-8 text-left transition-all duration-500 flex flex-col group relative overflow-hidden shadow-[0_18px_60px_rgb(var(--color-brand-charcoal)/0.35)] hover:shadow-[0_26px_80px_rgb(var(--color-brand-teal)/0.16)]"
+        {/* Steps Stack */}
+        <div className="space-y-20 sm:space-y-28 md:space-y-32">
+          {steps.map((step, idx) => {
+            const isEven = idx % 2 === 0;
 
-            >
-              <div className="absolute inset-0 bg-brand-teal/0 group-hover:bg-brand-teal/[0.035] transition-colors duration-500 pointer-events-none" />
+            return (
+              <motion.div
+                key={idx}
+                variants={sectionReveal}
+                initial="hidden"
+                whileInView="visible"
+                viewport={viewportOnce}
+                className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center"
+              >
+                {/* Image / Graphic Container */}
+                <div
+                  className={[
+                    'md:col-span-7 flex justify-center w-full',
+                    isEven ? 'md:order-1 md:justify-start' : 'md:order-2 md:justify-end',
+                  ].join(' ')}
+                >
+                  <div className="relative w-full max-w-[460px] rounded-[20px] shadow-lg overflow-hidden aspect-[4/3]">
+                    <img
+                      src={`/images/process_step${idx + 1}.png`}
+                      alt={step.title}
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </div>
+                </div>
 
-              <div className="relative z-10 flex items-start justify-between">
-                <span className="font-sans text-sm sm:text-[15px] font-light text-white [line-height:1.35]">
-                  {step.stepNum}
-                </span>
-                {/* <span className="font-sans text-xl text-white leading-none group-hover:text-brand-teal transition-colors duration-300">
-                  +
-                </span> */}
-<ArrowRight
-  className="w-4 h-4 stroke-[2.3] text-white rotate-90 md:rotate-0 transition-transform duration-300 group-hover:text-brand-teal"
-/>
-
-              </div>
-
-              <div className="relative z-10 flex-1 flex flex-col justify-end pt-24 sm:pt-32">
-                <h3 className="font-serif text-3xl sm:text-4xl text-white font-light mb-6 [line-height:1.18] group-hover:text-white transition-colors duration-500">
-                  {step.title}
-                </h3>
-                <p className="text-white text-sm sm:text-[15px] font-light [line-height:1.35] max-w-sm">
-                  {step.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+                {/* Text Copy Container */}
+                <div
+                  className={[
+                    'md:col-span-5 text-left',
+                    isEven ? 'md:order-2 md:pl-10' : 'md:order-1 md:pr-10',
+                  ].join(' ')}
+                >
+                  <div className={`w-full max-w-[400px] space-y-3.5 ${isEven ? 'mr-auto' : 'ml-auto'}`}>
+                    <span className="block text-xs font-sans font-bold tracking-[0.25em] text-brand-gold uppercase">
+                      STEP {parseInt(step.stepNum)}
+                    </span>
+                    
+                    <h3 className="font-sans text-2xl sm:text-[30px] text-brand-charcoal font-bold leading-tight">
+                      {step.title}
+                    </h3>
+                    
+                    <p className="text-brand-charcoal/78 text-sm sm:text-base leading-relaxed font-light whitespace-pre-line">
+                      {step.desc}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
