@@ -39,7 +39,7 @@ export const FeaturedSection: React.FC = () => {
           {t('featured.eyebrow') || 'AS SEEN ON'}
         </p>
 
-        <div className="relative w-full max-w-[310px] sm:max-w-[480px] h-10 sm:h-12 overflow-hidden flex items-center justify-center">
+        <div className="relative w-full  sm:max-w-[480px] h-10 sm:h-12 overflow-hidden flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}

@@ -100,7 +100,7 @@ export const HeroSection: React.FC = () => {
 
           <h1 
             style={{ lineHeight: 1.15 }}
-            className="font-serif font-medium text-brand-charcoal text-4xl sm:text-5xl lg:text-[56px] tracking-tight"
+            className="font-serif font-medium text-brand-charcoal text-3xl sm:text-5xl lg:text-[56px] tracking-tight"
           >
             {t("hero.heading")}
           </h1>
@@ -126,9 +126,9 @@ export const HeroSection: React.FC = () => {
         <div className="hidden lg:block lg:col-span-6" />
 
         {/* Mobile Image (hidden on desktop) */}
-        <div className="col-span-1 lg:hidden w-full flex items-center justify-center py-6">
-          <div className="relative w-full max-w-[520px] aspect-[4/3] overflow-hidden rounded-[20px] border border-brand-teal/15 shadow-lg">
-            <div className="absolute inset-y-0 left-0 w-[20%] bg-gradient-to-r from-[#EEEEE9] to-transparent z-20 pointer-events-none" />
+        <div className="col-span-1 lg:hidden w-full flex items-center justify-center">
+          <div className="relative w-full max-w-[520px] aspect-[4/3] overflow-hidden rounded-[20px] border  shadow-lg">
+            {/* <div className="absolute inset-y-0 left-0 w-[20%] bg-gradient-to-r from-[#EEEEE9] to-transparent z-20 pointer-events-none" /> */}
             <img
               src="/images/Image20260611133747.png"
               alt={t("hero.alt")}
