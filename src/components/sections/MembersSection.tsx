@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Lock, Shield, Crown } from 'lucide-react';
+import { ArrowUpRight, Lock, Shield, Crown } from 'lucide-react';
 import { useLocalization } from '../../lib/i18n';
 import { cardReveal, containerStagger } from '../../lib/motion';
 
@@ -65,7 +65,7 @@ export const MembersSection: React.FC = () => {
             {t('members.eyebrow') || 'FEATURED MEMBERS'}
           </span>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-brand-charcoal mb-4 leading-tight tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-brand-charcoal mb-4 leading-tight tracking-tight">
             {t('members.heading') || 'Meet Some of Our Members'}
           </h2>
 
@@ -129,34 +129,33 @@ export const MembersSection: React.FC = () => {
                 )}
               </div>
 
-              {/* Combined Blurred Details Block (Personal Details & Bio Blurred) */}
-              <div className="relative my-4 flex-grow flex flex-col justify-center">
+              {/* Blurred Personal Details Block */}
+              <div className="relative my-3">
                 {/* Blurred Content Container */}
-                <div className="blur-[4px] select-none space-y-4">
-                  {/* Metadata Headings */}
-                  <div>
-                    <h4 className="font-serif text-[19px] font-bold text-brand-charcoal text-center leading-none">
-                      {member.age} Yrs • {member.country}
-                    </h4>
-                    
-                    <span className="block text-[10px] font-sans font-bold uppercase tracking-[0.18em] text-brand-gold/90 text-center mt-2">
-                      {member.occupation}
-                    </span>
-                  </div>
-
-                  {/* Bio Paragraph */}
-                  <p className="text-[11px] font-normal leading-relaxed text-brand-charcoal/60 text-center px-4 h-16 overflow-hidden">
-                    {member.bio}
-                  </p>
+                <div className="blur-[4px] select-none py-1">
+                  <h4 className="font-serif text-[19px] font-bold text-brand-charcoal text-center leading-none">
+                    {member.age} Yrs • {member.country}
+                  </h4>
+                  
+                  <span className="block text-[10px] font-sans font-bold uppercase tracking-[0.18em] text-brand-gold/90 text-center mt-2 leading-none">
+                    {member.occupation}
+                  </span>
                 </div>
 
-                {/* Single Centered Lock Badge Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center bg-transparent">
-                  <div className="rounded-full border border-brand-teal/20 bg-white/95 px-4 py-1.5 text-[9px] font-sans font-bold uppercase tracking-widest text-brand-teal shadow-md flex items-center gap-1.5 transition-transform duration-300 hover:scale-105">
+                {/* Lock Badge Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="rounded-full border border-brand-teal/15 bg-white/95 px-3.5 py-1 text-[8px] font-sans font-bold uppercase tracking-widest text-brand-teal shadow-sm flex items-center gap-1 transition-transform duration-300 hover:scale-105">
                     <Lock className="w-3.5 h-3.5 text-brand-teal" />
-                    PROFILE LOCKED
+                    LOCKED
                   </div>
                 </div>
+              </div>
+
+              {/* Bio Paragraph (Clear and readable) */}
+              <div className="my-4 flex-grow flex items-center justify-center">
+                <p className="text-[11px] font-normal leading-relaxed text-brand-charcoal/70 text-center px-4 h-16 overflow-hidden">
+                  {member.bio}
+                </p>
               </div>
 
               {/* Divider & Heights / Education Metadata (Personal Information Blurred) */}
@@ -178,14 +177,9 @@ export const MembersSection: React.FC = () => {
                     <span className="text-[11px] font-bold text-brand-charcoal mt-1 leading-none">
                       {member.education}
                     </span>
-                  </div>
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-[8px] font-sans font-bold uppercase tracking-widest text-brand-teal/60">
-                    PRIVATE
-                  </span>
                 </div>
               </div>
+            </div>
 
               {/* Unlock Button */}
               <button
@@ -204,9 +198,10 @@ export const MembersSection: React.FC = () => {
             href="#cta"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex h-11 items-center justify-center bg-brand-teal text-white px-8 font-bold text-xs uppercase tracking-widest rounded-lg hover:bg-brand-teal/90 transition-colors duration-300 shadow-sm"
+            className="group inline-flex h-11 items-center justify-center gap-2 bg-brand-teal text-white px-8 font-bold text-xs uppercase tracking-widest rounded-lg hover:bg-brand-teal/90 transition-colors duration-300 shadow-sm"
           >
-            {t('members.cta').toUpperCase()} ↗
+            <span>{t('members.cta').toUpperCase()}</span>
+            <ArrowUpRight className="w-4 h-4 stroke-[2.5] transition-transform duration-300 group-hover:rotate-45" />
           </motion.a>
         </div>
 

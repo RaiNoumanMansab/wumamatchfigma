@@ -16,11 +16,11 @@ export const CTASection: React.FC = () => {
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Inner light card */}
         <motion.div
-          className="bg-brand-cream rounded-[20px] border border-brand-teal/5 p-8 sm:p-12 md:p-16 text-center shadow-xl flex flex-col items-center justify-center gap-6 relative overflow-hidden"
+          className="bg-[#EEEEE9] rounded-[20px] border border-brand-teal/5 p-8 sm:p-12 md:p-16 text-center shadow-xl flex flex-col items-center justify-center gap-6 relative overflow-hidden"
         >
           {/* Heading */}
           <div className="space-y-4 max-w-2xl mx-auto relative z-10">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-charcoal tracking-tight font-sans leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-brand-charcoal tracking-tight font-serif leading-tight">
               {t('cta.heading')}
             </h2>
 
@@ -33,12 +33,12 @@ export const CTASection: React.FC = () => {
           <div className="relative z-10 mt-2">
             <motion.a
               href="tel:+123456789"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 bg-[#0CB9B4] text-white px-6 py-3 rounded-[8px] text-xs font-bold tracking-wider uppercase hover:bg-brand-charcoal transition-colors duration-300 shadow-md"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="group inline-flex h-12 items-center justify-center gap-2 bg-brand-teal text-white px-7 rounded-[8px] text-xs font-bold tracking-wider uppercase hover:bg-brand-teal/90 transition-colors duration-300 shadow-md"
             >
-              <span>{t('cta.button') || 'Book A Call'}</span>
-              <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
+              <span>{(t('cta.button') || 'Book A Call').toUpperCase()}</span>
+              <ArrowUpRight className="w-4 h-4 stroke-[2.5] transition-transform duration-300 group-hover:rotate-45" />
             </motion.a>
           </div>
         </motion.div>

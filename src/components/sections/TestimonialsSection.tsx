@@ -157,7 +157,7 @@ export const TestimonialsSection: React.FC = () => {
             {t("testimonials.eyebrow")}
           </span>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-brand-charcoal mb-4 font-serif leading-tight tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-brand-charcoal mb-4 font-serif leading-tight tracking-tight">
             {t("testimonials.heading")}
           </h2>
 

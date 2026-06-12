@@ -212,7 +212,7 @@ export const PrivacySection: React.FC = () => {
                 {t('privacy.eyebrow')}
               </span>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-brand-charcoal leading-tight tracking-tight font-serif">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-brand-charcoal leading-tight tracking-tight font-serif">
                 {t('privacy.heading')}
               </h2>
 

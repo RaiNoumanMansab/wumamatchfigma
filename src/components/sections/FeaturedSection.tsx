@@ -4,7 +4,7 @@ import logo390 from '../../assets/featuredSectionLogos/logoipsum-390.svg';
 import logo410 from '../../assets/featuredSectionLogos/logoipsum-410.svg';
 import logo418 from '../../assets/featuredSectionLogos/logoipsum-418.svg';
 import logo426 from '../../assets/featuredSectionLogos/logoipsum-426.svg';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const featuredBrands = [
   { name: 'The Knot', logo: logo390 },
@@ -24,36 +24,45 @@ export const FeaturedSection: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Concatenate array to allow endless scrolling list
-  const displayBrands = [...featuredBrands, ...featuredBrands, ...featuredBrands, ...featuredBrands];
-  const itemWidth = 160; // item width (120px) + gap (40px)
+  const total = featuredBrands.length;
+  // Get 3 brands for the current index, shifting by 3 each time
+  const currentBrands = [
+    featuredBrands[(index * 3) % total],
+    featuredBrands[(index * 3 + 1) % total],
+    featuredBrands[(index * 3 + 2) % total],
+  ];
 
   return (
-    <section className="bg-brand-cream py-4 relative z-20 border-b border-brand-teal/5 w-full">
+    <section className="bg-[#FEF9EF] py-4 relative z-20 border-b border-brand-charcoal/15 w-full">
       <div className="relative mx-auto w-full max-w-5xl px-6 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
         <p className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-brand-gold shrink-0">
           {t('featured.eyebrow') || 'AS SEEN ON'}
         </p>
 
-        <div className="relative w-full max-w-[440px] h-12 overflow-hidden flex items-center">
-          <motion.div
-            animate={{ x: -(index % featuredBrands.length) * itemWidth }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="flex items-center gap-10 absolute left-0"
-          >
-            {displayBrands.map((brand, idx) => (
-              <div
-                key={idx}
-                className="flex items-center justify-center w-[120px] h-8 opacity-45 hover:opacity-85 transition-opacity duration-300 shrink-0"
-              >
-                <img
-                  src={brand.logo}
-                  alt={brand.name}
-                  className="max-h-full max-w-full object-contain brightness-0"
-                />
-              </div>
-            ))}
-          </motion.div>
+        <div className="relative w-full max-w-[310px] sm:max-w-[480px] h-10 sm:h-12 overflow-hidden flex items-center justify-center">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
+              className="flex items-center gap-6 sm:gap-10 absolute"
+            >
+              {currentBrands.map((brand, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center justify-center w-[90px] sm:w-[120px] h-7 sm:h-8 shrink-0"
+                >
+                  <img
+                    src={brand.logo}
+                    alt={brand.name}
+                    className="max-h-full max-w-full object-contain brightness-0"
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>

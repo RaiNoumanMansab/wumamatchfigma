@@ -6,8 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['Playfair Display', ...defaultTheme.fontFamily.serif],
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        serif: ['Poppins', ...defaultTheme.fontFamily.sans],
+        sans: ['Roboto', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         teal: {

@@ -46,7 +46,7 @@ const fallbackHeadlineParts: HeadlinePart[] = [
   },
   {
     text: '“good enough”',
-    className: 'italic text-brand-charcoal font-serif',
+    className: 'italic text-brand-gold font-serif',
   },
   {
     text: 'to',
@@ -54,7 +54,7 @@ const fallbackHeadlineParts: HeadlinePart[] = [
   },
   {
     text: 'unforgettable',
-    className: 'text-brand-charcoal font-semibold',
+    className: 'text-brand-teal font-semibold',
   },
   {
     text: ', blending psychology, intuition, and deep vetting to deliver connections that actually move the needle.',
@@ -93,6 +93,20 @@ export const WhyWuMaSection: React.FC = () => {
       
       if (part.className.includes('italic')) {
         overridenClass = 'italic text-brand-charcoal font-serif';
+      }
+
+      // Preserve special text colors (gold and teal accents)
+      if (part.className.includes('text-brand-gold')) {
+        overridenClass = overridenClass.replace('text-brand-charcoal', 'text-brand-gold');
+      } else if (part.className.includes('text-brand-teal')) {
+        overridenClass = overridenClass.replace('text-brand-charcoal', 'text-brand-teal');
+      }
+
+      // Preserve font weight customization if specified
+      if (part.className.includes('font-semibold')) {
+        overridenClass = overridenClass.replace('font-medium', 'font-semibold');
+      } else if (part.className.includes('font-normal')) {
+        overridenClass = overridenClass.replace('font-medium', 'font-normal');
       }
 
       return {
@@ -159,7 +173,7 @@ export const WhyWuMaSection: React.FC = () => {
             {/* Character Scroll Reveal Headline */}
             <div className="max-w-5xl w-full min-w-0 mb-8 overflow-hidden">
               <h2
-                className="flex flex-wrap items-baseline gap-x-[0.28em] gap-y-2 text-3xl sm:text-4xl lg:text-5xl font-sans font-medium text-brand-charcoal tracking-tight max-w-full leading-tight"
+                className="flex flex-wrap items-baseline gap-x-[0.28em] gap-y-2 text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-brand-charcoal tracking-tight max-w-full leading-tight"
               >
                 {words.map((item, wordIndex) => (
                   <span
@@ -190,12 +204,12 @@ export const WhyWuMaSection: React.FC = () => {
             <div className="pt-2 max-w-full">
               <motion.a
                 href="#cta"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2 bg-[#0CB9B4] text-white px-6 py-3 rounded-[8px] text-xs font-bold tracking-wider uppercase hover:bg-brand-charcoal transition-colors duration-300 shadow-md"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="group inline-flex h-12 items-center justify-center gap-2 bg-brand-teal text-white px-7 rounded-[8px] text-xs font-bold tracking-wider uppercase hover:bg-brand-teal/90 transition-colors duration-300 shadow-md"
               >
-                <span>{t('why.cta') || 'Apply Now'}</span>
-                <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
+                <span>{(t('why.cta') || 'Apply Now').toUpperCase()}</span>
+                <ArrowUpRight className="w-4 h-4 stroke-[2.5] transition-transform duration-300 group-hover:rotate-45" />
               </motion.a>
             </div>
           </div>

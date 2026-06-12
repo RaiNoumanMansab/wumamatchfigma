@@ -134,7 +134,7 @@ export const StatsBanner: React.FC = () => {
 
       <div className="relative z-10 mx-auto max-w-7xl text-center">
         <div className="mb-10 max-w-3xl mx-auto">
-          <h2 className="mb-4 font-sans font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-brand-charcoal leading-tight">
+          <h2 className="mb-4 font-serif font-medium text-3xl sm:text-4xl lg:text-5xl tracking-tight text-brand-charcoal leading-tight">
             {t('stats.heading')}
           </h2>
 

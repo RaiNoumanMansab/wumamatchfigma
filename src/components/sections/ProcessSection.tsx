@@ -16,17 +16,17 @@ export const ProcessSection: React.FC = () => {
 
       <div className="max-w-6xl mx-auto relative z-10 text-center">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto mb-16 sm:mb-20">
-          <span className="block text-xs tracking-[0.25em] text-brand-gold uppercase font-sans font-bold mb-3">
+        <div className="max-w-3xl xl:max-w-4xl mx-auto mb-12 sm:mb-16">
+          <span className="block text-xs xl:text-sm tracking-[0.3em] text-brand-gold uppercase font-sans font-bold mb-3">
             {t('process.kicker') || 'HOW IT WORKS'}
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-brand-charcoal mb-4 leading-tight tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-medium text-brand-charcoal mb-4 leading-tight tracking-tight">
             {t('process.heading') || 'A Clear Path to Find Your Love'}
           </h2>
         </div>
 
         {/* Steps Stack */}
-        <div className="space-y-20 sm:space-y-28 md:space-y-32">
+        <div className="space-y-16 sm:space-y-20 md:space-y-24">
           {steps.map((step, idx) => {
             const isEven = idx % 2 === 0;
 
@@ -37,16 +37,16 @@ export const ProcessSection: React.FC = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={viewportOnce}
-                className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center"
+                className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 xl:gap-20 2xl:gap-24 items-center max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto"
               >
                 {/* Image / Graphic Container */}
                 <div
                   className={[
-                    'md:col-span-7 flex justify-center w-full',
-                    isEven ? 'md:order-1 md:justify-start' : 'md:order-2 md:justify-end',
+                    'flex w-full',
+                    isEven ? 'md:order-1 md:justify-end' : 'md:order-2 md:justify-start',
                   ].join(' ')}
                 >
-                  <div className="relative w-full max-w-[460px] rounded-[20px] shadow-lg overflow-hidden aspect-[4/3]">
+                  <div className="relative w-full max-w-[440px] xl:max-w-[500px] 2xl:max-w-[560px] rounded-[20px] shadow-lg overflow-hidden aspect-[4/3]">
                     <img
                       src={`/images/process_step${idx + 1}.png`}
                       alt={step.title}
@@ -58,20 +58,20 @@ export const ProcessSection: React.FC = () => {
                 {/* Text Copy Container */}
                 <div
                   className={[
-                    'md:col-span-5 text-left',
-                    isEven ? 'md:order-2 md:pl-10' : 'md:order-1 md:pr-10',
+                    'text-left flex w-full',
+                    isEven ? 'md:order-2 md:justify-start' : 'md:order-1 md:justify-end',
                   ].join(' ')}
                 >
-                  <div className={`w-full max-w-[400px] space-y-3.5 ${isEven ? 'mr-auto' : 'ml-auto'}`}>
-                    <span className="block text-xs font-sans font-bold tracking-[0.25em] text-brand-gold uppercase">
+                  <div className={`w-full max-w-[400px] xl:max-w-[460px] 2xl:max-w-[520px] space-y-4 ${isEven ? 'md:mr-auto' : 'md:ml-auto'}`}>
+                    <span className="block text-xs xl:text-sm font-sans font-bold tracking-[0.3em] text-brand-gold uppercase">
                       STEP {parseInt(step.stepNum)}
                     </span>
                     
-                    <h3 className="font-sans text-2xl sm:text-[30px] text-brand-charcoal font-bold leading-tight">
+                    <h3 className="font-serif text-2xl sm:text-[30px] xl:text-[36px] 2xl:text-[40px] text-brand-charcoal font-medium leading-tight">
                       {step.title}
                     </h3>
                     
-                    <p className="text-brand-charcoal/78 text-sm sm:text-base leading-relaxed font-light whitespace-pre-line">
+                    <p className="text-brand-charcoal/78 text-sm sm:text-base xl:text-[17px] 2xl:text-[18px] leading-relaxed font-light whitespace-pre-line">
                       {step.desc}
                     </p>
                   </div>

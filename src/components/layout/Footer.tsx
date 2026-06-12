@@ -60,7 +60,7 @@ export const Footer: React.FC = () => {
   return (
     <footer
       id="footer"
-      className="bg-brand-cream border-t border-brand-teal/14 w-full relative z-10 overflow-hidden"
+      className="bg-[#EEEEE9] border-t border-brand-teal/14 w-full relative z-10 overflow-hidden"
     >
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-teal/35 to-transparent" />
 
@@ -68,7 +68,7 @@ export const Footer: React.FC = () => {
         <div className="py-14 sm:py-16 px-7 sm:px-12 lg:pr-16 flex flex-col items-start justify-between gap-10 text-left border-b lg:border-b-0 lg:border-r border-brand-teal/12 min-h-[360px]">
           <div>
             <img
-              src="/images/Image20260611132035.png"
+              src="/images/Logo.svg"
               alt={t('hero.alt')}
               className="h-20 sm:h-24 w-auto object-contain drop-shadow-[0_0_24px_rgb(var(--color-brand-teal)/0.18)] mb-7"
             />
@@ -84,7 +84,7 @@ export const Footer: React.FC = () => {
         <div className="py-14 sm:py-16 px-7 sm:px-12 lg:pl-16 flex flex-col justify-between gap-10 text-left min-h-[360px]">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-12">
             <div className="space-y-5">
-              <h4 className="text-[10px] font-sans font-bold tracking-[0.2em] uppercase text-brand-teal">
+              <h4 className="text-[10px] font-serif font-bold tracking-[0.2em] uppercase text-brand-teal">
                 {t('footer.contact')}
               </h4>
               <div className="flex flex-col gap-4">
@@ -104,7 +104,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <div className="space-y-5">
-              <h4 className="text-[10px] font-sans font-bold tracking-[0.2em] uppercase text-brand-teal">
+              <h4 className="text-[10px] font-serif font-bold tracking-[0.2em] uppercase text-brand-teal">
                 {t('footer.navigation')}
               </h4>
               <div className="flex flex-col gap-3">

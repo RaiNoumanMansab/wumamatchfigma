@@ -21,8 +21,8 @@ export const FAQSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* Left Column: Heading and Subtitle (Aligned Higher) */}
-          <div className="lg:col-span-5 text-left self-start lg:pt-2 lg:border-r lg:border-brand-charcoal/18 lg:pr-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-brand-charcoal mb-4 font-serif leading-tight tracking-tight">
+          <div className="lg:col-span-6 text-left self-start lg:pt-2 lg:border-r lg:border-brand-charcoal/18 lg:pr-20">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-brand-charcoal mb-4 font-serif leading-tight tracking-tight">
               {t('faq.heading')}
             </h2>
             <p className="text-brand-charcoal/70 text-sm sm:text-base font-light leading-relaxed max-w-md">
@@ -31,7 +31,7 @@ export const FAQSection: React.FC = () => {
           </div>
 
           {/* Right Column: Accordions */}
-          <div className="lg:col-span-7 space-y-2.5">
+          <div className="lg:col-span-6 space-y-2.5">
             {faqs.map((faq, idx) => {
               const isOpen = openIdx === idx;
               return (

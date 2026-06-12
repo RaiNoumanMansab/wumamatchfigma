@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Languages, Menu, X } from "lucide-react";
+import { ArrowUpRight, Languages, Menu, X } from "lucide-react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { languageOptions, useLocalization } from "../../lib/i18n";
 
@@ -23,7 +23,7 @@ export const Navbar: React.FC = () => {
   // Track the active section dynamically on scroll
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "process", "testimonials", "cta"];
+      const sections = ["home", "members", "testimonials", "cta", "about", "faq"];
       const scrollPosition = window.scrollY + 120; // offset for navbar height
 
       for (const section of sections) {
@@ -54,9 +54,11 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: t("nav.home"), href: "#home", id: "home" },
-    { name: t("nav.process"), href: "#process", id: "process" },
-    { name: t("nav.testimonials"), href: "#testimonials", id: "testimonials" },
-    { name: t("nav.apply"), href: "#cta", id: "cta" },
+    { name: t("nav.members"), href: "#members", id: "members" },
+    { name: t("nav.stories"), href: "#testimonials", id: "testimonials" },
+    { name: t("nav.events"), href: "#cta", id: "cta" },
+    { name: t("nav.about"), href: "#about", id: "about" },
+    { name: t("nav.blog"), href: "#faq", id: "faq" },
   ];
 
   return (
@@ -74,9 +76,9 @@ export const Navbar: React.FC = () => {
             className="relative flex items-center transition-transform duration-300 hover:scale-[1.02] -ml-1.5"
           >
             <img
-              src="/images/Image20260611130244.png"
+              src="/images/Logo.svg"
               alt="WuMa Matchmaking"
-              className="h-[52px] sm:h-[68px] w-auto object-contain"
+              className="h-[clamp(44px,4.8vw,72px)] w-auto object-contain"
             />
           </a>
 
@@ -120,9 +122,10 @@ export const Navbar: React.FC = () => {
             href="#cta"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="hidden sm:inline-flex h-10 items-center justify-center bg-brand-teal text-white px-5 font-bold text-[11px] tracking-widest uppercase rounded-lg hover:bg-brand-teal/90 transition-colors duration-300 shadow-sm"
+            className="group hidden sm:inline-flex h-10 items-center justify-center gap-2 bg-brand-teal text-white px-5 font-bold text-[11px] tracking-widest uppercase rounded-lg hover:bg-brand-teal/90 transition-colors duration-300 shadow-sm"
           >
-            {t("nav.apply").toUpperCase()} ↗
+            <span>{t("nav.apply").toUpperCase()}</span>
+            <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5] transition-transform duration-300 group-hover:rotate-45" />
           </motion.a>
 
           {/* Mobile Menu Toggle */}
@@ -180,9 +183,10 @@ export const Navbar: React.FC = () => {
             <a
               href="#cta"
               onClick={() => setIsOpen(false)}
-              className="inline-flex h-9 items-center justify-center bg-brand-teal text-white px-4 font-bold text-[10px] tracking-widest uppercase rounded-lg shadow-sm"
+              className="group inline-flex h-9 items-center justify-center gap-2 bg-brand-teal text-white px-4 font-bold text-[10px] tracking-widest uppercase rounded-lg shadow-sm"
             >
-              {t("nav.apply").toUpperCase()} ↗
+              <span>{t("nav.apply").toUpperCase()}</span>
+              <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5] transition-transform duration-300 group-hover:rotate-45" />
             </a>
           </div>
         </motion.div>

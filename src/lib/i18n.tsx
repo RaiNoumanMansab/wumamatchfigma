@@ -18,6 +18,11 @@ export const languageOptions: Array<{ locale: Locale; label: string; shortLabel:
 const translations: Record<Locale, Record<string, TranslationValue>> = {
   en: {
     'nav.home': 'Home',
+    'nav.members': 'Members',
+    'nav.stories': 'Stories',
+    'nav.events': 'Events',
+    'nav.about': 'About',
+    'nav.blog': 'Blog',
     'nav.process': 'How It Works',
     'nav.testimonials': 'Success Stories',
     'nav.apply': 'Apply Now',
@@ -61,16 +66,16 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       },
     ],
 
-    'featured.eyebrow': 'As Seen In',
+    'featured.eyebrow': 'As Seen On',
     'featured.heading': 'Featured by voices shaping modern relationships.',
 
     'why.eyebrow': 'OUR APPROACH',
     'why.cta': 'Apply Now',
     'why.headlineParts': [
       { text: 'We help ambitious singles go from', className: 'text-white' },
-      { text: '“good enough”', className: 'italic text-zinc-300' },
+      { text: '“good enough”', className: 'italic text-brand-gold' },
       { text: 'to', className: 'text-white' },
-      { text: 'unforgettable', className: 'text-[#D4A853] font-normal' },
+      { text: 'unforgettable', className: 'text-brand-teal font-normal' },
       {
         text: ', blending psychology, intuition, and deep vetting to deliver connections that actually move the needle.',
         className: 'text-white',
@@ -242,6 +247,11 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
   },
   'zh-CN': {
     'nav.home': '首页',
+    'nav.members': '会员',
+    'nav.stories': '故事',
+    'nav.events': '活动',
+    'nav.about': '关于',
+    'nav.blog': '博客',
     'nav.process': '服务流程',
     'nav.testimonials': '成功故事',
     'nav.apply': '立即申请',
@@ -280,9 +290,9 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
     'why.cta': '立即申请',
     'why.headlineParts': [
       { text: '我们帮助优秀单身人士从', className: 'text-white' },
-      { text: '“还不错”', className: 'italic text-zinc-300' },
+      { text: '“还不错”', className: 'italic text-brand-gold' },
       { text: '走向', className: 'text-white' },
-      { text: '难以忘怀', className: 'text-[#D4A853] font-normal' },
+      { text: '难以忘怀', className: 'text-brand-teal font-normal' },
       { text: '，结合心理学、直觉与深度筛选，促成真正有分量的连接。', className: 'text-white' },
     ],
 
@@ -376,6 +386,11 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
   },
   'zh-TW': {
     'nav.home': '首頁',
+    'nav.members': '會員',
+    'nav.stories': '故事',
+    'nav.events': '活動',
+    'nav.about': '關於',
+    'nav.blog': '部落格',
     'nav.process': '服務流程',
     'nav.testimonials': '成功故事',
     'nav.apply': '立即申請',
@@ -414,9 +429,9 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
     'why.cta': '立即申請',
     'why.headlineParts': [
       { text: '我們幫助優秀單身人士從', className: 'text-white' },
-      { text: '「還不錯」', className: 'italic text-zinc-300' },
+      { text: '「還不錯」', className: 'italic text-brand-gold' },
       { text: '走向', className: 'text-white' },
-      { text: '難以忘懷', className: 'text-[#D4A853] font-normal' },
+      { text: '難以忘懷', className: 'text-brand-teal font-normal' },
       { text: '，結合心理學、直覺與深度篩選，促成真正有份量的連結。', className: 'text-white' },
     ],
 
