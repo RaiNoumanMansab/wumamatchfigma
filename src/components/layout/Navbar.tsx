@@ -6,7 +6,15 @@ import { languageOptions, useLocalization } from "../../lib/i18n";
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState(() => {
+    const path = window.location.pathname.replace(/\/$/, '');
+    if (path === '/members') return 'members';
+    if (path === '/events') return 'events';
+    if (path === '/stories') return 'stories';
+    if (path === '/about') return 'about';
+    if (path === '/blog') return 'blog';
+    return 'home';
+  });
   const { scrollY } = useScroll();
   const { locale, setLocale, t } = useLocalization();
 
@@ -20,10 +28,31 @@ export const Navbar: React.FC = () => {
     }
   });
 
-  // Track the active section dynamically on scroll
+  // Track the active section dynamically on scroll and popstate
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "members", "testimonials", "cta", "about", "faq"];
+      const path = window.location.pathname.replace(/\/$/, '');
+      if (path === '/members') {
+        setActiveSection("members");
+        return;
+      }
+      if (path === '/events') {
+        setActiveSection("events");
+        return;
+      }
+      if (path === '/stories') {
+        setActiveSection("stories");
+        return;
+      }
+      if (path === '/about') {
+        setActiveSection("about");
+        return;
+      }
+      if (path === '/blog') {
+        setActiveSection("blog");
+        return;
+      }
+      const sections = ["home", "testimonials", "cta", "faq"];
       const scrollPosition = window.scrollY + 120; // offset for navbar height
 
       for (const section of sections) {
@@ -39,9 +68,31 @@ export const Navbar: React.FC = () => {
       }
     };
 
+    const handleLocationChange = () => {
+      const path = window.location.pathname.replace(/\/$/, '');
+      if (path === '/members') {
+        setActiveSection("members");
+      } else if (path === '/events') {
+        setActiveSection("events");
+      } else if (path === '/stories') {
+        setActiveSection("stories");
+      } else if (path === '/about') {
+        setActiveSection("about");
+      } else if (path === '/blog') {
+        setActiveSection("blog");
+      } else {
+        handleScroll();
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("popstate", handleLocationChange);
     handleScroll(); // run initially
-    return () => window.removeEventListener("scroll", handleScroll);
+    handleLocationChange(); // run initially
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("popstate", handleLocationChange);
+    };
   }, []);
 
   const currentLanguageIndex = languageOptions.findIndex(
@@ -54,12 +105,29 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: t("nav.home"), href: "#home", id: "home" },
-    { name: t("nav.members"), href: "#members", id: "members" },
-    { name: t("nav.stories"), href: "#testimonials", id: "testimonials" },
-    { name: t("nav.events"), href: "#cta", id: "cta" },
-    { name: t("nav.about"), href: "#about", id: "about" },
-    { name: t("nav.blog"), href: "#faq", id: "faq" },
+    { name: t("nav.members"), href: "/members", id: "members" },
+    { name: t("nav.stories"), href: "/stories", id: "stories" },
+    { name: t("nav.events"), href: "/events", id: "events" },
+    { name: t("nav.about"), href: "/about", id: "about" },
+    { name: t("nav.blog"), href: "/blog", id: "blog" },
   ];
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, link: typeof navLinks[0]) => {
+    const path = window.location.pathname.replace(/\/$/, '');
+    if (link.id === 'members' || link.id === 'events' || link.id === 'stories' || link.id === 'about' || link.id === 'blog') {
+      e.preventDefault();
+      window.history.pushState({}, '', link.href);
+      window.dispatchEvent(new PopStateEvent('popstate'));
+      setIsOpen(false);
+    } else {
+      if (path === '/members' || path === '/events' || path === '/stories' || path === '/about' || path === '/blog') {
+        e.preventDefault();
+        window.history.pushState({}, '', `/#${link.id}`);
+        window.dispatchEvent(new PopStateEvent('popstate'));
+        setIsOpen(false);
+      }
+    }
+  };
 
   return (
     <motion.div
@@ -73,6 +141,7 @@ export const Navbar: React.FC = () => {
           {/* Logo with Gold Skyline */}
           <a
             href="#home"
+            onClick={(e) => handleLinkClick(e, { name: t("nav.home"), href: "#home", id: "home" })}
             className="relative flex items-center transition-transform duration-300 hover:scale-[1.02] -ml-1.5"
           >
             <img
@@ -90,6 +159,7 @@ export const Navbar: React.FC = () => {
                 <a
                   key={link.name}
                   href={link.href}
+                  onClick={(e) => handleLinkClick(e, link)}
                   className={`text-[11px] lg:text-[12px] font-bold tracking-widest uppercase transition-all duration-300 py-1.5 border-b-2 ${
                     isActive
                       ? "border-brand-gold text-black"
@@ -153,7 +223,7 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => handleLinkClick(e, link)}
                 className={`text-[11px] font-bold tracking-widest uppercase transition-all duration-300 py-2 ${
                   isActive
                     ? "text-black pl-2 border-l-2 border-brand-gold"

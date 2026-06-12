@@ -198,7 +198,12 @@ export const MembersSection: React.FC = () => {
         {/* Large bottom browse button */}
         <div className="flex justify-center pt-6">
           <motion.a
-            href="#cta"
+            href="/members"
+            onClick={(e) => {
+              e.preventDefault();
+              window.history.pushState({}, '', '/members');
+              window.dispatchEvent(new PopStateEvent('popstate'));
+            }}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             className="group inline-flex h-11 items-center justify-center gap-2 bg-brand-teal text-white px-8 font-bold text-xs uppercase tracking-widest rounded-lg hover:bg-brand-teal/90 transition-colors duration-300 shadow-sm"
