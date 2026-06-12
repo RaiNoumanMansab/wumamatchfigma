@@ -13,7 +13,7 @@ export const CTASection: React.FC = () => {
     >
       <div className="absolute inset-0 bg-radial-teal opacity-20 pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto relative z-10">
+      <div className="w-full max-w-[var(--container-max-width)] mx-auto relative z-10">
         {/* Inner light card */}
         <motion.div
           className="bg-[#EEEEE9] rounded-[20px] border border-brand-teal/5 p-8 sm:p-12 md:p-16 text-center shadow-xl flex flex-col items-center justify-center gap-6 relative overflow-hidden"

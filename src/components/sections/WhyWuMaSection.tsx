@@ -147,7 +147,7 @@ export const WhyWuMaSection: React.FC = () => {
       id="about"
       className="bg-white py-20 px-6 sm:px-12 lg:px-20 relative overflow-hidden border-t border-brand-teal/5"
     >
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-[var(--container-max-width)] mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           {/* Left Column */}
           <div className="lg:col-span-3 mb-6 lg:mb-0 min-w-0 pt-2">

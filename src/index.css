@@ -12,6 +12,12 @@
   --color-brand-teal-deep: 12 62 63;     /* #0C3E3F */
   --color-brand-teal-mid: 10 163 158;    /* #0AA39E */
   --color-white: 255 255 255;           /* #FFFFFF */
+
+
+  /* definition for the Custom Container spacing */
+
+  --container-max-width: 1440px; /* Max width for the container */
+  /* --container-padding: 1.5rem;    Default horizontal padding */
 }
 
 @layer base {

@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
     >
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-teal/35 to-transparent" />
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2">
+      <div className=" w-full max-w-[var(--container-max-width)] mx-auto grid grid-cols-1 lg:grid-cols-2">
         <div className="py-14 sm:py-16 px-7 sm:px-12 lg:pr-16 flex flex-col items-start justify-between gap-10 text-left border-b lg:border-b-0 lg:border-r border-brand-teal/12 min-h-[360px]">
           <div>
             <img
