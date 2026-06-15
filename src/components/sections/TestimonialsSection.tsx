@@ -190,6 +190,7 @@ export const TestimonialsSection: React.FC = () => {
                   alt={testimonial.name}
                   onLoad={updateScrollButtons}
                   className="w-full h-full object-cover brightness-[0.88] group-hover:brightness-[0.94] transition-all duration-700 group-hover:scale-105"
+                  loading="lazy"
                 />
 
                 {/* Soft Image Overlay */}

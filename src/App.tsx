@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar.tsx';
 import { HeroSection } from './components/sections/HeroSection.tsx';
 import { FeaturedSection } from './components/sections/FeaturedSection.tsx';
@@ -15,84 +16,62 @@ import { StoriesPage } from './components/pages/StoriesPage.tsx';
 import { AboutPage } from './components/pages/AboutPage.tsx';
 import { BlogPage } from './components/pages/BlogPage.tsx';
 
-function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'members' | 'events' | 'stories' | 'about' | 'blog'>(() => {
-    const path = window.location.pathname.replace(/\/$/, '');
-    if (path === '/members') return 'members';
-    if (path === '/events') return 'events';
-    if (path === '/stories') return 'stories';
-    if (path === '/about') return 'about';
-    if (path === '/blog') return 'blog';
-    return 'home';
-  });
+// Scroll management helper for React Router
+function ScrollToTopOrAnchor() {
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    const handleLocationChange = () => {
-      const path = window.location.pathname.replace(/\/$/, '');
-      if (path === '/members') {
-        setCurrentView('members');
-        window.scrollTo(0, 0);
-      } else if (path === '/events') {
-        setCurrentView('events');
-        window.scrollTo(0, 0);
-      } else if (path === '/stories') {
-        setCurrentView('stories');
-        window.scrollTo(0, 0);
-      } else if (path === '/about') {
-        setCurrentView('about');
-        window.scrollTo(0, 0);
-      } else if (path === '/blog') {
-        setCurrentView('blog');
-        window.scrollTo(0, 0);
-      } else {
-        setCurrentView('home');
-      }
-    };
-    window.addEventListener('popstate', handleLocationChange);
-    return () => window.removeEventListener('popstate', handleLocationChange);
-  }, []);
-
-  useEffect(() => {
-    if (currentView === 'home' && window.location.hash && window.location.hash !== '#/') {
-      const targetId = window.location.hash.replace('#', '');
+    if (hash) {
+      const targetId = hash.replace('#', '');
       const element = document.getElementById(targetId);
       if (element) {
-        setTimeout(() => {
+        const timer = setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth' });
         }, 80);
+        return () => clearTimeout(timer);
       }
+    } else {
+      window.scrollTo(0, 0);
     }
-  }, [currentView]);
+  }, [pathname, hash]);
 
+  return null;
+}
+
+function HomePage() {
+  return (
+    <>
+      <HeroSection />
+      <FeaturedSection />
+      <StatsBanner />
+      <ProcessSection />
+      <WhyWuMaSection />
+      <TestimonialsSection />
+      <FAQSection />
+      <CTASection />
+    </>
+  );
+}
+
+function App() {
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Scroll restoration & anchoring */}
+      <ScrollToTopOrAnchor />
+
       {/* Premium Header/Navbar */}
       <Navbar />
 
       {/* Main Sections / Dedicated Views */}
       <main className="flex-grow bg-brand-cream">
-        {currentView === 'members' ? (
-          <MembersPage />
-        ) : currentView === 'events' ? (
-          <EventsPage />
-        ) : currentView === 'stories' ? (
-          <StoriesPage />
-        ) : currentView === 'about' ? (
-          <AboutPage />
-        ) : currentView === 'blog' ? (
-          <BlogPage />
-        ) : (
-          <>
-            <HeroSection />
-            <FeaturedSection />
-            <StatsBanner />
-            <ProcessSection />
-            <WhyWuMaSection />
-            <TestimonialsSection />
-            <FAQSection />
-            <CTASection />
-          </>
-        )}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/members" element={<MembersPage />} />
+          <Route path="/events" element={<EventsPage />} />
+          <Route path="/stories" element={<StoriesPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+        </Routes>
       </main>
 
       {/* Premium Footer */}
@@ -102,4 +81,3 @@ function App() {
 }
 
 export default App;
-

@@ -138,6 +138,14 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
         stepNum: '05',
       },
     ],
+    'events.eyebrow': 'EXCLUSIVE EVENTS',
+    'events.heading': 'Exclusive VIP Mixers & Events',
+    'events.description': 'To help build connections in person, we organize periodic wine tastings, art gallery mixers, and structured formal dinners. Strictly restricted to verified active members.',
+
+    'about.eyebrow': 'ABOUT US',
+    'about.heading': 'Our Mission: Meaningful Connections',
+    'about.description': 'WuMa Match is a premium, concierge matchmaking platform connecting diasporas worldwide with shared values and deep relationship goals.',
+
     'members.eyebrow': 'FEATURED MEMBERS',
     'members.heading': 'Meet Some of Our Members',
     'members.description': 'All members are identity-verified. Photos and sensitive details are blurred for public visitors.',
@@ -322,6 +330,14 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
       { title: '带着意向见面', desc: '当配对呈现时，在建立任何联系之前双方都已做好了准备。\n\n您的顾问协助协调介绍、设定预期，并确保流程保持尊重和专注。\n\n没有随机消息，没有尴尬的第一步，也没有对意向的不确定。每一次见面都是为了同一个原因——一份认真的关系。', stepNum: '04' },
       { title: '建立真实的关系', desc: '随着联系的发展，您的顾问会在需要时继续提供支持。\n\n您不是独自在恋爱中摸索——引导规则可帮助您充满信心地向前迈进，避免误解，并保持与长期目标一致。\n\n焦点很简单：建立稳定、承诺并走向婚姻的关系。', stepNum: '05' },
     ],
+    'events.eyebrow': '专属活动',
+    'events.heading': '专属 VIP 聚会与活动',
+    'events.description': '为了帮助建立面对面的联系，我们定期组织品酒会、艺术画廊聚会和结构化的正式晚宴。仅限经过验证的活跃会员参加。',
+
+    'about.eyebrow': '关于我们',
+    'about.heading': '我们的使命：有意义的连接',
+    'about.description': 'WuMa Match 是一家高端、顾问式的婚恋匹配平台，致力于通过共同的价值观和深度的关系目标连接全球华人。',
+
     'members.eyebrow': '推荐会员',
     'members.heading': '会见我们的部分会员',
     'members.description': '所有会员均已进行身份验证。照片和敏感信息已对公共访客模糊处理。',
@@ -481,6 +497,14 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
         stepNum: '05',
       },
     ],
+    'events.eyebrow': '專屬活動',
+    'events.heading': '專屬 VIP 聚會與活動',
+    'events.description': '為了幫助建立面對面的聯繫，我們定期組織品酒會、藝術畫廊聚會和結構化的正式晚宴。僅限經過驗證的活躍會員參加。',
+
+    'about.eyebrow': '關於我們',
+    'about.heading': '我們的使命：有意義的連接',
+    'about.description': 'WuMa Match 是一家高端、顧問式的婚戀配對平台，致力於透過共同的價值觀和深度的關係目標連接全球華人。',
+
     'members.eyebrow': '推薦會員',
     'members.heading': '會見我們的部分會員',
     'members.description': '所有會員均已進行身份驗證。照片和敏感信息已對公共訪客模糊處理。',

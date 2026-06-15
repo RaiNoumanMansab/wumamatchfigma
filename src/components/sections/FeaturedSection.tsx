@@ -33,13 +33,16 @@ export const FeaturedSection: React.FC = () => {
   ];
 
   return (
-    <section className="bg-[#FEF9EF] py-4 relative z-20 border-b border-brand-charcoal/15 w-full">
-      <div className="relative mx-auto w-full max-w-5xl px-6 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
+    <section className="bg-gradient-to-r from-brand-cream/50 via-white to-brand-cream/50 py-5 relative z-20 border-t border-b border-brand-gold/20 w-full">
+      <div className="relative mx-auto w-full max-w-5xl px-6 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
         <p className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-brand-gold shrink-0">
           {t('featured.eyebrow') || 'AS SEEN ON'}
         </p>
 
-        <div className="relative w-full max-w-[310px] sm:max-w-[480px] h-10 sm:h-12 overflow-hidden flex items-center justify-center">
+        {/* Premium Vertical Divider */}
+        <div className="hidden md:block w-px h-5 bg-brand-gold/25 shrink-0" />
+
+        <div className="relative w-full sm:max-w-[480px] h-10 sm:h-12 overflow-hidden flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
@@ -57,7 +60,7 @@ export const FeaturedSection: React.FC = () => {
                   <img
                     src={brand.logo}
                     alt={brand.name}
-                    className="max-h-full max-w-full object-contain brightness-0"
+                    className="max-h-full max-w-full object-contain brightness-0 opacity-50 hover:opacity-90 transition-opacity duration-300 select-none"
                   />
                 </div>
               ))}

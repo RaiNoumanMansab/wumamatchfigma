@@ -1,13 +1,19 @@
 import { useState, useEffect } from "react";
 import { ArrowUpRight, Languages, Menu, X } from "lucide-react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { useLocation, useNavigate } from "react-router-dom";
 import { languageOptions, useLocalization } from "../../lib/i18n";
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { scrollY } = useScroll();
+  const { locale, setLocale, t } = useLocalization();
+
   const [activeSection, setActiveSection] = useState(() => {
-    const path = window.location.pathname.replace(/\/$/, '');
+    const path = location.pathname.replace(/\/$/, '');
     if (path === '/members') return 'members';
     if (path === '/events') return 'events';
     if (path === '/stories') return 'stories';
@@ -15,8 +21,6 @@ export const Navbar: React.FC = () => {
     if (path === '/blog') return 'blog';
     return 'home';
   });
-  const { scrollY } = useScroll();
-  const { locale, setLocale, t } = useLocalization();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
@@ -28,10 +32,10 @@ export const Navbar: React.FC = () => {
     }
   });
 
-  // Track the active section dynamically on scroll and popstate
+  // Track the active section dynamically on scroll and location change
   useEffect(() => {
     const handleScroll = () => {
-      const path = window.location.pathname.replace(/\/$/, '');
+      const path = location.pathname.replace(/\/$/, '');
       if (path === '/members') {
         setActiveSection("members");
         return;
@@ -68,32 +72,12 @@ export const Navbar: React.FC = () => {
       }
     };
 
-    const handleLocationChange = () => {
-      const path = window.location.pathname.replace(/\/$/, '');
-      if (path === '/members') {
-        setActiveSection("members");
-      } else if (path === '/events') {
-        setActiveSection("events");
-      } else if (path === '/stories') {
-        setActiveSection("stories");
-      } else if (path === '/about') {
-        setActiveSection("about");
-      } else if (path === '/blog') {
-        setActiveSection("blog");
-      } else {
-        handleScroll();
-      }
-    };
-
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("popstate", handleLocationChange);
     handleScroll(); // run initially
-    handleLocationChange(); // run initially
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("popstate", handleLocationChange);
     };
-  }, []);
+  }, [location.pathname]);
 
   const currentLanguageIndex = languageOptions.findIndex(
     (option) => option.locale === locale,
@@ -113,20 +97,29 @@ export const Navbar: React.FC = () => {
   ];
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, link: typeof navLinks[0]) => {
-    const path = window.location.pathname.replace(/\/$/, '');
-    if (link.id === 'members' || link.id === 'events' || link.id === 'stories' || link.id === 'about' || link.id === 'blog') {
+    const path = location.pathname.replace(/\/$/, '');
+    const isSubpage = ['members', 'events', 'stories', 'about', 'blog'].includes(link.id);
+
+    if (isSubpage) {
       e.preventDefault();
-      window.history.pushState({}, '', link.href);
-      window.dispatchEvent(new PopStateEvent('popstate'));
+      navigate(link.href);
       setIsOpen(false);
     } else {
-      if (path === '/members' || path === '/events' || path === '/stories' || path === '/about' || path === '/blog') {
+      if (path !== '') {
         e.preventDefault();
-        window.history.pushState({}, '', `/#${link.id}`);
-        window.dispatchEvent(new PopStateEvent('popstate'));
+        navigate(`/${link.href}`);
         setIsOpen(false);
       }
     }
+  };
+
+  const handleApplyClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const path = location.pathname.replace(/\/$/, '');
+    if (path !== '') {
+      e.preventDefault();
+      navigate('/#cta');
+    }
+    setIsOpen(false);
   };
 
   return (
@@ -136,7 +129,7 @@ export const Navbar: React.FC = () => {
       transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
       className="fixed top-0 left-0 right-0 z-50 w-full bg-gradient-to-r from-brand-teal via-[#5ECFCB] to-brand-cream border-b border-brand-teal/10 shadow-sm"
     >
-      <nav className="max-w-[var(--container-max-width)] mx-auto px-6 sm:px-8 lg:px-12 py-3 flex items-center justify-between">
+      <nav className="max-w-[var(--container-max-width)] mx-auto px-6 sm:px-8 lg:px-12 py-1 flex items-center justify-between">
         <div className="flex items-center gap-20 md:gap-32 lg:gap-44">
           {/* Logo with Gold Skyline */}
           <a
@@ -147,7 +140,8 @@ export const Navbar: React.FC = () => {
             <img
               src="/images/logo.png"
               alt="WuMa Matchmaking"
-              className="h-[clamp(44px,4.8vw,72px)] w-auto object-contain"
+              className="h-[clamp(60px,5.0vw,72px)] md:h-[clamp(44px,4.8vw,72px)] w-auto object-contain"
+              loading="lazy"
             />
           </a>
 
@@ -190,6 +184,7 @@ export const Navbar: React.FC = () => {
           {/* Apply Now Button with Arrow */}
           <motion.a
             href="#cta"
+            onClick={handleApplyClick}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             className="group hidden sm:inline-flex h-10 items-center justify-center gap-2 bg-brand-teal text-white px-5 font-bold text-[11px] tracking-widest uppercase rounded-lg hover:bg-brand-teal/90 transition-colors duration-300 shadow-sm"
@@ -252,7 +247,7 @@ export const Navbar: React.FC = () => {
 
             <a
               href="#cta"
-              onClick={() => setIsOpen(false)}
+              onClick={handleApplyClick}
               className="group inline-flex h-9 items-center justify-center gap-2 bg-brand-teal text-white px-4 font-bold text-[10px] tracking-widest uppercase rounded-lg shadow-sm"
             >
               <span>{t("nav.apply").toUpperCase()}</span>
