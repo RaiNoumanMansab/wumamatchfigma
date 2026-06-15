@@ -59,7 +59,7 @@ export const FeaturedSection: React.FC = () => {
                   <img
                     src={brand.logo}
                     alt={brand.name}
-                    className="max-h-full max-w-full object-contain brightness-0 opacity-50 hover:opacity-90 transition-opacity duration-300 select-none"
+                    className="max-h-full max-w-full object-contain brightness-0"
                   />
                 </div>
               ))}

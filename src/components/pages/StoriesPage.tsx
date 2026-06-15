@@ -114,6 +114,7 @@ export const StoriesPage: React.FC = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.58 }}
+
             className=" mx-auto bg-white border border-brand-teal/10 rounded-[32px] overflow-hidden flex flex-col md:flex-row text-left shadow-[0_12px_40px_rgba(22,28,45,0.02)] mb-16 hover:shadow-[0_20px_50px_rgba(22,28,45,0.05)] transition-shadow duration-300"
           >
             {/* Left Column: Image (Figma exact dimensions 619x625) */}

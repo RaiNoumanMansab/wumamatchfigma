@@ -65,7 +65,7 @@ export const MembersSection: React.FC = () => {
   return (
     <section
   id="members"
-  className="relative z-20 overflow-hidden border-t border-brand-teal/10 bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-0 lg:py-20"
+  className="relative z-20 overflow-hidden border-t border-brand-teal/10 bg-white px-6 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20"
 >
   <div className="main-container  relative z-10 text-center">
     {/* Header */}
@@ -90,13 +90,13 @@ export const MembersSection: React.FC = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.15 }}
-      className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 justify-center"
+      className="mx-auto grid w-full max-w-[var(--container-max-width)]  grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 justify-center"
     >
       {membersList.map((member, idx) => (
         <motion.div
           key={idx}
           variants={cardReveal}
-          className="relative flex h-full w-full max-w-[270px] mx-auto flex-col rounded-2xl border border-[#4A4541] bg-white p-6 text-center shadow-sm transition-shadow duration-300 hover:shadow-md sm:p-7 lg:p-8"
+          className="relative flex h-full w-full  mx-auto flex-col rounded-2xl border border-[#4A4541] bg-white p-6 text-center shadow-sm transition-shadow duration-300 hover:shadow-md sm:p-7 lg:p-8"
         >
           {/* Verified Badge */}
           <div className="absolute left-4 top-4 flex items-center gap-1 rounded-full border border-brand-teal/20 bg-white/90 px-2.5 py-1 font-sans text-[8px] font-bold uppercase tracking-wider text-brand-teal shadow-sm">
