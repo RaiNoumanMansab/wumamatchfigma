@@ -8,6 +8,7 @@ export default {
       fontFamily: {
         serif: ['Poppins', ...defaultTheme.fontFamily.sans],
         sans: ['Roboto', ...defaultTheme.fontFamily.sans],
+        inter: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         teal: {

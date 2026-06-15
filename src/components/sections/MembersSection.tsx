@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, Lock, Shield, Crown } from 'lucide-react';
 import { useLocalization } from '../../lib/i18n';
 import { cardReveal, containerStagger } from '../../lib/motion';
-import { allMembers } from '../../data/members';
+import { allMembers, type MemberData } from '../../data/members';
 
 type Props = {
   /** How many cards to show. Defaults to 4 (homepage preview). Pass Infinity or omit for all. */
@@ -13,15 +13,19 @@ type Props = {
   hideHeader?: boolean;
   /** Hide the "View All" CTA button at the bottom */
   hideCTA?: boolean;
+  /** Optional custom list of members to render */
+  members?: MemberData[];
 };
 
 export const MembersSection: React.FC<Props> = ({
   limit = 4,
   hideHeader = false,
   hideCTA = false,
+  members,
 }) => {
   const { t } = useLocalization();
-  const visibleMembers = allMembers.slice(0, limit);
+  const baseMembers = members || allMembers;
+  const visibleMembers = baseMembers.slice(0, limit);
 
   return (
     <section

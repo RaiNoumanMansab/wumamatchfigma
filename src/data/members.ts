@@ -7,6 +7,7 @@ export type MemberData = {
   education: string;
   badgeType: 'PREMIUM' | 'BASIC';
   image: string;
+  gender: 'Male' | 'Female';
 };
 
 export const allMembers: MemberData[] = [
@@ -18,7 +19,8 @@ export const allMembers: MemberData[] = [
     height: '165–173 CM',
     education: "MASTER'S DEGREE",
     badgeType: 'PREMIUM',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&h=300&q=80'
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&h=300&q=80',
+    gender: 'Female'
   },
   {
     age: 36,
@@ -28,7 +30,8 @@ export const allMembers: MemberData[] = [
     height: '175–183 CM',
     education: "MASTER'S DEGREE",
     badgeType: 'PREMIUM',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&h=300&q=80'
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&h=300&q=80',
+    gender: 'Male'
   },
   {
     age: 29,
@@ -38,7 +41,8 @@ export const allMembers: MemberData[] = [
     height: '155–163 CM',
     education: "BACHELOR'S DEGREE",
     badgeType: 'BASIC',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&h=300&q=80'
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&h=300&q=80',
+    gender: 'Female'
   },
   {
     age: 31,
@@ -48,7 +52,8 @@ export const allMembers: MemberData[] = [
     height: '163–170 CM',
     education: "MEDICAL DEGREE",
     badgeType: 'PREMIUM',
-    image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&h=300&q=80'
+    image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&h=300&q=80',
+    gender: 'Male'
   },
   {
     age: 28,
@@ -58,7 +63,8 @@ export const allMembers: MemberData[] = [
     height: '168–175 CM',
     education: "BACHELOR'S DEGREE",
     badgeType: 'BASIC',
-    image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&h=300&q=80'
+    image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&h=300&q=80',
+    gender: 'Female'
   },
   {
     age: 38,
@@ -68,7 +74,8 @@ export const allMembers: MemberData[] = [
     height: '178–185 CM',
     education: "MBA",
     badgeType: 'PREMIUM',
-    image: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=300&h=300&q=80'
+    image: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=300&h=300&q=80',
+    gender: 'Male'
   },
   {
     age: 27,
@@ -78,7 +85,8 @@ export const allMembers: MemberData[] = [
     height: '158–165 CM',
     education: "BACHELOR'S DEGREE",
     badgeType: 'BASIC',
-    image: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=300&h=300&q=80'
+    image: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=300&h=300&q=80',
+    gender: 'Female'
   },
   {
     age: 33,
@@ -88,6 +96,7 @@ export const allMembers: MemberData[] = [
     height: '172–180 CM',
     education: "MASTER'S DEGREE",
     badgeType: 'PREMIUM',
-    image: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=300&h=300&q=80'
+    image: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=300&h=300&q=80',
+    gender: 'Male'
   }
 ];
