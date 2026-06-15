@@ -130,14 +130,14 @@ export const BlogPage: React.FC = () => {
       <div className="pointer-events-none absolute inset-0 bg-radial-teal opacity-[0.05]" />
 
       {/* Header Block (Beige background block, matching other subpages) */}
-      <section className="relative overflow-hidden bg-[#EEEEE9] pt-24 md:pt-28 pb-8 sm:pb-10 px-6 sm:px-8 lg:px-12 border-b border-brand-teal/10">
+      <section className="relative overflow-hidden bg-[#EEEEE9] pt-28 md:pt-36 pb-12 sm:pb-16 px-6 sm:px-8 lg:px-12 border-b border-brand-teal/10">
         <div className="max-w-[var(--container-max-width)] mx-auto relative z-10 text-center">
           <div className="max-w-3xl mx-auto">
-            <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans mb-1.5">
+            <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans mb-3">
               {t('blog.eyebrow') || 'WUMA INSIGHTS'}
             </span>
 
-            <h1 className="font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:text-4xl lg:text-5xl mb-2.5">
+            <h1 className="font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:text-4xl lg:text-5xl mb-4">
               Matchmaker Blog & Relationship Guides
             </h1>
 

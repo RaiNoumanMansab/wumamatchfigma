@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, ArrowUpRight } from 'lucide-react';
+import { Star, ArrowUpRight, Crown } from 'lucide-react';
 import { useLocalization } from '../../lib/i18n';
 import { cardReveal, containerStagger } from '../../lib/motion';
 
@@ -86,19 +86,19 @@ export const StoriesPage: React.FC = () => {
       <div className="pointer-events-none absolute inset-0 bg-radial-teal opacity-[0.05]" />
 
       {/* Header Block (Beige background block, matching other subpages) */}
-      <section className="relative overflow-hidden bg-[#EEEEE9] pt-24 md:pt-28 pb-8 sm:pb-10 px-6 sm:px-8 lg:px-12 border-b border-brand-teal/10">
+      <section className="relative overflow-hidden bg-[#EEEEE9] pt-28 md:pt-36 pb-12 sm:pb-16 px-6 sm:px-8 lg:px-12 border-b border-brand-teal/10">
         <div className="max-w-[var(--container-max-width)] mx-auto relative z-10 text-center">
           <div className="max-w-3xl mx-auto">
-            <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans mb-1.5">
-              {t('stories.eyebrow') || 'REAL SUCCESS STORIES'}
+            <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans mb-3">
+              {t('stories.eyebrow') || 'REAL LIFE STORIES'}
             </span>
 
-            <h1 className="font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:text-4xl lg:text-5xl mb-2.5">
+            <h1 className="font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:text-4xl lg:text-5xl mb-4">
               Love Stories That Started Here
             </h1>
 
             <p className="text-brand-charcoal/70 text-sm sm:text-base leading-relaxed max-w-xl mx-auto font-light">
-              Meet the intentional matchmaking matches who found love through WuMa Match.
+              Real matchmaking success stories from WuMa Match
             </p>
           </div>
         </div>
@@ -113,10 +113,10 @@ export const StoriesPage: React.FC = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.58 }}
-            className="max-w-5xl mx-auto bg-white border border-brand-teal/10 rounded-[32px] overflow-hidden flex flex-col md:flex-row text-left shadow-[0_12px_40px_rgba(22,28,45,0.02)] mb-16 hover:shadow-[0_20px_50px_rgba(22,28,45,0.05)] transition-shadow duration-300"
+            className="max-w-5xl mx-auto bg-white rounded-[12px] overflow-hidden flex flex-col md:flex-row items-stretch text-left shadow-[0_12px_40px_rgba(22,28,45,0.02)] mb-16 hover:shadow-[0_20px_50px_rgba(22,28,45,0.05)] transition-shadow duration-300"
           >
-            {/* Left Column: Image */}
-            <div className="w-full md:w-1/2 h-72 sm:h-96 md:h-auto overflow-hidden">
+            {/* Left Column: Image (Figma exact dimensions 619x625) */}
+            <div className="w-full md:w-[619px] h-72 sm:h-96 md:h-[540px] overflow-hidden shrink-0">
               <img
                 src={coupleWedding}
                 alt="Featured Matched Couple Emily & Ryan"
@@ -125,33 +125,36 @@ export const StoriesPage: React.FC = () => {
             </div>
 
             {/* Right Column: Text content */}
-            <div className="w-full md:w-1/2 p-8 sm:p-12 flex flex-col justify-between gap-8">
+            <div className="w-full md:flex-grow p-8 sm:p-10 md:p-12 lg:p-14 flex flex-col justify-center gap-6">
               <div className="space-y-6">
                 {/* Badge */}
                 <div className="inline-flex items-center justify-center gap-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/5 px-3.5 py-1 text-[9px] font-sans font-bold uppercase tracking-widest text-[#9B7A5B]">
-                  <Star className="w-3.5 h-3.5 fill-[#9B7A5B] stroke-none" />
+                  <Crown className="w-3.5 h-3.5 text-[#9B7A5B]" />
                   FEATURED STORY
                 </div>
 
                 {/* Quote */}
-                <p className="font-serif text-lg sm:text-[21px] text-brand-charcoal/90 italic leading-relaxed">
-                  "The team introduced us with care and intention. It never felt random - every step felt thoughtfully guided. It never felt random - every step felt thoughtfully guided."
+                <p className="font-sans font-light text-sm sm:text-base text-brand-charcoal/80 leading-relaxed">
+                  “The team introduced us with care and intention. It never felt random - every step felt thoughtfully guided.It never felt random - every step felt thoughtfully guided.It never felt random - every step felt thoughtfully guided.”
                 </p>
               </div>
 
+              {/* Divider */}
+              <div className="w-full h-px bg-brand-charcoal/10 my-6" />
+
               {/* Couple details */}
-              <div>
+              <div className="mt-4 md:mt-8">
                 {/* Stars */}
                 <div className="flex gap-0.5 mb-2.5">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-3.5 h-3.5 fill-brand-gold stroke-none" />
                   ))}
                 </div>
-                <h3 className="font-serif text-xl font-bold text-brand-charcoal">
+                <h3 className="font-serif text-xl font-medium text-brand-charcoal">
                   Emily & Ryan
                 </h3>
                 <span className="block text-[9px] font-sans font-bold tracking-[0.16em] uppercase text-brand-charcoal/45 mt-1">
-                  MATCHED COUPLE  •  WUMA-MATCH
+                  MATCHED COUPLE • WUMA-MATCH
                 </span>
               </div>
             </div>
@@ -162,7 +165,7 @@ export const StoriesPage: React.FC = () => {
             variants={containerStagger}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-20"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-20"
           >
             {storiesList.map((story) => (
               <motion.div
@@ -172,39 +175,45 @@ export const StoriesPage: React.FC = () => {
                   y: -6,
                   transition: { duration: 0.28, ease: 'easeOut' },
                 }}
-                className="flex flex-col rounded-[24px] border border-brand-teal/10 bg-white overflow-hidden text-left shadow-[0_10px_30px_rgba(22,28,45,0.02)] transition-shadow duration-300 hover:shadow-[0_16px_40px_rgba(22,28,45,0.05)] hover:border-brand-gold/30"
+                className="w-full aspect-[3/4] md:h-[380px] rounded-[12px] overflow-hidden shadow-soft hover:shadow-luxury transition-all duration-500 relative group snap-start bg-white"
               >
-                {/* Card Image */}
-                <div className="h-44 sm:h-48 w-full overflow-hidden">
-                  <img
-                    src={story.image}
-                    alt={story.names}
-                    className="w-full h-full object-cover select-none"
-                  />
-                </div>
+                {/* Card Background Image */}
+                <img
+                  src={story.image}
+                  alt={story.names}
+                  className="w-full h-full object-cover brightness-[0.88] group-hover:brightness-[0.94] transition-all duration-700 group-hover:scale-105 select-none"
+                  loading="lazy"
+                />
 
-                {/* Card content */}
-                <div className="p-5 flex flex-col justify-between flex-grow">
-                  <div>
-                    {/* Stars */}
-                    <div className="flex gap-0.5 mb-2">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-brand-gold stroke-none" />
-                      ))}
-                    </div>
-                    {/* Quote */}
-                    <p className="text-[11px] font-normal leading-relaxed text-brand-charcoal/75 italic mb-4">
-                      "{story.quote}"
-                    </p>
+                {/* Soft Image Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal/55 via-brand-charcoal/8 to-transparent" />
+
+                {/* Fixed Height Review Overlay Card */}
+                <div className="absolute bottom-3 left-3 right-3 h-[170px] bg-white/95 backdrop-blur-sm rounded-[10px] p-3.5 border border-[#4A4541]/15 shadow-lg flex flex-col items-start text-left group-hover:shadow-xl transition-all duration-300">
+                  {/* Stars */}
+                  <div className="flex gap-0.5 mb-2">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-3.5 h-3.5 fill-brand-gold text-brand-gold"
+                      />
+                    ))}
                   </div>
 
-                  <div>
-                    <h4 className="font-serif text-[15px] font-bold text-brand-charcoal leading-tight">
+                  {/* Quote */}
+                  <p className="text-brand-charcoal/72 text-[10px] sm:text-[11px] font-light leading-relaxed mb-2 line-clamp-3">
+                    “{story.quote}”
+                  </p>
+
+                  {/* Divider line & info */}
+                  <div className="w-full pt-2 border-t border-[#4A4541]/15 mt-auto">
+                    <h4 className="font-sans font-medium text-xs text-brand-charcoal tracking-wide mb-0.5">
                       {story.names}
                     </h4>
-                    <span className="block text-[8px] font-sans font-bold tracking-wider text-brand-charcoal/40 uppercase mt-1">
-                      {story.role}
-                    </span>
+
+                    <div className="flex items-center gap-1.5 text-[7.5px] tracking-wider text-brand-charcoal/40 font-semibold uppercase mt-0.5">
+                      <span>{story.role}</span>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -238,7 +247,7 @@ export const StoriesPage: React.FC = () => {
               whileTap={{ scale: 0.97 }}
               className="group inline-flex h-11 items-center justify-center gap-2 bg-brand-teal text-white px-7 font-bold text-[10px] tracking-widest uppercase rounded-lg hover:bg-brand-teal/90 transition-colors duration-300 shadow-sm"
             >
-              <span>APPLY NOW</span>
+              <span>APPLY FOR MEMBERSHIP</span>
               <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5] transition-transform duration-300 group-hover:rotate-45" />
             </motion.a>
           </motion.div>

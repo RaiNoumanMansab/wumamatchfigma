@@ -60,12 +60,11 @@ export const Footer: React.FC = () => {
   return (
     <footer
       id="footer"
-      className="bg-[#EEEEE9] border-t border-brand-teal/14 w-full relative z-10 overflow-hidden"
+      className="bg-[#EEEEE9] border-t border-brand-charcoal/10 w-full relative z-10 overflow-hidden"
     >
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-teal/35 to-transparent" />
 
       <div className=" w-full max-w-[var(--container-max-width)] mx-auto grid grid-cols-1 lg:grid-cols-2">
-        <div className="py-14 sm:py-16 px-7 sm:px-12 lg:pr-16 flex flex-col items-start justify-between gap-10 text-left border-b lg:border-b-0 lg:border-r border-brand-teal/12 min-h-[360px]">
+        <div className="py-14 sm:py-16 px-7 sm:px-12 lg:pr-16 flex flex-col items-start justify-between gap-10 text-left border-b lg:border-b-0 lg:border-r border-brand-charcoal/10 min-h-[360px]">
           <div>
             <img
               src="/images/logo.png"
@@ -116,7 +115,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 pt-8 border-t border-brand-teal/12">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 pt-8 border-t border-brand-charcoal/10">
             <div className="flex items-center gap-4">
               {socialLinks.map((link) => (
                 <a

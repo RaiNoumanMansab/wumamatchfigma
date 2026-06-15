@@ -182,7 +182,7 @@ export const TestimonialsSection: React.FC = () => {
                 key={idx}
                 variants={cardReveal}
                 whileHover={softLift}
-                className="w-[285px] sm:w-[320px] shrink-0 aspect-[3/4] rounded-[10px] overflow-hidden border border-brand-teal/15 shadow-soft hover:shadow-luxury hover:border-brand-teal/40 transition-all duration-500 relative group snap-start bg-white"
+                className="w-[285px] sm:w-[320px] shrink-0 aspect-[3/4] rounded-[12px] overflow-hidden shadow-soft hover:shadow-luxury transition-all duration-500 relative group snap-start bg-white"
               >
                 {/* Card Background Image */}
                 <img
@@ -197,7 +197,7 @@ export const TestimonialsSection: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal/55 via-brand-charcoal/8 to-transparent" />
 
                 {/* Fixed Height Review Overlay Card */}
-                <div className="absolute bottom-4 left-4 right-4 h-[205px] bg-white/95 backdrop-blur-sm rounded-[10px] p-5 border border-brand-teal/10 shadow-lg flex flex-col items-start text-left group-hover:shadow-xl transition-all duration-300">
+                <div className="absolute bottom-4 left-4 right-4 h-[205px] bg-white/95 backdrop-blur-sm rounded-[10px] p-5 border border-[#4A4541]/15 shadow-lg flex flex-col items-start text-left group-hover:shadow-xl transition-all duration-300">
                   <div className="flex items-center gap-0.5 mb-3">
                     {[...Array(5)].map((_, i) => (
                       <Star
@@ -211,8 +211,8 @@ export const TestimonialsSection: React.FC = () => {
                     “{testimonial.review}”
                   </p>
 
-                  <div className="w-full pt-3 border-t border-brand-teal/10 mt-auto">
-                    <h4 className="font-sans font-bold text-sm text-brand-charcoal tracking-wide mb-1.5">
+                  <div className="w-full pt-3 border-t border-[#4A4541]/15 mt-auto">
+                    <h4 className="font-sans font-medium text-sm text-brand-charcoal tracking-wide mb-1.5">
                       {testimonial.name}
                     </h4>
 

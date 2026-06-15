@@ -6,6 +6,7 @@ import { FeaturedSection } from './components/sections/FeaturedSection.tsx';
 import { StatsBanner } from './components/sections/StatsBanner.tsx';
 import { ProcessSection } from './components/sections/ProcessSection.tsx';
 import { WhyWuMaSection } from './components/sections/WhyWuMaSection.tsx';
+import { MembersSection } from './components/sections/MembersSection.tsx';
 import { TestimonialsSection } from './components/sections/TestimonialsSection.tsx';
 import { FAQSection } from './components/sections/FAQSection.tsx';
 import { CTASection } from './components/sections/CTASection.tsx';
@@ -44,6 +45,7 @@ function HomePage() {
       <HeroSection />
       <FeaturedSection />
       <StatsBanner />
+      <MembersSection />
       <ProcessSection />
       <WhyWuMaSection />
       <TestimonialsSection />

@@ -127,7 +127,7 @@ export const HeroSection: React.FC = () => {
 
         {/* Mobile Image (hidden on desktop) */}
         <div className="col-span-1 lg:hidden w-full flex items-center justify-center">
-          <div className="relative w-full max-w-[520px] aspect-[4/3] overflow-hidden rounded-[20px] border  shadow-lg">
+          <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[20px] border  shadow-lg">
             {/* <div className="absolute inset-y-0 left-0 w-[20%] bg-gradient-to-r from-[#EEEEE9] to-transparent z-20 pointer-events-none" /> */}
             <img
               src="/images/Image20260611133747.png"

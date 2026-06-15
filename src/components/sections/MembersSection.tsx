@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Lock, Shield, Crown } from 'lucide-react';
 import { useLocalization } from '../../lib/i18n';
@@ -89,13 +90,13 @@ export const MembersSection: React.FC = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.15 }}
-      className="mx-auto grid  w-full max-w-[var(--container-max-width)] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
+      className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 justify-center"
     >
       {membersList.map((member, idx) => (
         <motion.div
           key={idx}
           variants={cardReveal}
-          className="relative flex h-full flex-col rounded-2xl border border-brand-charcoal/15 bg-white p-6 text-center shadow-sm transition-shadow duration-300 hover:shadow-md sm:p-7 lg:p-8"
+          className="relative flex h-full w-full max-w-[270px] mx-auto flex-col rounded-2xl border border-[#4A4541] bg-white p-6 text-center shadow-sm transition-shadow duration-300 hover:shadow-md sm:p-7 lg:p-8"
         >
           {/* Verified Badge */}
           <div className="absolute left-4 top-4 flex items-center gap-1 rounded-full border border-brand-teal/20 bg-white/90 px-2.5 py-1 font-sans text-[8px] font-bold uppercase tracking-wider text-brand-teal shadow-sm">
@@ -109,7 +110,7 @@ export const MembersSection: React.FC = () => {
               <img
                 src={member.image}
                 alt="Member profile"
-                className="h-full w-full scale-110 select-none object-cover blur-[5px]"
+                className="h-full w-full scale-110 select-none object-cover blur-[3px]"
               />
 
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/15">
@@ -145,7 +146,7 @@ export const MembersSection: React.FC = () => {
 
           {/* Locked Personal Details */}
           <div className="relative my-3">
-            <div className="select-none py-1 blur-[4px]">
+            <div className="select-none py-1 blur-[2px]">
               <h4 className="text-center font-serif text-[19px] font-bold leading-none text-brand-charcoal">
                 {member.age} Yrs • {member.country}
               </h4>
@@ -172,7 +173,7 @@ export const MembersSection: React.FC = () => {
 
           {/* Metadata */}
           <div className="relative mt-auto w-full border-t border-brand-charcoal/10 pt-4">
-            <div className="flex w-full justify-between select-none blur-[4px]">
+            <div className="flex w-full justify-between select-none blur-[2px]">
               <div className="flex flex-col text-left">
                 <span className="font-sans text-[9px] font-bold uppercase leading-none tracking-wider text-brand-charcoal/40">
                   HEIGHT
@@ -208,16 +209,14 @@ export const MembersSection: React.FC = () => {
 
     {/* Bottom CTA */}
     <div className="flex justify-center pt-10">
-      <motion.a
-        href="#cta"
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.97 }}
-        className="group inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-brand-teal px-8 font-sans text-xs font-bold uppercase tracking-widest text-white shadow-sm transition-colors duration-300 hover:bg-brand-teal/90"
+      <Link
+        to="/members"
+        className="group inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-brand-teal px-8 font-sans text-xs font-bold uppercase tracking-widest text-white shadow-sm transition-all duration-300 hover:bg-brand-teal/90 hover:scale-[1.03] active:scale-[0.97]"
       >
         <span>{t("members.cta").toUpperCase()}</span>
 
         <ArrowUpRight className="h-4 w-4 stroke-[2.5] transition-transform duration-300 group-hover:rotate-45" />
-      </motion.a>
+      </Link>
     </div>
   </div>
 </section>

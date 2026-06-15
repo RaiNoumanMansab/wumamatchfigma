@@ -33,15 +33,14 @@ export const FeaturedSection: React.FC = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-r from-brand-cream/50 via-white to-brand-cream/50 py-5 relative z-20 border-t border-b border-brand-gold/20 w-full">
-      <div className="relative mx-auto w-full max-w-5xl px-6 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
-        <p className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-brand-gold shrink-0">
+    <section className="bg-[#FEF9EF] py-8 relative z-20 border-t border-b border-brand-gold/20 w-full">
+      <div className="relative mx-auto w-full max-w-5xl px-8 flex flex-col items-center gap-6">
+        {/* AS SEEN ON text centered above */}
+        <p className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-brand-gold text-center">
           {t('featured.eyebrow') || 'AS SEEN ON'}
         </p>
 
-        {/* Premium Vertical Divider */}
-        <div className="hidden md:block w-px h-5 bg-brand-gold/25 shrink-0" />
-
+        {/* Animated logos */}
         <div className="relative w-full sm:max-w-[480px] h-10 sm:h-12 overflow-hidden flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
@@ -71,4 +70,3 @@ export const FeaturedSection: React.FC = () => {
     </section>
   );
 };
-

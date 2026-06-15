@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Crown, Lock, ChevronDown } from 'lucide-react';
+import { Shield, Crown, Lock, ChevronDown, Info } from 'lucide-react';
 import { useLocalization } from '../../lib/i18n';
 import { cardReveal, containerStagger } from '../../lib/motion';
 
@@ -113,14 +113,14 @@ export const MembersPage: React.FC = () => {
       <div className="pointer-events-none absolute inset-0 bg-radial-teal opacity-[0.05]" />
 
       {/* Header Block (Beige background block, matching mockup) */}
-      <section className="relative overflow-hidden bg-[#EEEEE9] pt-24 md:pt-28 pb-8 sm:pb-10 px-6 sm:px-8 lg:px-12 border-b border-brand-teal/10">
+      <section className="relative overflow-hidden bg-[#EEEEE9] pt-28 md:pt-36 pb-12 sm:pb-16 px-6 sm:px-8 lg:px-12 border-b border-brand-teal/10">
         <div className="max-w-[var(--container-max-width)] mx-auto relative z-10 text-center">
           <div className="max-w-3xl mx-auto">
-            <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans mb-1.5">
+            <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans mb-3">
               {t('members.eyebrow') || 'OUR MEMBERS'}
             </span>
 
-            <h1 className="font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:text-4xl lg:text-5xl mb-2.5">
+            <h1 className="font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:text-4xl lg:text-5xl mb-4">
               {t('members.heading') || 'Meet Some of Our Members'}
             </h1>
 
@@ -132,9 +132,9 @@ export const MembersPage: React.FC = () => {
       </section>
 
       {/* Full-width Gold Warning Banner */}
-      <div className="w-full bg-[#D4A853] py-3 px-6 flex items-center justify-center gap-2 text-[10px] sm:text-[11px] font-sans font-bold uppercase tracking-widest text-white relative z-20 shadow-sm text-center">
-        <span className="inline-flex items-center justify-center w-4.5 h-4.5 rounded-full border border-white text-white text-[10px] font-bold">!</span>
-        <span>YOU ARE VIEWING LIMITED PROFILES. JOIN WUMA MATCH TO UNLOCK FULL PROFILES & REPORTS.</span>
+      <div className="w-full bg-gradient-to-r from-[#D4A853] via-[#C29956] to-[#9B7A5B] py-3 px-6 flex items-center justify-center gap-2 text-[10px] sm:text-[11px] font-sans font-bold uppercase tracking-widest text-white relative z-20 shadow-sm text-center">
+        <Info className="w-4 h-4 text-black shrink-0" />
+        <span className="text-white">YOU ARE VIEWING LIMITED PROFILES. JOIN WUMA MATCH TO UNLOCK FULL PROFILES & REPORTS.</span>
       </div>
 
       {/* Filters & Grid Section (White background) */}
@@ -266,7 +266,7 @@ export const MembersPage: React.FC = () => {
                   scale: 1.01,
                   transition: { duration: 0.28, ease: 'easeOut' },
                 }}
-                className="flex flex-col justify-between rounded-[20px] border border-brand-teal/10 bg-white p-6 text-center shadow-[0_12px_32px_rgb(var(--color-brand-charcoal)/0.02)] backdrop-blur-sm transition-all duration-300 hover:shadow-[0_20px_48px_rgb(var(--color-brand-charcoal)/0.06)] hover:border-brand-gold/30 relative"
+                className="flex flex-col justify-between rounded-[20px] border border-[#4A4541] bg-white p-6 text-center shadow-[0_12px_32px_rgb(var(--color-brand-charcoal)/0.02)] backdrop-blur-sm transition-all duration-300 hover:shadow-[0_20px_48px_rgb(var(--color-brand-charcoal)/0.06)] hover:border-brand-gold/30 relative max-w-[270px] w-full mx-auto"
               >
                 {/* Verified Pill Badge (Top Left) */}
                 <div className="absolute top-4 left-4 flex items-center gap-1 rounded-full border border-brand-teal/20 bg-white/90 px-2.5 py-1 text-[8px] font-sans font-bold uppercase tracking-wider text-brand-teal shadow-sm">
@@ -281,7 +281,7 @@ export const MembersPage: React.FC = () => {
                     <img
                       src={member.image}
                       alt="Member profile"
-                      className="w-full h-full object-cover blur-[5px] scale-110 select-none"
+                      className="w-full h-full object-cover blur-[3px] scale-110 select-none"
                     />
                     <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/15">
                       <Lock className="w-4 h-4 text-brand-gold mb-1" />
@@ -310,7 +310,7 @@ export const MembersPage: React.FC = () => {
                 {/* Blurred Personal Details Block */}
                 <div className="relative my-4">
                   {/* Blurred Content Container */}
-                  <div className="blur-[4px] select-none py-1">
+                  <div className="blur-[2px] select-none py-1">
                     <h4 className="font-serif text-[17px] font-bold text-brand-charcoal text-center leading-none">
                       {member.age} Yrs • {member.country}
                     </h4>
@@ -338,7 +338,7 @@ export const MembersPage: React.FC = () => {
 
                 {/* Divider & Heights / Education Metadata */}
                 <div className="w-full pt-4 border-t border-brand-charcoal/10 flex items-center justify-between text-left mt-auto relative">
-                  <div className="flex w-full justify-between blur-[4px] select-none">
+                  <div className="flex w-full justify-between blur-[2px] select-none">
                     <div className="flex flex-col">
                       <span className="text-[8px] font-sans font-bold uppercase tracking-wider text-brand-charcoal/40 leading-none">
                         HEIGHT

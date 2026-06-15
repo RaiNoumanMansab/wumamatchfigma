@@ -32,51 +32,22 @@ export const Navbar: React.FC = () => {
     }
   });
 
-  // Track the active section dynamically on scroll and location change
+  // Track the active section dynamically on location change
   useEffect(() => {
-    const handleScroll = () => {
-      const path = location.pathname.replace(/\/$/, '');
-      if (path === '/members') {
-        setActiveSection("members");
-        return;
-      }
-      if (path === '/events') {
-        setActiveSection("events");
-        return;
-      }
-      if (path === '/stories') {
-        setActiveSection("stories");
-        return;
-      }
-      if (path === '/about') {
-        setActiveSection("about");
-        return;
-      }
-      if (path === '/blog') {
-        setActiveSection("blog");
-        return;
-      }
-      const sections = ["home", "testimonials", "cta", "faq"];
-      const scrollPosition = window.scrollY + 120; // offset for navbar height
-
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // run initially
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    const path = location.pathname.replace(/\/$/, '');
+    if (path === '/members') {
+      setActiveSection("members");
+    } else if (path === '/events') {
+      setActiveSection("events");
+    } else if (path === '/stories') {
+      setActiveSection("stories");
+    } else if (path === '/about') {
+      setActiveSection("about");
+    } else if (path === '/blog') {
+      setActiveSection("blog");
+    } else {
+      setActiveSection("home");
+    }
   }, [location.pathname]);
 
   const currentLanguageIndex = languageOptions.findIndex(
