@@ -43,7 +43,7 @@ export const MembersPage: React.FC = () => {
       <div className="pointer-events-none absolute inset-0 bg-radial-teal opacity-[0.05]" />
 
       {/* Header Block */}
-      <section className="relative overflow-hidden bg-[#EEEEE9] pt-28 md:pt-36 pb-12 sm:pb-16 px-6 sm:px-8 lg:px-12 border-b border-brand-teal/10">
+      <section className="relative overflow-hidden bg-[#EEEEE9] pt-28 md:pt-36 pb-12 sm:pb-16 px-6 sm:px-8 lg:px-12">
         <div className="max-w-[var(--container-max-width)] mx-auto relative z-10 text-center">
           <div className="max-w-3xl mx-auto">
             <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans mb-3">
@@ -67,9 +67,8 @@ export const MembersPage: React.FC = () => {
         <span className="text-white">YOU ARE VIEWING LIMITED PROFILES. JOIN WUMA MATCH TO UNLOCK FULL PROFILES &amp; REPORTS.</span>
       </div>
 
-      {/* Filter / Search Bar Container */}
       <div className="max-w-[var(--container-max-width)] mx-auto px-6 sm:px-8 lg:px-12 mt-12 mb-2">
-        <div className="bg-white border border-brand-teal/10 rounded-2xl p-6 shadow-sm text-left">
+        <div className="bg-white border border-zinc-100 rounded-2xl p-6 shadow-sm text-left">
           <div className="grid grid-cols-12 gap-4 items-end">
             
             {/* Preferred Gender */}

@@ -30,7 +30,9 @@ export const MembersSection: React.FC<Props> = ({
   return (
     <section
       id="members"
-      className="relative z-20 overflow-hidden border-t border-brand-teal/10 bg-white px-6 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20"
+      className={`relative z-20 overflow-hidden bg-white px-6 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20 ${
+        hideHeader ? '' : 'border-t border-brand-teal/10'
+      }`}
     >
       <div className="main-container relative z-10 text-center">
 
