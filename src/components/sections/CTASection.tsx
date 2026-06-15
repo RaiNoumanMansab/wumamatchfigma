@@ -19,12 +19,12 @@ export const CTASection: React.FC = () => {
           className="bg-[#EEEEE9] rounded-[20px] border border-brand-teal/5 p-8 sm:p-12 md:p-16 text-center shadow-xl flex flex-col items-center justify-center gap-6 relative overflow-hidden"
         >
           {/* Heading */}
-          <div className="space-y-4 max-w-2xl mx-auto relative z-10">
+          <div className="space-y-4  mx-auto relative z-10">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-medium text-brand-charcoal tracking-tight font-serif leading-tight">
               {t('cta.heading')}
             </h2>
 
-            <p className="max-w-xl mx-auto text-brand-charcoal/78 text-sm sm:text-base font-light leading-relaxed font-sans">
+            <p className="max-w-4xl mx-auto text-brand-charcoal/78 text-sm sm:text-base font-light leading-relaxed font-sans">
               {t('cta.description')}
             </p>
           </div>

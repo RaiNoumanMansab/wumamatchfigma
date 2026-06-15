@@ -102,7 +102,7 @@ export const EventsPage: React.FC = () => {
         <div className="max-w-[var(--container-max-width)] mx-auto relative z-10">
           
           {/* Tab / Category Selector */}
-          <div className="max-w-6xl mx-auto flex justify-start gap-3 mb-12 px-1">
+          <div className=" mx-auto flex justify-start gap-3 mb-12 px-1">
             <button
               type="button"
               onClick={() => setActiveTab('all')}
@@ -144,7 +144,7 @@ export const EventsPage: React.FC = () => {
             initial="hidden"
             animate="visible"
             layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  mx-auto"
           >
             <AnimatePresence mode="popLayout">
               {filteredEvents.map((event) => (
