@@ -36,8 +36,8 @@ export const MembersPage: React.FC = () => {
         <span className="text-white">YOU ARE VIEWING LIMITED PROFILES. JOIN WUMA MATCH TO UNLOCK FULL PROFILES &amp; REPORTS.</span>
       </div>
 
-      {/* Members Section (same as homepage) */}
-      <MembersSection />
+      {/* Members Section — show all 8 cards, hide duplicate header & CTA */}
+      <MembersSection limit={8} hideHeader hideCTA />
     </div>
   );
 };
