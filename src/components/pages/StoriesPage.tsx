@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, ArrowUpRight } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { useLocalization } from '../../lib/i18n';
 import { cardReveal, containerStagger } from '../../lib/motion';
 
@@ -9,6 +9,7 @@ import coupleOne from '../../assets/testimonalsImages/couple1.jpg';
 import coupleTwo from '../../assets/testimonalsImages/couple2.jpg';
 import coupleThree from '../../assets/testimonalsImages/couple3.jpg';
 import coupleFour from '../../assets/testimonalsImages/couple4.jpg';
+import { CTASection } from '../sections/CTASection';
 
 type StoryData = {
   id: number;
@@ -113,7 +114,7 @@ export const StoriesPage: React.FC = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.58 }}
-            className="max-w-5xl mx-auto bg-white border border-brand-teal/10 rounded-[32px] overflow-hidden flex flex-col md:flex-row text-left shadow-[0_12px_40px_rgba(22,28,45,0.02)] mb-16 hover:shadow-[0_20px_50px_rgba(22,28,45,0.05)] transition-shadow duration-300"
+            className=" mx-auto bg-white border border-brand-teal/10 rounded-[32px] overflow-hidden flex flex-col md:flex-row text-left shadow-[0_12px_40px_rgba(22,28,45,0.02)] mb-16 hover:shadow-[0_20px_50px_rgba(22,28,45,0.05)] transition-shadow duration-300"
           >
             {/* Left Column: Image */}
             <div className="w-full md:w-1/2 h-72 sm:h-96 md:h-auto overflow-hidden">
@@ -162,7 +163,7 @@ export const StoriesPage: React.FC = () => {
             variants={containerStagger}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-20"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6  mx-auto mb-20"
           >
             {storiesList.map((story) => (
               <motion.div
@@ -214,36 +215,8 @@ export const StoriesPage: React.FC = () => {
       </section>
 
       {/* Call to Action (CTA) Section with Black Background */}
-      <section className="bg-black w-full py-16 sm:py-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute inset-0 bg-radial-teal opacity-[0.12] pointer-events-none" />
 
-        <div className="max-w-[var(--container-max-width)] mx-auto relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.52 }}
-            className="bg-white border border-brand-teal/5 rounded-[20px] sm:rounded-[24px] py-12 sm:py-14 md:py-16 px-6 sm:px-10 md:px-12 max-w-3xl mx-auto shadow-luxury overflow-hidden relative z-10"
-          >
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-medium text-brand-charcoal tracking-tight font-serif leading-tight mb-4">
-              Want To Be Next Story
-            </h2>
-            <p className="max-w-xl mx-auto text-brand-charcoal/78 text-sm sm:text-base font-light leading-relaxed font-sans mb-8">
-              Begin with a conversation. Our matches are made with patience and care.
-            </p>
-            <motion.a
-              href="#cta"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="group inline-flex h-11 items-center justify-center gap-2 bg-brand-teal text-white px-7 font-bold text-[10px] tracking-widest uppercase rounded-lg hover:bg-brand-teal/90 transition-colors duration-300 shadow-sm"
-            >
-              <span>APPLY NOW</span>
-              <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5] transition-transform duration-300 group-hover:rotate-45" />
-            </motion.a>
-          </motion.div>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 };

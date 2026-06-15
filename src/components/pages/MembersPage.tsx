@@ -142,7 +142,7 @@ export const MembersPage: React.FC = () => {
         <div className="max-w-[var(--container-max-width)] mx-auto relative z-10 text-center">
           
           {/* Filter / Search Bar Container */}
-          <div className="max-w-6xl mx-auto bg-white border border-brand-teal/10 rounded-2xl p-6 shadow-sm mb-12 text-left">
+          <div className="mx-auto bg-white border border-brand-teal/10 rounded-2xl p-6 shadow-sm mb-12 text-left">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 items-end">
               
               {/* Preferred Gender */}
@@ -255,7 +255,7 @@ export const MembersPage: React.FC = () => {
             variants={containerStagger}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16 text-center"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6  mx-auto mb-16 text-center"
           >
             {membersList.map((member, idx) => (
               <motion.div
