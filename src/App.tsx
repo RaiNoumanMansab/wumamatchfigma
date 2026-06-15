@@ -18,22 +18,23 @@ import { BlogPage } from './components/pages/BlogPage.tsx';
 
 // Scroll management helper for React Router
 function ScrollToTopOrAnchor() {
-  const { pathname, hash } = useLocation();
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    if (hash) {
-      const targetId = hash.replace('#', '');
-      const element = document.getElementById(targetId);
-      if (element) {
-        const timer = setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }, 80);
-        return () => clearTimeout(timer);
-      }
-    } else {
+    // if (hash) {
+    //   console.log("Scrolling to anchor:", hash);
+    //   const targetId = hash.replace('#', '');
+    //   const element = document.getElementById(targetId);
+    //   if (element) {
+    //     const timer = setTimeout(() => {
+    //       element.scrollIntoView({ behavior: 'smooth' });
+    //     }, 80);
+    //     return () => clearTimeout(timer);
+    //   }
+    // } else {
       window.scrollTo(0, 0);
-    }
-  }, [pathname, hash]);
+    // }
+  }, [pathname]);
 
   return null;
 }
