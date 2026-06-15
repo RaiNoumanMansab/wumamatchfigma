@@ -1,5 +1,5 @@
 import React from 'react';
-import { Info } from 'lucide-react';
+import { Info, ArrowUpRight } from 'lucide-react';
 import { useLocalization } from '../../lib/i18n';
 import { MembersSection } from '../sections/MembersSection';
 
@@ -38,6 +38,22 @@ export const MembersPage: React.FC = () => {
 
       {/* Members Section — show all 8 cards, hide duplicate header & CTA */}
       <MembersSection limit={8} hideHeader hideCTA />
+
+      {/* Weekly Introductions End Notification */}
+      <section className="relative z-20 bg-white pb-20 sm:pb-28 pt-4 px-6 text-center">
+        <div className="max-w-xl mx-auto">
+          <p className="font-sans text-[16px] leading-[24px] font-normal text-[#4A4541] tracking-normal mb-6 text-center">
+            You Have Reached the end of your weekly introductions.
+          </p>
+          <button
+            type="button"
+            className="group inline-flex items-center justify-center gap-2 rounded-xl border border-brand-teal/20 bg-[#F4FAFA] px-7 py-3.5 font-sans text-[11px] font-bold uppercase tracking-wider text-brand-teal transition-all duration-300 hover:bg-brand-teal/10 hover:border-brand-teal/40 hover:scale-[1.02] active:scale-[0.98] shadow-[0_2px_8px_rgba(12,185,180,0.04)]"
+          >
+            <span>REQUEST MORE</span>
+            <ArrowUpRight className="h-4 w-4 stroke-[2.5] text-brand-teal transition-transform duration-300 group-hover:rotate-45 active:rotate-45" />
+          </button>
+        </div>
+      </section>
     </div>
   );
 };
