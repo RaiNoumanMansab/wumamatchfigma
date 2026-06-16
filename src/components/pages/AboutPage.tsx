@@ -4,7 +4,7 @@ import { Shield, Lock, CheckCircle, Heart, ArrowUpRight } from 'lucide-react';
 import { useLocalization } from '../../lib/i18n';
 import { cardReveal, containerStagger } from '../../lib/motion';
 
-import aboutCouple from '../../assets/about_couple.jpg';
+
 import { ProcessSection } from '../sections/ProcessSection';
 
 export const AboutPage: React.FC = () => {
@@ -90,15 +90,11 @@ export const AboutPage: React.FC = () => {
 
             {/* Right Column: Image */}
             <div className="w-full">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
-                {/* Strong left fade — fully hides the left border line */}
-                <div className="absolute inset-y-0 left-0 w-[60%] bg-gradient-to-r from-[#FDFBF7] via-[#FDFBF7]/85 to-transparent z-10 pointer-events-none" />
-                {/* Extra hard edge cover — makes the very left edge completely invisible */}
-                <div className="absolute inset-y-0 left-0 w-[15%] bg-[#FDFBF7] z-10 pointer-events-none" />
+              <div className="relative w-full overflow-hidden rounded-2xl shadow-lg">
                 <img
-                  src={aboutCouple}
+                  src="/images/Image20260616142038.png"
                   alt="Matched wedding couple"
-                  className="w-full h-full object-cover select-none"
+                  className="w-full h-auto object-contain select-none bg-brand-cream/10"
                 />
               </div>
             </div>

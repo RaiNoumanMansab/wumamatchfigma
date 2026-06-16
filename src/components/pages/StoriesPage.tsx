@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Crown } from 'lucide-react';
+import { Star, ChevronRight } from 'lucide-react';
 import { useLocalization } from '../../lib/i18n';
 import { cardReveal, containerStagger } from '../../lib/motion';
 
-import coupleWedding from '../../assets/couple_wedding.jpg';
+
 import coupleOne from '../../assets/testimonalsImages/couple1.jpg';
 import coupleTwo from '../../assets/testimonalsImages/couple2.jpg';
 import coupleThree from '../../assets/testimonalsImages/couple3.jpg';
@@ -98,8 +98,8 @@ export const StoriesPage: React.FC = () => {
               Love Stories That Started Here
             </h1>
 
-            <p className="text-brand-charcoal/70 text-sm sm:text-base leading-relaxed max-w-xl mx-auto font-light">
-              Real matchmaking success stories from WuMa Match
+            <p className="text-brand-charcoal/70 text-sm sm:text-[15px] leading-relaxed max-w-xl mx-auto font-sans">
+              Where intentional matching results in lifetime commitment
             </p>
           </div>
         </div>
@@ -107,57 +107,58 @@ export const StoriesPage: React.FC = () => {
 
       {/* Content Section (White background) */}
       <section className="relative overflow-hidden bg-white pt-10 pb-12 sm:pt-12 sm:pb-16 lg:pb-20">
-        <div className="section-container relative z-10">
+        <div className="section-container relative z-10 max-w-5xl">
           
           {/* Featured Big Story Card */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.58 }}
-            className="mx-auto mb-16 flex flex-col overflow-hidden rounded-[20px] border border-brand-charcoal/10 bg-white text-left shadow-[0_8px_32px_rgba(22,28,45,0.05)] transition-shadow duration-300 hover:shadow-[0_16px_48px_rgba(22,28,45,0.08)] md:flex-row md:items-stretch"
+            className="mx-auto mb-16 flex flex-col overflow-hidden rounded-[20px] border border-brand-charcoal/10 bg-white text-left shadow-[0_8px_32px_rgba(22,28,45,0.04)] transition-shadow duration-300 hover:shadow-[0_16px_48px_rgba(22,28,45,0.08)] md:flex-row md:items-stretch"
           >
-            {/* Left Column: Image (~45%) */}
-            <div className="aspect-[4/5] w-full shrink-0 overflow-hidden sm:aspect-[5/4] md:aspect-auto md:w-[45%] md:min-h-[320px] lg:min-h-[380px]">
+            {/* Left Column: Image (~50%) */}
+            <div className="aspect-square w-full shrink-0 overflow-hidden md:w-1/2 md:aspect-auto">
               <img
-                src={coupleWedding}
+                src="/images/Image20260616142038.png"
                 alt="Featured Matched Couple Emily & Ryan"
                 className="h-full w-full select-none object-cover"
               />
             </div>
 
-            {/* Right Column: Text content (~55%) */}
-            <div className="flex min-h-full w-full flex-1 flex-col md:w-[55%] px-8 pb-8 pt-8 sm:px-10 sm:pb-10 sm:pt-9 lg:px-10 lg:pb-10 lg:pt-10">
+            {/* Right Column: Text content (~50%) */}
+            <div className="flex min-h-full w-full flex-1 flex-col md:w-1/2 p-8 sm:p-10 lg:p-12 xl:p-14">
               {/* Badge + Quote */}
               <div>
-                <div className="inline-flex w-fit items-center gap-1.5 rounded-full border border-brand-gold/30 bg-[#F9F5EE] px-3.5 py-1 text-[9px] font-sans font-bold uppercase tracking-widest text-[#9B7A5B]">
-                  <Crown className="h-3.5 w-3.5 text-[#9B7A5B]" />
+                <div className="inline-flex w-fit items-center gap-1.5 rounded-md border border-[#9B7A5B]/30 bg-[#F9F5EE] px-3 py-1.5 text-[9px] font-sans font-bold uppercase tracking-widest text-[#9B7A5B]">
+                  <Star className="h-3 w-3 text-[#9B7A5B]" />
                   FEATURED STORY
                 </div>
 
-                <p className="mt-4 font-serif text-sm font-light leading-relaxed text-brand-charcoal/75 sm:text-[15px] sm:leading-[1.75]">
-                  &ldquo;The team introduced us with care and intention. It never felt random - every step felt thoughtfully guided. It never felt random - every step felt thoughtfully guided. It never felt random - every step felt thoughtfully guided.&rdquo;
+                <p className="mt-6 font-sans text-base md:text-lg font-light leading-[1.8] text-[#5C6574]">
+                  "The team introduced us with care and intention. It never felt random - every step felt thoughtfully guided.It never felt random - every step felt thoughtfully guided.It never felt random - every step felt thoughtfully guided."
                 </p>
               </div>
 
-              {/* Divider — just below quote */}
-              <div className="mt-8 h-px w-full bg-brand-charcoal/10 sm:mt-10" />
+              <div className="flex-1 min-h-8" />
 
-              <div className="flex-1 min-h-4" />
+              {/* Divider — just above attribution */}
+              <div className="mb-5 h-px w-full bg-brand-charcoal/10" />
 
               {/* Attribution — bottom */}
               <div>
-                <div className="mb-2.5 flex gap-0.5">
+                <div className="mb-4 flex gap-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-brand-gold stroke-none" />
+                    <Star key={i} className="h-4 w-4 fill-[#9B7A5B] stroke-none" />
                   ))}
                 </div>
 
-                <h3 className="font-sans text-xl font-semibold text-brand-charcoal">
+                <h3 className="font-sans text-xl md:text-2xl font-bold text-brand-charcoal">
                   Emily & Ryan
                 </h3>
 
-                <span className="mt-1 block text-[9px] font-sans font-bold uppercase tracking-[0.16em] text-brand-charcoal/45">
+                <span className="mt-2 block text-[10px] font-sans font-bold uppercase tracking-[0.16em] text-brand-charcoal/60">
                   MATCHED COUPLE • WUMA-MATCH
+
                 </span>
               </div>
             </div>

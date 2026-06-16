@@ -16,6 +16,7 @@ import { EventsPage } from './components/pages/EventsPage.tsx';
 import { StoriesPage } from './components/pages/StoriesPage.tsx';
 import { AboutPage } from './components/pages/AboutPage.tsx';
 import { BlogPage } from './components/pages/BlogPage.tsx';
+import { BlogDetailPage } from './components/pages/BlogDetailPage.tsx';
 
 // Scroll management helper for React Router
 function ScrollToTopOrAnchor() {
@@ -74,6 +75,7 @@ function App() {
           <Route path="/stories" element={<StoriesPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:id" element={<BlogDetailPage />} />
         </Routes>
       </main>
 

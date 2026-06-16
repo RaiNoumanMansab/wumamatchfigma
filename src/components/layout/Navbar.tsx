@@ -59,7 +59,7 @@ export const Navbar: React.FC = () => {
     languageOptions[(currentLanguageIndex + 1) % languageOptions.length];
 
   const navLinks = [
-    { name: t("nav.home"), href: "#home", id: "home" },
+    { name: t("nav.home"), href: "/", id: "home" },
     { name: t("nav.members"), href: "/members", id: "members" },
     { name: t("nav.stories"), href: "/stories", id: "stories" },
     { name: t("nav.events"), href: "/events", id: "events" },
@@ -68,20 +68,15 @@ export const Navbar: React.FC = () => {
   ];
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, link: typeof navLinks[0]) => {
-    const path = location.pathname.replace(/\/$/, '');
-    const isSubpage = ['members', 'events', 'stories', 'about', 'blog'].includes(link.id);
-
-    if (isSubpage) {
-      e.preventDefault();
-      navigate(link.href);
-      setIsOpen(false);
+    e.preventDefault();
+    
+    if (link.id === 'home' && location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      if (path !== '') {
-        e.preventDefault();
-        navigate(`/${link.href}`);
-        setIsOpen(false);
-      }
+      navigate(link.href);
     }
+    
+    setIsOpen(false);
   };
 
   const handleApplyClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -104,8 +99,8 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center gap-20 md:gap-32 lg:gap-44">
           {/* Logo with Gold Skyline */}
           <a
-            href="#home"
-            onClick={(e) => handleLinkClick(e, { name: t("nav.home"), href: "#home", id: "home" })}
+            href="/"
+            onClick={(e) => handleLinkClick(e, { name: t("nav.home"), href: "/", id: "home" })}
             className="relative flex items-center transition-transform duration-300 hover:scale-[1.02] -ml-1.5"
           >
             <img

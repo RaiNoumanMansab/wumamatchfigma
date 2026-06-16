@@ -41,7 +41,7 @@ export const FeaturedSection: React.FC = () => {
         </p>
 
         {/* Animated logos */}
-        <div className="relative w-full sm:max-w-[480px] h-10 sm:h-12 overflow-hidden flex items-center justify-center">
+        <div className="relative w-full sm:max-w-[800px] h-12 sm:h-16 overflow-hidden flex items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
@@ -49,17 +49,17 @@ export const FeaturedSection: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.5, ease: 'easeInOut' }}
-              className="flex items-center gap-6 sm:gap-10 absolute"
+              className="flex items-center gap-8 sm:gap-16 absolute"
             >
               {currentBrands.map((brand, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center justify-center w-[90px] sm:w-[120px] h-7 sm:h-8 shrink-0"
+                  className="flex items-center justify-center w-[130px] sm:w-[180px] h-12 sm:h-16 shrink-0"
                 >
                   <img
                     src={brand.logo}
                     alt={brand.name}
-                    className="max-h-full max-w-full object-contain brightness-0"
+                    className="max-h-[120%] max-w-[120%] object-contain brightness-0"
                   />
                 </div>
               ))}

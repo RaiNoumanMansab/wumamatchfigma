@@ -4,116 +4,8 @@ import { Clock } from 'lucide-react';
 import { useLocalization } from '../../lib/i18n';
 import { cardReveal, containerStagger } from '../../lib/motion';
 
-const blogCoffee = '/images/wuma_blog_coffee.png';
-
-type BlogPost = {
-  id: number;
-  title: string;
-  category: 'dating' | 'relationship' | 'matchmaking';
-  tag: string;
-  date: string;
-  readTime: string;
-  excerpt: string;
-  image: string;
-  author: {
-    name: string;
-    role: string;
-    avatar: string;
-  };
-};
-
-const blogPosts: BlogPost[] = [
-  {
-    id: 1,
-    title: '7 Conversation Starters That Go Beyond Small Talk',
-    category: 'dating',
-    tag: 'DATING ADVICE',
-    date: 'MAY 28, 2026',
-    readTime: '5 MIN READ',
-    excerpt: 'An intimate, private evening for verified premium WuMa members. Set in a prestigious format with hands-on vetting and icebreakers.',
-    image: blogCoffee,
-    author: {
-      name: 'Sarah Chen',
-      role: 'LEAD MATCHMAKER',
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&h=100&q=80'
-    }
-  },
-  {
-    id: 2,
-    title: '7 Conversation Starters That Go Beyond Small Talk',
-    category: 'dating',
-    tag: 'DATING ADVICE',
-    date: 'MAY 28, 2026',
-    readTime: '5 MIN READ',
-    excerpt: 'An intimate, private evening for verified premium WuMa members. Set in a prestigious format with hands-on vetting and icebreakers.',
-    image: blogCoffee,
-    author: {
-      name: 'Sarah Chen',
-      role: 'LEAD MATCHMAKER',
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&h=100&q=80'
-    }
-  },
-  {
-    id: 3,
-    title: '7 Conversation Starters That Go Beyond Small Talk',
-    category: 'dating',
-    tag: 'DATING ADVICE',
-    date: 'MAY 28, 2026',
-    readTime: '5 MIN READ',
-    excerpt: 'An intimate, private evening for verified premium WuMa members. Set in a prestigious format with hands-on vetting and icebreakers.',
-    image: blogCoffee,
-    author: {
-      name: 'Sarah Chen',
-      role: 'LEAD MATCHMAKER',
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&h=100&q=80'
-    }
-  },
-  {
-    id: 4,
-    title: '7 Conversation Starters That Go Beyond Small Talk',
-    category: 'relationship',
-    tag: 'RELATIONSHIP TIPS',
-    date: 'MAY 28, 2026',
-    readTime: '5 MIN READ',
-    excerpt: 'An intimate, private evening for verified premium WuMa members. Set in a prestigious format with hands-on vetting and icebreakers.',
-    image: blogCoffee,
-    author: {
-      name: 'Sarah Chen',
-      role: 'LEAD MATCHMAKER',
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&h=100&q=80'
-    }
-  },
-  {
-    id: 5,
-    title: '7 Conversation Starters That Go Beyond Small Talk',
-    category: 'relationship',
-    tag: 'RELATIONSHIP TIPS',
-    date: 'MAY 28, 2026',
-    readTime: '5 MIN READ',
-    excerpt: 'An intimate, private evening for verified premium WuMa members. Set in a prestigious format with hands-on vetting and icebreakers.',
-    image: blogCoffee,
-    author: {
-      name: 'Sarah Chen',
-      role: 'LEAD MATCHMAKER',
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&h=100&q=80'
-    }
-  },
-  {
-    id: 6,
-    title: '7 Conversation Starters That Go Beyond Small Talk',
-    category: 'matchmaking',
-    tag: 'MATCHMAKING GUIDES',
-    date: 'MAY 28, 2026',
-    readTime: '5 MIN READ',
-    excerpt: 'An intimate, private evening for verified premium WuMa members. Set in a prestigious format with hands-on vetting and icebreakers.',
-    image: blogCoffee,
-    author: {
-      name: 'Sarah Chen',
-      role: 'LEAD MATCHMAKER',
-      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&h=100&q=80'
-    }
-  }
-];
+import { Link } from 'react-router-dom';
+import { blogPosts } from '../../data/blogPosts';
 
 export const BlogPage: React.FC = () => {
   const { t } = useLocalization();
@@ -221,15 +113,15 @@ export const BlogPage: React.FC = () => {
                     y: -6,
                     transition: { duration: 0.28, ease: 'easeOut' },
                   }}
-                  className="flex flex-col rounded-[24px] border border-brand-teal/5 bg-white overflow-hidden text-left shadow-[0_12px_32px_rgb(var(--color-brand-charcoal)/0.02)] transition-all duration-300 hover:shadow-[0_20px_48px_rgb(var(--color-brand-charcoal)/0.06)]"
+                  className="flex flex-col rounded-[24px] border border-brand-teal/5 bg-white overflow-hidden text-left shadow-[0_12px_32px_rgb(var(--color-brand-charcoal)/0.02)] transition-all duration-300 hover:shadow-[0_20px_48px_rgb(var(--color-brand-charcoal)/0.06)] group cursor-pointer"
                 >
-                  
+                  <Link to={`/blog/${post.id}`} className="flex flex-col h-full">
                   {/* Blog Cover Image with Badge on the top-left */}
                   <div className="relative h-52 sm:h-56 w-full overflow-hidden">
                     <img
                       src={post.image}
                       alt={post.title}
-                      className="w-full h-full object-cover select-none"
+                      className="w-full h-full object-cover select-none group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute top-4 left-4 bg-white px-2.5 py-1 rounded-[6px] text-[8px] font-sans font-bold text-[#9B7A5B] uppercase tracking-widest border border-brand-gold/20 shadow-sm">
                       {post.tag}
@@ -250,12 +142,12 @@ export const BlogPage: React.FC = () => {
                       </div>
 
                       {/* Title */}
-                      <h3 className="font-serif text-base font-bold text-brand-charcoal leading-snug">
+                      <h3 className="font-serif text-base font-bold text-brand-charcoal leading-snug group-hover:text-brand-teal transition-colors duration-300">
                         {post.title}
                       </h3>
 
                       {/* Excerpt */}
-                      <p className="text-[11px] font-normal leading-relaxed text-brand-charcoal/65">
+                      <p className="text-[13px] font-light text-brand-charcoal/70 line-clamp-3 mt-2 leading-relaxed">
                         {post.excerpt}
                       </p>
                     </div>
@@ -276,9 +168,8 @@ export const BlogPage: React.FC = () => {
                         </span>
                       </div>
                     </div>
-
                   </div>
-
+                  </Link>
                 </motion.div>
               ))}
             </AnimatePresence>
