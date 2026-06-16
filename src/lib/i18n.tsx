@@ -146,6 +146,10 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
     'about.heading': 'Our Mission: Meaningful Connections',
     'about.description': 'WuMa Match is a premium, concierge matchmaking platform connecting diasporas worldwide with shared values and deep relationship goals.',
 
+    'blog.eyebrow': 'WUMA INSIGHTS',
+
+    'stories.eyebrow': 'REAL LIFE STORIES',
+
     'members.eyebrow': 'FEATURED MEMBERS',
     'members.heading': 'Meet Some of Our Members',
     'members.description': 'All members are identity-verified. Photos and sensitive details are blurred for public visitors.',
@@ -338,6 +342,10 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
     'about.heading': '我们的使命：有意义的连接',
     'about.description': 'WuMa Match 是一家高端、顾问式的婚恋匹配平台，致力于通过共同的价值观和深度的关系目标连接全球华人。',
 
+    'blog.eyebrow': 'WUMA 洞见',
+
+    'stories.eyebrow': '真实爱情故事',
+
     'members.eyebrow': '推荐会员',
     'members.heading': '会见我们的部分会员',
     'members.description': '所有会员均已进行身份验证。照片和敏感信息已对公共访客模糊处理。',
@@ -504,6 +512,10 @@ const translations: Record<Locale, Record<string, TranslationValue>> = {
     'about.eyebrow': '關於我們',
     'about.heading': '我們的使命：有意義的連接',
     'about.description': 'WuMa Match 是一家高端、顧問式的婚戀配對平台，致力於透過共同的價值觀和深度的關係目標連接全球華人。',
+
+    'blog.eyebrow': 'WUMA 洞見',
+
+    'stories.eyebrow': '真實愛情故事',
 
     'members.eyebrow': '推薦會員',
     'members.heading': '會見我們的部分會員',

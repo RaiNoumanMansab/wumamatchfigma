@@ -90,7 +90,7 @@ export const HeroSection: React.FC = () => {
       id="home"
       className="relative z-10 bg-[#EEEEE9] min-h-[85vh] md:min-h-screen flex items-center overflow-hidden"
     >
-      <div className="max-w-[var(--container-max-width)] mx-auto w-full px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center relative z-20 pt-32 md:pt-44 pb-16 md:pb-24">
+      <div className="section-container grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center relative z-20 pt-32 md:pt-44 pb-16 md:pb-24">
         
         {/* Left Column: Heading and copy */}
         <div className="col-span-1 lg:col-span-6 space-y-6 text-left py-6">

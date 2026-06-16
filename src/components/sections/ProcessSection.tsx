@@ -86,11 +86,11 @@ export const ProcessSection: React.FC = () => {
 
     <section
   id="process"
-  className="relative overflow-hidden border-t border-brand-teal/10 bg-brand-cream px-4 py-14 sm:px-6 sm:py-20 lg:px-0 lg:py-24"
+  className="relative overflow-hidden border-t border-brand-teal/10 bg-brand-cream py-14 sm:py-20 lg:py-24"
 >
-  <div className="main-container  relative z-10 text-center">
+  <div className="section-container relative z-10 text-center">
     {/* Section Header */}
-    <div className="mx-auto mb-12 max-w-[var(--container-max-width)] sm:mb-16">
+    <div className="mx-auto mb-12 max-w-3xl sm:mb-16">
       <span className="mb-3 block font-sans text-xs font-bold uppercase tracking-[0.3em] text-brand-gold">
         {t("process.kicker") || "HOW IT WORKS"}
       </span>
@@ -112,7 +112,7 @@ export const ProcessSection: React.FC = () => {
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
-            className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-8 sm:gap-10 md:grid-cols-2 lg:gap-14"
+            className="mx-auto grid grid-cols-1 items-center gap-8 sm:gap-10 md:grid-cols-2 lg:gap-14"
           >
             {/* Image */}
             <div

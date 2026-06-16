@@ -34,7 +34,7 @@ export const FeaturedSection: React.FC = () => {
 
   return (
     <section className="bg-[#FEF9EF] py-8 relative z-20 border-t border-b border-brand-gold/20 w-full">
-      <div className="relative mx-auto w-full max-w-5xl px-8 flex flex-col items-center gap-6">
+      <div className="section-container flex flex-col items-center gap-6">
         {/* AS SEEN ON text centered above */}
         <p className="text-[10px] font-sans font-bold uppercase tracking-[0.25em] text-brand-gold text-center">
           {t('featured.eyebrow') || 'AS SEEN ON'}

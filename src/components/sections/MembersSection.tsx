@@ -30,20 +30,20 @@ export const MembersSection: React.FC<Props> = ({
   return (
     <section
       id="members"
-      className={`relative z-20 overflow-hidden bg-white px-6 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20 ${
+      className={`relative z-20 overflow-hidden bg-white pt-6 pb-12 sm:pt-8 sm:pb-16 lg:pt-10 lg:pb-20 ${
         hideHeader ? '' : 'border-t border-brand-teal/10'
       }`}
     >
-      <div className="main-container relative z-10 text-center">
+      <div className="section-container relative z-10 text-center">
 
         {/* Header — shown only on homepage */}
         {!hideHeader && (
-          <div className="mx-auto mb-10 max-w-[var(--container-max-width)] sm:mb-12">
-            <span className="mb-3 block font-sans text-xs font-bold uppercase tracking-[0.25em] text-brand-gold">
+          <div className="mx-auto mb-10 max-w-3xl sm:mb-12">
+            <span className="block font-sans text-xs font-bold uppercase tracking-[0.25em] text-brand-gold">
               {t('members.eyebrow') || 'FEATURED MEMBERS'}
             </span>
 
-            <h2 className="mb-4 font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:text-4xl lg:text-5xl">
+            <h2 className="mt-6 mb-4 font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:mt-8 sm:text-4xl lg:mt-10 lg:text-5xl">
               {t('members.heading') || 'Meet Some of Our Members'}
             </h2>
 
@@ -60,7 +60,7 @@ export const MembersSection: React.FC<Props> = ({
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="mx-auto grid w-full max-w-[var(--container-max-width)] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 justify-center"
+          className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 justify-center"
         >
           {visibleMembers.map((member, idx) => (
             <motion.div

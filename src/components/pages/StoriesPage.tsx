@@ -87,14 +87,14 @@ export const StoriesPage: React.FC = () => {
       <div className="pointer-events-none absolute inset-0 bg-radial-teal opacity-[0.05]" />
 
       {/* Header Block (Beige background block, matching other subpages) */}
-      <section className="relative overflow-hidden bg-[#EEEEE9] pt-28 md:pt-36 pb-12 sm:pb-16 px-6 sm:px-8 lg:px-12 border-b border-brand-teal/10">
-        <div className="max-w-[var(--container-max-width)] mx-auto relative z-10 text-center">
+      <section className="relative overflow-hidden bg-[#EEEEE9] pt-28 md:pt-36 pb-14 sm:pb-16 border-b border-brand-teal/10">
+        <div className="section-container relative z-10 text-center">
           <div className="max-w-3xl mx-auto">
-            <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans mb-3">
+            <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans">
               {t('stories.eyebrow') || 'REAL LIFE STORIES'}
             </span>
 
-            <h1 className="font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:text-4xl lg:text-5xl mb-4">
+            <h1 className="mt-5 font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:mt-6 sm:text-4xl lg:text-5xl mb-4">
               Love Stories That Started Here
             </h1>
 
@@ -106,56 +106,57 @@ export const StoriesPage: React.FC = () => {
       </section>
 
       {/* Content Section (White background) */}
-      <section className="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-20 px-6 sm:px-8 lg:px-12">
-        <div className="max-w-[var(--container-max-width)] mx-auto relative z-10">
+      <section className="relative overflow-hidden bg-white pt-10 pb-12 sm:pt-12 sm:pb-16 lg:pb-20">
+        <div className="section-container relative z-10">
           
           {/* Featured Big Story Card */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.58 }}
-
-            className=" mx-auto bg-white border border-brand-teal/10 rounded-[32px] overflow-hidden flex flex-col md:flex-row text-left shadow-[0_12px_40px_rgba(22,28,45,0.02)] mb-16 hover:shadow-[0_20px_50px_rgba(22,28,45,0.05)] transition-shadow duration-300"
+            className="mx-auto mb-16 flex flex-col overflow-hidden rounded-[20px] border border-brand-charcoal/10 bg-white text-left shadow-[0_8px_32px_rgba(22,28,45,0.05)] transition-shadow duration-300 hover:shadow-[0_16px_48px_rgba(22,28,45,0.08)] md:flex-row md:items-stretch"
           >
-            {/* Left Column: Image (Figma exact dimensions 619x625) */}
-            <div className="w-full md:w-[619px] h-72 sm:h-96 md:h-[540px] overflow-hidden shrink-0">
+            {/* Left Column: Image (~45%) */}
+            <div className="aspect-[4/5] w-full shrink-0 overflow-hidden sm:aspect-[5/4] md:aspect-auto md:w-[45%] md:min-h-[320px] lg:min-h-[380px]">
               <img
                 src={coupleWedding}
                 alt="Featured Matched Couple Emily & Ryan"
-                className="w-full h-full object-cover select-none"
+                className="h-full w-full select-none object-cover"
               />
             </div>
 
-            {/* Right Column: Text content */}
-            <div className="w-full md:flex-grow p-8 sm:p-10 md:p-12 lg:p-14 flex flex-col justify-center gap-6">
-              <div className="space-y-6">
-                {/* Badge */}
-                <div className="inline-flex items-center justify-center gap-1.5 rounded-full border border-brand-gold/30 bg-brand-gold/5 px-3.5 py-1 text-[9px] font-sans font-bold uppercase tracking-widest text-[#9B7A5B]">
-                  <Crown className="w-3.5 h-3.5 text-[#9B7A5B]" />
+            {/* Right Column: Text content (~55%) */}
+            <div className="flex min-h-full w-full flex-1 flex-col md:w-[55%] px-8 pb-8 pt-8 sm:px-10 sm:pb-10 sm:pt-9 lg:px-10 lg:pb-10 lg:pt-10">
+              {/* Badge + Quote */}
+              <div>
+                <div className="inline-flex w-fit items-center gap-1.5 rounded-full border border-brand-gold/30 bg-[#F9F5EE] px-3.5 py-1 text-[9px] font-sans font-bold uppercase tracking-widest text-[#9B7A5B]">
+                  <Crown className="h-3.5 w-3.5 text-[#9B7A5B]" />
                   FEATURED STORY
                 </div>
 
-                {/* Quote */}
-                <p className="font-sans font-light text-sm sm:text-base text-brand-charcoal/80 leading-relaxed">
-                  “The team introduced us with care and intention. It never felt random - every step felt thoughtfully guided.It never felt random - every step felt thoughtfully guided.It never felt random - every step felt thoughtfully guided.”
+                <p className="mt-4 font-serif text-sm font-light leading-relaxed text-brand-charcoal/75 sm:text-[15px] sm:leading-[1.75]">
+                  &ldquo;The team introduced us with care and intention. It never felt random - every step felt thoughtfully guided. It never felt random - every step felt thoughtfully guided. It never felt random - every step felt thoughtfully guided.&rdquo;
                 </p>
               </div>
 
-              {/* Divider */}
-              <div className="w-full h-px bg-brand-charcoal/10 my-6" />
+              {/* Divider — just below quote */}
+              <div className="mt-8 h-px w-full bg-brand-charcoal/10 sm:mt-10" />
 
-              {/* Couple details */}
-              <div className="mt-4 md:mt-8">
-                {/* Stars */}
-                <div className="flex gap-0.5 mb-2.5">
+              <div className="flex-1 min-h-4" />
+
+              {/* Attribution — bottom */}
+              <div>
+                <div className="mb-2.5 flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-brand-gold stroke-none" />
+                    <Star key={i} className="h-3.5 w-3.5 fill-brand-gold stroke-none" />
                   ))}
                 </div>
-                <h3 className="font-serif text-xl font-medium text-brand-charcoal">
+
+                <h3 className="font-sans text-xl font-semibold text-brand-charcoal">
                   Emily & Ryan
                 </h3>
-                <span className="block text-[9px] font-sans font-bold tracking-[0.16em] uppercase text-brand-charcoal/45 mt-1">
+
+                <span className="mt-1 block text-[9px] font-sans font-bold uppercase tracking-[0.16em] text-brand-charcoal/45">
                   MATCHED COUPLE • WUMA-MATCH
                 </span>
               </div>

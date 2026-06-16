@@ -52,6 +52,31 @@
   }
 }
 
+/* Container Utility for exact horizontal alignment across all sections */
+.section-container {
+  width: 100%;
+  max-width: var(--container-max-width, 1440px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;  /* px-6 */
+  padding-right: 1.5rem; /* px-6 */
+}
+
+@media (min-width: 640px) {
+  .section-container {
+    padding-left: 3rem;  /* px-12 */
+    padding-right: 3rem; /* px-12 */
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    padding-left: 5rem;  /* px-20 */
+    padding-right: 5rem; /* px-20 */
+  }
+}
+
+
 /* Override standard project #root sizing */
 #root {
   width: 100%;

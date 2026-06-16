@@ -128,11 +128,11 @@ export const StatsBanner: React.FC = () => {
   return (
     <section
       id="stats"
-      className="relative z-25 overflow-hidden bg-[#EEEEE9] px-6 py-14 sm:px-8 lg:px-12"
+      className="relative z-25 overflow-hidden bg-[#EEEEE9] py-14"
     >
       <div className="pointer-events-none absolute inset-0 bg-radial-teal opacity-10" />
 
-      <div className="relative z-10 mx-auto max-w-[var(--container-max-width)] container text-center">
+      <div className="section-container relative z-10 text-center">
         <div className="mb-10 max-w-3xl mx-auto">
           <h2 className="mb-4 font-serif font-medium text-3xl sm:text-4xl lg:text-5xl tracking-tight text-brand-charcoal leading-tight">
             {t('stats.heading')}

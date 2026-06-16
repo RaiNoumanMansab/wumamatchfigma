@@ -148,9 +148,9 @@ export const TestimonialsSection: React.FC = () => {
       initial="hidden"
       whileInView="visible"
       viewport={viewportOnce}
-      className="bg-brand-cream pt-16 pb-6 px-6 sm:px-8 lg:px-12 relative overflow-hidden border-t border-brand-teal/10"
+      className="bg-brand-cream pt-16 pb-6 relative overflow-hidden border-t border-brand-teal/10"
     >
-      <div className="max-w-[var(--container-max-width)] mx-auto relative z-10 text-center">
+      <div className="section-container text-center relative z-10">
         {/* Header */}
         <div className="max-w-3xl mx-auto mb-12">
           <span className="block text-xs tracking-[0.25em] text-brand-gold uppercase font-sans font-bold mb-3">

@@ -14,9 +14,9 @@ export const FAQSection: React.FC = () => {
   return (
     <section
       id="faq"
-      className="bg-brand-cream py-14 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
+      className="bg-brand-cream py-14 relative overflow-hidden"
     >
-      <div className="w-full max-w-[var(--container-max-width)] mx-auto relative z-10">
+      <div className="section-container relative z-10">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           

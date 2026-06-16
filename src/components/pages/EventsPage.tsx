@@ -79,14 +79,14 @@ export const EventsPage: React.FC = () => {
       <div className="pointer-events-none absolute inset-0 bg-radial-teal opacity-[0.05]" />
 
       {/* Header Block (Beige background block, matching other subpages) */}
-      <section className="relative overflow-hidden bg-[#EEEEE9] pt-28 md:pt-36 pb-12 sm:pb-16 px-6 sm:px-8 lg:px-12 border-b border-brand-teal/10">
-        <div className="max-w-[var(--container-max-width)] mx-auto relative z-10 text-center">
+      <section className="relative overflow-hidden bg-[#EEEEE9] pt-28 md:pt-36 pb-12 sm:pb-16 border-b border-brand-teal/10">
+        <div className="section-container relative z-10 text-center">
           <div className="max-w-3xl mx-auto">
-            <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans mb-3">
+            <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans">
               {t('events.eyebrow')}
             </span>
 
-            <h1 className="font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:text-4xl lg:text-5xl mb-4">
+            <h1 className="mt-5 font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:mt-6 sm:text-4xl lg:text-5xl mb-4">
               {t('events.heading')}
             </h1>
 
@@ -98,8 +98,8 @@ export const EventsPage: React.FC = () => {
       </section>
 
       {/* Content Section (White background) */}
-      <section className="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-20 px-6 sm:px-8 lg:px-12">
-        <div className="max-w-[var(--container-max-width)] mx-auto relative z-10">
+      <section className="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-20">
+        <div className="section-container relative z-10">
           
           {/* Tab / Category Selector */}
           <div className=" mx-auto flex justify-start gap-3 mb-12 px-1">

@@ -39,14 +39,14 @@ export const AboutPage: React.FC = () => {
       <div className="pointer-events-none absolute inset-0 bg-radial-teal opacity-[0.05]" />
 
       {/* Section 1: Our Mission Header (Beige background block, matching other subpages) */}
-      <section className="relative overflow-hidden bg-[#EEEEE9] pt-28 md:pt-36 pb-12 sm:pb-16 px-6 sm:px-8 lg:px-12 border-b border-brand-teal/10">
-        <div className="max-w-[var(--container-max-width)] mx-auto relative z-10 text-center">
+      <section className="relative overflow-hidden bg-[#EEEEE9] pt-28 md:pt-36 pb-12 sm:pb-16 border-b border-brand-teal/10">
+        <div className="section-container relative z-10 text-center">
           <div className=" mx-auto">
-            <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans mb-1.5">
+            <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans">
               {t('about.eyebrow')}
             </span>
 
-            <h1 className="font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:text-4xl lg:text-5xl mb-4">
+            <h1 className="mt-5 font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:mt-6 sm:text-4xl lg:text-5xl mb-4">
               {t('about.heading')}
             </h1>
 
@@ -58,15 +58,15 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Section 2: Introduction Block (Two columns) */}
-      <section className="relative overflow-hidden py-14 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-12 border-t border-brand-teal/5">
-        <div className="max-w-[var(--container-max-width)] mx-auto relative z-10">
+      <section className="relative overflow-hidden py-14 sm:py-20 lg:py-24 border-t border-brand-teal/5">
+        <div className="section-container relative z-10">
           <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-14 items-center text-left">
             {/* Left Column: Text */}
             <div className="space-y-5">
               <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans">
                 A PLACE BUILT FOR REAL LOVE
               </span>
-              <h2 className="font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:text-4xl lg:text-5xl">
+              <h2 className="mt-5 font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:mt-6 sm:text-4xl lg:text-5xl">
                 Crafting Love Stories Globally
               </h2>
               <p className="text-brand-charcoal/80 text-sm sm:text-base leading-relaxed font-light">
@@ -90,7 +90,11 @@ export const AboutPage: React.FC = () => {
 
             {/* Right Column: Image */}
             <div className="w-full">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-lg">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
+                {/* Strong left fade — fully hides the left border line */}
+                <div className="absolute inset-y-0 left-0 w-[60%] bg-gradient-to-r from-[#FDFBF7] via-[#FDFBF7]/85 to-transparent z-10 pointer-events-none" />
+                {/* Extra hard edge cover — makes the very left edge completely invisible */}
+                <div className="absolute inset-y-0 left-0 w-[15%] bg-[#FDFBF7] z-10 pointer-events-none" />
                 <img
                   src={aboutCouple}
                   alt="Matched wedding couple"
@@ -103,13 +107,13 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Section 3: Pillars Section with Beige background */}
-      <section className="relative overflow-hidden bg-[#EEEEE9] border-t border-b border-brand-teal/10 py-16 sm:py-20 lg:py-24 px-6 sm:px-8 lg:px-12">
-        <div className="max-w-[var(--container-max-width)] mx-auto relative z-10 text-center">
+      <section className="relative overflow-hidden bg-[#EEEEE9] border-t border-b border-brand-teal/10 py-16 sm:py-20 lg:py-24">
+        <div className="section-container relative z-10 text-center">
           <div className=" mx-auto mb-12">
-            <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans mb-3">
+            <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans">
               OUR GUIDING VALUES
             </span>
-            <h2 className="font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:text-4xl lg:text-5xl mb-4">
+            <h2 className="mt-5 font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:mt-6 sm:text-4xl lg:text-5xl mb-4">
               Our Core Pillars
             </h2>
             <p className="text-brand-charcoal/70 text-sm sm:text-base leading-relaxed max-w-xl mx-auto font-light">
@@ -150,11 +154,11 @@ export const AboutPage: React.FC = () => {
       <ProcessSection />
 
       {/* Section 5: Ready to Start CTA Block with Black Background */}
-      <section className="bg-black w-full py-16 sm:py-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden text-center">
+      <section className="bg-black w-full py-16 sm:py-24 relative overflow-hidden text-center">
         {/* Decorative elements */}
         <div className="absolute inset-0 bg-radial-teal opacity-[0.12] pointer-events-none" />
 
-        <div className="max-w-[var(--container-max-width)] mx-auto relative z-10">
+        <div className="section-container relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
