@@ -17,6 +17,8 @@ import { StoriesPage } from './components/pages/StoriesPage.tsx';
 import { AboutPage } from './components/pages/AboutPage.tsx';
 import { BlogPage } from './components/pages/BlogPage.tsx';
 import { BlogDetailPage } from './components/pages/BlogDetailPage.tsx';
+import { LoginPage } from './components/pages/LoginPage.tsx';
+import { RegisterPage } from './components/pages/RegisterPage.tsx';
 
 // Scroll management helper for React Router
 function ScrollToTopOrAnchor() {
@@ -58,13 +60,16 @@ function HomePage() {
 }
 
 function App() {
+  const location = useLocation();
+  const hideHeaderFooter = ['/login', '/register'].includes(location.pathname);
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Scroll restoration & anchoring */}
       <ScrollToTopOrAnchor />
 
       {/* Premium Header/Navbar */}
-      <Navbar />
+      {!hideHeaderFooter && <Navbar />}
 
       {/* Main Sections / Dedicated Views */}
       <main className="flex-grow bg-brand-cream">
@@ -76,11 +81,13 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<BlogDetailPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
         </Routes>
       </main>
 
       {/* Premium Footer */}
-      <Footer />
+      {!hideHeaderFooter && <Footer />}
     </div>
   );
 }
