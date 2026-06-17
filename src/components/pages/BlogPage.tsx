@@ -22,7 +22,7 @@ export const BlogPage: React.FC = () => {
       <div className="pointer-events-none absolute inset-0 bg-radial-teal opacity-[0.05]" />
 
       {/* Header Block (Beige background block, matching other subpages) */}
-      <section className="relative overflow-hidden bg-[#EEEEE9] pt-28 md:pt-36 pb-12 sm:pb-16 border-b border-brand-teal/10">
+      <section className="relative overflow-hidden bg-[#EEEEE9] pt-24 md:pt-28 pb-12 sm:pb-16 border-b border-brand-teal/10">
         <div className="section-container relative z-10 text-center">
           <div className="max-w-3xl mx-auto">
             <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans">
@@ -113,7 +113,7 @@ export const BlogPage: React.FC = () => {
                     y: -6,
                     transition: { duration: 0.28, ease: 'easeOut' },
                   }}
-                  className="flex flex-col rounded-[24px] border border-brand-teal/5 bg-white overflow-hidden text-left shadow-[0_12px_32px_rgb(var(--color-brand-charcoal)/0.02)] transition-all duration-300 hover:shadow-[0_20px_48px_rgb(var(--color-brand-charcoal)/0.06)] group cursor-pointer"
+                  className="flex flex-col rounded-[24px] border border-brand-teal/5 bg-white overflow-hidden text-left shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_16px_40px_rgba(0,0,0,0.1)] group cursor-pointer"
                 >
                   <Link to={`/blog/${post.id}`} className="flex flex-col h-full">
                   {/* Blog Cover Image with Badge on the top-left */}

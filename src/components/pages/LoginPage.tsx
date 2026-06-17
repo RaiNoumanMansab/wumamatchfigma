@@ -46,7 +46,7 @@ export const LoginPage: React.FC = () => {
                   to="/"
                   className="inline-flex items-center gap-1.5 text-brand-teal text-[11px] font-semibold hover:text-brand-teal/80 transition-colors mb-6"
                 >
-                  <ArrowLeft className="w-3.5 h-3.5" />
+                  <ArrowLeft className="w-3.5 h-3.5 transition-transform duration-300 group-active:-rotate-90" />
                   Back to Homepage
                 </Link>
 

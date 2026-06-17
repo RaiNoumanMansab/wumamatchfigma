@@ -106,11 +106,13 @@ export const Footer: React.FC = () => {
               <h4 className="text-[10px] font-serif font-bold tracking-[0.2em] uppercase text-brand-teal">
                 {t('footer.navigation')}
               </h4>
-              <div className="flex flex-col gap-3">
+              <div className="grid grid-cols-2 gap-x-4 gap-y-3">
                 <a href="#home" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">{t('nav.home')}</a>
                 <a href="#process" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">{t('nav.process')}</a>
                 <a href="#testimonials" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">{t('nav.testimonials')}</a>
                 <a href="#privacy" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">{t('footer.privacyNotice')}</a>
+                <a href="#careers" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">Careers</a>
+                <a href="#contact" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">Contact Us</a>
               </div>
             </div>
           </div>

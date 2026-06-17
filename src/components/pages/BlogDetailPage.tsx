@@ -103,11 +103,11 @@ export const BlogDetailPage: React.FC = () => {
   return (
     <div className="relative z-10 bg-white min-h-screen">
       {/* Page Hero */}
-      <section className="relative w-full pt-28 md:pt-36 pb-10 bg-[#EEEEE9] border-b border-brand-teal/10">
+      <section className="relative w-full pt-24 md:pt-28 pb-10 bg-[#EEEEE9] border-b border-brand-teal/10">
         <div className="section-container relative z-10">
           <button
             onClick={() => navigate('/blog')}
-            className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-brand-charcoal/50 hover:text-brand-teal transition-colors mb-8 group"
+            className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-brand-charcoal/50 hover:text-brand-teal transition-colors mb-6 group"
           >
             <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
             Back to All Posts

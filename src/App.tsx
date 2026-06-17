@@ -19,6 +19,8 @@ import { BlogPage } from './components/pages/BlogPage.tsx';
 import { BlogDetailPage } from './components/pages/BlogDetailPage.tsx';
 import { LoginPage } from './components/pages/LoginPage.tsx';
 import { RegisterPage } from './components/pages/RegisterPage.tsx';
+import { ForgotPasswordPage } from './components/pages/ForgotPasswordPage.tsx';
+import { NotFoundPage } from './components/pages/NotFoundPage.tsx';
 
 // Scroll management helper for React Router
 function ScrollToTopOrAnchor() {
@@ -61,7 +63,7 @@ function HomePage() {
 
 function App() {
   const location = useLocation();
-  const hideHeaderFooter = ['/login', '/register'].includes(location.pathname);
+  const hideHeaderFooter = ['/login', '/register', '/forgot-password'].includes(location.pathname);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -83,6 +85,8 @@ function App() {
           <Route path="/blog/:id" element={<BlogDetailPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
 
