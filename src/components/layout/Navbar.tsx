@@ -18,7 +18,7 @@ export const Navbar: React.FC = () => {
     if (path === '/events') return 'events';
     if (path === '/stories') return 'stories';
     if (path === '/about') return 'about';
-    if (path === '/blog') return 'blog';
+    if (path === '/blog' || path.startsWith('/blog/')) return 'blog';
     return 'home';
   });
 
@@ -43,7 +43,7 @@ export const Navbar: React.FC = () => {
       setActiveSection("stories");
     } else if (path === '/about') {
       setActiveSection("about");
-    } else if (path === '/blog') {
+    } else if (path === '/blog' || path.startsWith('/blog/')) {
       setActiveSection("blog");
     } else {
       setActiveSection("home");

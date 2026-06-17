@@ -20,6 +20,9 @@ import { BlogDetailPage } from './components/pages/BlogDetailPage.tsx';
 import { LoginPage } from './components/pages/LoginPage.tsx';
 import { RegisterPage } from './components/pages/RegisterPage.tsx';
 import { ForgotPasswordPage } from './components/pages/ForgotPasswordPage.tsx';
+import { ContactPage } from './components/pages/ContactPage.tsx';
+import { CareersPage } from './components/pages/CareersPage.tsx';
+import { CareerDetailPage } from './components/pages/CareerDetailPage.tsx';
 import { NotFoundPage } from './components/pages/NotFoundPage.tsx';
 
 // Scroll management helper for React Router
@@ -86,6 +89,9 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/careers" element={<CareersPage />} />
+          <Route path="/careers/:id" element={<CareerDetailPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

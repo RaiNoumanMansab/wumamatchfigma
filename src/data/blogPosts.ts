@@ -19,30 +19,30 @@ const blogCoffee = '/images/wuma_blog_coffee.png';
 
 // Dummy markdown-like content for details page
 const sampleContent = `
-Finding someone who shares your values, lifestyle, and vision for the future isn't just about swiping right—it's about intentionality. Small talk has its place, but true connection is forged when we dare to dig a little deeper. 
+Finding someone who shares your values, lifestyle, and vision for the future isn't just about swiping right—it's about intentionality. Small talk has its place, but true connection is forged when we dare to dig a little deeper.
 
 As matchmakers, we often advise our clients to steer the conversation toward topics that reveal character and compatibility. Here are seven conversation starters that do just that:
 
-### 1. "What's a lesson you've learned recently that changed your perspective?"
+1. "What's a lesson you've learned recently that changed your perspective?"
 This question immediately shifts the dynamic. It shows you're interested in their growth and mindset. People who are introspective usually love this question.
 
-### 2. "If you could design your perfect Saturday from start to finish, what would it look like?"
+2. "If you could design your perfect Saturday from start to finish, what would it look like?"
 Our weekends reflect our priorities. Are they active and adventurous, or slow and relaxed? This gives you a clear window into how your lifestyles might align.
 
-### 3. "What's the best piece of advice you've ever received?"
+3. "What's the best piece of advice you've ever received?"
 The advice we hold onto says a lot about the values we prioritize. Whether it's a career lesson or relationship wisdom, it opens up a meaningful narrative.
 
-### 4. "What's something you're passionate about that not many people know?"
+4. "What's something you're passionate about that not many people know?"
 Everyone has a hidden passion or a quirky hobby. Giving someone the floor to talk about something they genuinely love creates an instant energetic shift.
 
-### 5. "How do you recharge when you're feeling completely drained?"
+5. "How do you recharge when you're feeling completely drained?"
 This is crucial for long-term compatibility. Do they need social interaction to recharge, or do they retreat into solitude? Understanding their emotional needs early on is a superpower.
 
-### 6. "What's a goal you're working toward right now?"
+6. "What's a goal you're working toward right now?"
 Ambition and drive are attractive. This question allows them to talk about their future and what they're currently dedicating their energy to.
 
-### 7. "What does a successful relationship look like to you?"
-While this might seem direct for a first date, framing it as a philosophical question ("In your opinion...") can lead to an incredible discussion about expectations, boundaries, and shared visions.
+7. "What does a successful relationship look like to you?"
+While this might seem direct for a first date, framing it as a philosophical question can lead to an incredible discussion about expectations, boundaries, and shared visions.
 
 At WuMa, we believe every introduction is an opportunity. By moving beyond small talk, you're not just passing the time—you're actively discovering if this is someone you want to share your time with.
 `;

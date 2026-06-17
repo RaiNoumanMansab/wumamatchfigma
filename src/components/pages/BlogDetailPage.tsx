@@ -69,22 +69,27 @@ export const BlogDetailPage: React.FC = () => {
           </h3>
         );
       }
-      // Numbered list items
+      // Numbered list items — Poppins 400, 18px, 32px line-height
       if (/^\d+\.\s/.test(para)) {
-        const num = para.match(/^(\d+)\.\s(.+)/s);
-        if (num) {
-          return (
-            <div key={index} className="mb-6">
-              <h4 className="font-serif text-base font-semibold text-brand-charcoal mb-2">{num[1]}. {num[2].split('\n')[0]}</h4>
-              {num[2].split('\n').slice(1).map((line, i) => (
-                <p key={i} className="text-[13px] sm:text-[14px] font-light text-brand-charcoal/70 leading-[1.8] mb-2">{line}</p>
-              ))}
-            </div>
-          );
-        }
+        const firstNewline = para.indexOf('\n');
+        const title = firstNewline !== -1 ? para.slice(0, firstNewline).trim() : para.trim();
+        const body = firstNewline !== -1 ? para.slice(firstNewline + 1).trim() : '';
+        return (
+          <div key={index} className="mb-8">
+            <p className="font-serif text-[18px] font-normal text-brand-charcoal/78 leading-[32px] mb-2">
+              {title}
+            </p>
+            {body && (
+              <p className="font-serif text-[18px] font-normal text-brand-charcoal/78 leading-[32px]">
+                {body}
+              </p>
+            )}
+          </div>
+        );
       }
+      // Regular paragraph
       return (
-        <p key={index} className="text-[13px] sm:text-[14px] font-light text-brand-charcoal/75 leading-[1.8] mb-5">
+        <p key={index} className="font-serif text-[16px] font-normal text-brand-charcoal/78 leading-[1.85] mb-6">
           {para}
         </p>
       );
@@ -103,21 +108,21 @@ export const BlogDetailPage: React.FC = () => {
   return (
     <div className="relative z-10 bg-white min-h-screen">
       {/* Page Hero */}
-      <section className="relative w-full pt-24 md:pt-28 pb-10 bg-[#EEEEE9] border-b border-brand-teal/10">
+      <section className="relative w-full pt-20 md:pt-24 pb-8 bg-[#EEEEE9] border-b border-brand-teal/10">
         <div className="section-container relative z-10">
           <button
             onClick={() => navigate('/blog')}
-            className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-brand-charcoal/50 hover:text-brand-teal transition-colors mb-6 group"
+            className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-brand-charcoal/50 hover:text-brand-teal transition-colors mb-5 group"
           >
             <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
             Back to All Posts
           </button>
 
           <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
-            <span className="inline-block px-3 py-1 mb-5 rounded-[6px] text-[9px] font-sans font-bold text-[#9B7A5B] uppercase tracking-widest border border-brand-gold/20 bg-white shadow-sm">
+            <span className="inline-block px-3 py-1 mb-4 rounded-[6px] text-[9px] font-sans font-bold text-[#9B7A5B] uppercase tracking-widest border border-brand-gold/20 bg-white shadow-sm">
               {post.tag}
             </span>
-            <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl font-medium leading-tight tracking-tight text-brand-charcoal mb-6">
+            <h1 className="font-sans text-2xl sm:text-3xl md:text-4xl font-medium leading-tight tracking-tight text-brand-charcoal mb-5">
               {post.title}
             </h1>
             <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-brand-charcoal/55">

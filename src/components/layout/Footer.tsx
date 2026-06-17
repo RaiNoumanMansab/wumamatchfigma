@@ -111,8 +111,8 @@ export const Footer: React.FC = () => {
                 <a href="#process" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">{t('nav.process')}</a>
                 <a href="#testimonials" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">{t('nav.testimonials')}</a>
                 <a href="#privacy" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">{t('footer.privacyNotice')}</a>
-                <a href="#careers" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">Careers</a>
-                <a href="#contact" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">Contact Us</a>
+                <a href="/careers" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">Careers</a>
+                <a href="/contact" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">Contact Us</a>
               </div>
             </div>
           </div>
