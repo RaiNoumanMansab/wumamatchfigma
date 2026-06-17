@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, MapPin } from 'lucide-react';
-import { useLocalization } from '../../lib/i18n';
-import { cardReveal, containerStagger } from '../../lib/motion';
+import { useLocalization } from '../../../lib/i18n';
+import { cardReveal, containerStagger } from '../../../lib/motion';
 
 type EventData = {
   id: number;

@@ -1,15 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
-import { useLocalization } from '../../lib/i18n';
-import { cardReveal, containerStagger } from '../../lib/motion';
+import { useLocalization } from '../../../lib/i18n';
+import { cardReveal, containerStagger } from '../../../lib/motion';
 
 
-import coupleOne from '../../assets/testimonalsImages/couple1.jpg';
-import coupleTwo from '../../assets/testimonalsImages/couple2.jpg';
-import coupleThree from '../../assets/testimonalsImages/couple3.jpg';
-import coupleFour from '../../assets/testimonalsImages/couple4.jpg';
-import { CTASection } from '../sections/CTASection';
+import coupleOne from '../../../assets/testimonalsImages/couple1.jpg';
+import coupleTwo from '../../../assets/testimonalsImages/couple2.jpg';
+import coupleThree from '../../../assets/testimonalsImages/couple3.jpg';
+import coupleFour from '../../../assets/testimonalsImages/couple4.jpg';
+import { CTASection } from '../../../components/sections/CTASection';
 
 type StoryData = {
   id: number;

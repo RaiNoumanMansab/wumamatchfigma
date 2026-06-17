@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+@tailwind utilities;
+
 :root {
   --color-brand-teal: 12 185 180;       /* #0CB9B4 */
   --color-brand-gold: 155 122 91;       /* #9B7A5B */
@@ -297,5 +308,19 @@
 }
 .font-serif {
   font-family: 'Poppins', sans-serif !important;
+}
+
+/* Dashboard: match Figma at 100% browser zoom (same as 80% zoom before) */
+.dashboard-ui {
+  zoom: 0.8;
+}
+
+@supports not (zoom: 1) {
+  .dashboard-ui {
+    transform: scale(0.8);
+    transform-origin: top left;
+    width: 125%;
+    min-height: 125vh;
+  }
 }
 

@@ -1,17 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, UploadCloud, ArrowUpRight } from 'lucide-react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const CareerDetailPage: React.FC = () => {
   const navigate = useNavigate();
-  const { id } = useParams();
   
-  // Dummy data based on Figma screenshot
   const jobTitle = "Senior Matchmakers";
   const dummyText = "Join our team of experienced matchmakers and help individuals build meaningful, lasting relationships. You'll work closely with clients, provide personalized guidance, and support them throughout their journey to finding a compatible life partner in a professional and caring environment.";
 
   const [activeTab, setActiveTab] = useState('Description');
   const tabs = ['Description', 'What will you do', 'Our Expectations', 'Benefits'];
+
+  // Refs for each section
+  const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
+
+  // Scroll spy using IntersectionObserver
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    tabs.forEach((tab) => {
+      const el = sectionRefs.current[tab];
+      if (!el) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveTab(tab);
+          }
+        },
+        { rootMargin: '-30% 0px -60% 0px', threshold: 0 }
+      );
+
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -51,7 +76,11 @@ export const CareerDetailPage: React.FC = () => {
               {tabs.map((tab) => (
                 <button
                   key={tab}
-                  onClick={() => setActiveTab(tab)}
+                  onClick={() => {
+                    const el = sectionRefs.current[tab];
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    setActiveTab(tab);
+                  }}
                   className={`text-left pl-4 py-1 text-[13px] font-sans transition-colors relative ${
                     activeTab === tab 
                       ? 'text-brand-charcoal font-medium' 
@@ -72,7 +101,7 @@ export const CareerDetailPage: React.FC = () => {
           <div className="flex-1 max-w-3xl">
             
             {/* Description Section */}
-            <div className="mb-12">
+            <div ref={(el) => { sectionRefs.current['Description'] = el; }} className="mb-12 scroll-mt-32">
               <h1 className="font-sans text-3xl sm:text-[32px] font-medium text-brand-charcoal mb-6">
                 {jobTitle}
               </h1>
@@ -82,7 +111,7 @@ export const CareerDetailPage: React.FC = () => {
             </div>
 
             {/* What will you do Section */}
-            <div className="mb-12">
+            <div ref={(el) => { sectionRefs.current['What will you do'] = el; }} className="mb-12 scroll-mt-32">
               <h2 className="font-sans text-xl sm:text-[22px] font-medium text-brand-charcoal mb-6">
                 What will you do
               </h2>
@@ -92,7 +121,7 @@ export const CareerDetailPage: React.FC = () => {
             </div>
 
             {/* Our Expectations Section */}
-            <div className="mb-12">
+            <div ref={(el) => { sectionRefs.current['Our Expectations'] = el; }} className="mb-12 scroll-mt-32">
               <h2 className="font-sans text-xl sm:text-[22px] font-medium text-brand-charcoal mb-6">
                 Our Expectations
               </h2>
@@ -102,7 +131,7 @@ export const CareerDetailPage: React.FC = () => {
             </div>
 
             {/* Benefits Section */}
-            <div className="mb-16">
+            <div ref={(el) => { sectionRefs.current['Benefits'] = el; }} className="mb-16 scroll-mt-32">
               <h2 className="font-sans text-xl sm:text-[22px] font-medium text-brand-charcoal mb-6">
                 Benefits
               </h2>

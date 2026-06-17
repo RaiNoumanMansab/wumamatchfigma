@@ -11,19 +11,26 @@ import { TestimonialsSection } from './components/sections/TestimonialsSection.t
 import { FAQSection } from './components/sections/FAQSection.tsx';
 import { CTASection } from './components/sections/CTASection.tsx';
 import { Footer } from './components/layout/Footer.tsx';
-import { MembersPage } from './components/pages/MembersPage.tsx';
-import { EventsPage } from './components/pages/EventsPage.tsx';
-import { StoriesPage } from './components/pages/StoriesPage.tsx';
-import { AboutPage } from './components/pages/AboutPage.tsx';
-import { BlogPage } from './components/pages/BlogPage.tsx';
-import { BlogDetailPage } from './components/pages/BlogDetailPage.tsx';
-import { LoginPage } from './components/pages/LoginPage.tsx';
-import { RegisterPage } from './components/pages/RegisterPage.tsx';
-import { ForgotPasswordPage } from './components/pages/ForgotPasswordPage.tsx';
-import { ContactPage } from './components/pages/ContactPage.tsx';
-import { CareersPage } from './components/pages/CareersPage.tsx';
-import { CareerDetailPage } from './components/pages/CareerDetailPage.tsx';
-import { NotFoundPage } from './components/pages/NotFoundPage.tsx';
+import { MembersPage } from './modules/public/pages/MembersPage.tsx';
+import { EventsPage } from './modules/public/pages/EventsPage.tsx';
+import { StoriesPage } from './modules/public/pages/StoriesPage.tsx';
+import { AboutPage } from './modules/public/pages/AboutPage.tsx';
+import { BlogPage } from './modules/public/pages/BlogPage.tsx';
+import { BlogDetailPage } from './modules/public/pages/BlogDetailPage.tsx';
+import { LoginPage } from './modules/auth/pages/LoginPage.tsx';
+import { RegisterPage } from './modules/auth/pages/RegisterPage.tsx';
+import { ForgotPasswordPage } from './modules/auth/pages/ForgotPasswordPage.tsx';
+import { ContactPage } from './modules/public/pages/ContactPage.tsx';
+import { CareersPage } from './modules/public/pages/CareersPage.tsx';
+import { CareerDetailPage } from './modules/public/pages/CareerDetailPage.tsx';
+import { DashboardLayout } from './modules/dashboard/layouts/DashboardLayout.tsx';
+import { FeaturedProfilesPage } from './modules/dashboard/pages/FeaturedProfilesPage.tsx';
+import { YourMatchesPage } from './modules/dashboard/pages/YourMatchesPage.tsx';
+import { DashboardEventsPage } from './modules/dashboard/pages/DashboardEventsPage.tsx';
+import { MembershipPage } from './modules/dashboard/pages/MembershipPage.tsx';
+import { ProfilePage } from './modules/dashboard/pages/ProfilePage.tsx';
+import { MessagesPage } from './modules/dashboard/pages/MessagesPage.tsx';
+import { NotFoundPage } from './modules/public/pages/NotFoundPage.tsx';
 
 // Scroll management helper for React Router
 function ScrollToTopOrAnchor() {
@@ -66,7 +73,7 @@ function HomePage() {
 
 function App() {
   const location = useLocation();
-  const hideHeaderFooter = ['/login', '/register', '/forgot-password'].includes(location.pathname);
+  const hideHeaderFooter = ['/login', '/register', '/forgot-password'].includes(location.pathname) || location.pathname.startsWith('/user');
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -92,6 +99,18 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/careers/:id" element={<CareerDetailPage />} />
+          
+          {/* Dashboard Routes */}
+          <Route path="/user" element={<DashboardLayout />}>
+            <Route path="featured" element={<FeaturedProfilesPage />} />
+            <Route path="matches" element={<YourMatchesPage />} />
+            <Route path="events" element={<DashboardEventsPage />} />
+            <Route path="messages" element={<MessagesPage />} />
+            <Route path="membership" element={<MembershipPage />} />
+            <Route path="profile" element={<ProfilePage />} />
+            {/* Add other dashboard routes here as they are built */}
+          </Route>
+
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

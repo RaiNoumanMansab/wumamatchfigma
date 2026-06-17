@@ -12,14 +12,15 @@ export const Navbar: React.FC = () => {
   const { scrollY } = useScroll();
   const { locale, setLocale, t } = useLocalization();
 
-  const [activeSection, setActiveSection] = useState(() => {
+  const [activeSection, setActiveSection] = useState<string | null>(() => {
     const path = location.pathname.replace(/\/$/, '');
     if (path === '/members') return 'members';
     if (path === '/events') return 'events';
     if (path === '/stories') return 'stories';
     if (path === '/about') return 'about';
     if (path === '/blog' || path.startsWith('/blog/')) return 'blog';
-    return 'home';
+    if (path === '' || path === '/') return 'home';
+    return null; // contact, careers, etc. — no active highlight
   });
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -36,17 +37,19 @@ export const Navbar: React.FC = () => {
   useEffect(() => {
     const path = location.pathname.replace(/\/$/, '');
     if (path === '/members') {
-      setActiveSection("members");
+      setActiveSection('members');
     } else if (path === '/events') {
-      setActiveSection("events");
+      setActiveSection('events');
     } else if (path === '/stories') {
-      setActiveSection("stories");
+      setActiveSection('stories');
     } else if (path === '/about') {
-      setActiveSection("about");
+      setActiveSection('about');
     } else if (path === '/blog' || path.startsWith('/blog/')) {
-      setActiveSection("blog");
+      setActiveSection('blog');
+    } else if (path === '' || path === '/') {
+      setActiveSection('home');
     } else {
-      setActiveSection("home");
+      setActiveSection(null); // /contact, /careers, etc.
     }
   }, [location.pathname]);
 

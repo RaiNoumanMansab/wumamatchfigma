@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Lock, CheckCircle, Heart, ArrowUpRight } from 'lucide-react';
-import { useLocalization } from '../../lib/i18n';
-import { cardReveal, containerStagger } from '../../lib/motion';
+import { useLocalization } from '../../../lib/i18n';
+import { cardReveal, containerStagger } from '../../../lib/motion';
 
 
-import { ProcessSection } from '../sections/ProcessSection';
+import { ProcessSection } from '../../../components/sections/ProcessSection';
 
 export const AboutPage: React.FC = () => {
   const { t } = useLocalization();

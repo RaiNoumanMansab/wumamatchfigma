@@ -2,8 +2,8 @@ import React, { useMemo } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Clock, ArrowLeft, ArrowUpRight, Tag, Folder, Share2 } from 'lucide-react';
-import { blogPosts } from '../../data/blogPosts';
-import { cardReveal } from '../../lib/motion';
+import { blogPosts } from '../../../data/blogPosts';
+import { cardReveal } from '../../../lib/motion';
 
 /* ── Same SVG icons as Footer ── */
 const InstagramIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
@@ -112,7 +112,7 @@ export const BlogDetailPage: React.FC = () => {
         <div className="section-container relative z-10">
           <button
             onClick={() => navigate('/blog')}
-            className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-brand-charcoal/50 hover:text-brand-teal transition-colors mb-5 group"
+            className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-brand-teal hover:text-brand-teal/70 transition-colors mb-5 group"
           >
             <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
             Back to All Posts

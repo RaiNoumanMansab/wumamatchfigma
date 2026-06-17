@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Info, ArrowUpRight, ChevronDown } from 'lucide-react';
-import { useLocalization } from '../../lib/i18n';
-import { MembersSection } from '../sections/MembersSection';
-import { allMembers } from '../../data/members';
+import { useLocalization } from '../../../lib/i18n';
+import { MembersSection } from '../../../components/sections/MembersSection';
+import { allMembers } from '../../../data/members';
 
 export const MembersPage: React.FC = () => {
   const { t } = useLocalization();

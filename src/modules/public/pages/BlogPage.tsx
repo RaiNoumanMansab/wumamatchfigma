@@ -1,11 +1,11 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Clock } from 'lucide-react';
-import { useLocalization } from '../../lib/i18n';
-import { cardReveal, containerStagger } from '../../lib/motion';
+import { useLocalization } from '../../../lib/i18n';
+import { cardReveal, containerStagger } from '../../../lib/motion';
 
 import { Link } from 'react-router-dom';
-import { blogPosts } from '../../data/blogPosts';
+import { blogPosts } from '../../../data/blogPosts';
 
 export const BlogPage: React.FC = () => {
   const { t } = useLocalization();
