@@ -3,7 +3,13 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLocalization } from "../../lib/i18n";
 
-export const CTASection: React.FC = () => {
+interface CTASectionProps {
+  heading?: string;
+  description?: string;
+  buttonText?: string;
+}
+
+export const CTASection: React.FC<CTASectionProps> = ({ heading, description, buttonText }) => {
   const { t } = useLocalization();
 
   return (
@@ -21,11 +27,11 @@ export const CTASection: React.FC = () => {
           {/* Heading */}
           <div className="space-y-4  mx-auto relative z-10">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-medium text-brand-charcoal tracking-tight font-serif leading-tight">
-              {t('cta.heading')}
+              {heading || t('cta.heading')}
             </h2>
 
             <p className="max-w-4xl mx-auto text-brand-charcoal/78 text-sm sm:text-base font-light leading-relaxed font-sans">
-              {t('cta.description')}
+              {description || t('cta.description')}
             </p>
           </div>
 
@@ -37,7 +43,7 @@ export const CTASection: React.FC = () => {
               whileTap={{ scale: 0.97 }}
               className="group inline-flex h-12 items-center justify-center gap-2 bg-brand-teal text-white px-7 rounded-[8px] text-xs font-bold tracking-wider uppercase hover:bg-brand-teal/90 transition-colors duration-300 shadow-md"
             >
-              <span>{(t('cta.button') || 'Book A Call').toUpperCase()}</span>
+              <span>{((buttonText || t('cta.button')) ?? 'Book A Call').toUpperCase()}</span>
               <ArrowUpRight className="w-4 h-4 stroke-[2.5] transition-transform duration-300 group-hover:rotate-45" />
             </motion.a>
           </div>

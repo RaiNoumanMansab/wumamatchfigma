@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ChevronDown } from 'lucide-react';
+import { CustomSelect } from '../../../components/ui/CustomSelect';
 
 export const RegisterPage: React.FC = () => {
   const [step, setStep] = useState(1);
@@ -265,16 +266,11 @@ export const RegisterPage: React.FC = () => {
                       <motion.div key="step3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-4">
                         <div>
                           <label className="block text-xs font-semibold text-brand-charcoal mb-1">Nationality</label>
-                          <select
+                          <CustomSelect
                             value={nationality}
-                            onChange={(e) => setNationality(e.target.value)}
-                            className="w-full px-4 py-2.5 rounded-xl border border-[#E5E7EB] bg-white focus:ring-1 focus:ring-brand-teal outline-none transition-all text-brand-charcoal text-sm h-11 appearance-none"
-                          >
-                            <option value="American">American</option>
-                            <option value="British">British</option>
-                            <option value="Canadian">Canadian</option>
-                            <option value="Pakistani">Pakistani</option>
-                          </select>
+                            onChange={setNationality}
+                            options={['American', 'British', 'Canadian', 'Pakistani']}
+                          />
                         </div>
 
                         <div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Info, ArrowUpRight, ChevronDown } from 'lucide-react';
+import { Info, ChevronDown, ArrowUpRight } from 'lucide-react';
+import { CustomSelect } from '../../../components/ui/CustomSelect';
 import { useLocalization } from '../../../lib/i18n';
 import { MembersSection } from '../../../components/sections/MembersSection';
 import { allMembers } from '../../../data/members';
@@ -38,7 +39,7 @@ export const MembersPage: React.FC = () => {
   };
 
   return (
-    <div className="relative z-10 bg-white min-h-screen">
+    <div className="relative z-10 bg-[#FDFBF7] min-h-screen w-full overflow-x-hidden">
       {/* Background Glow */}
       <div className="pointer-events-none absolute inset-0 bg-radial-teal opacity-[0.05]" />
 
@@ -62,9 +63,9 @@ export const MembersPage: React.FC = () => {
       </section>
 
       {/* Full-width Gold Warning Banner */}
-      <div className="w-full bg-gradient-to-r from-[#D4A853] via-[#C29956] to-[#9B7A5B] py-3 px-6 flex items-center justify-center gap-2 text-[10px] sm:text-[11px] font-sans font-bold uppercase tracking-widest text-white relative z-20 shadow-sm text-center">
-        <Info className="w-4 h-4 text-black shrink-0" />
-        <span className="text-white">YOU ARE VIEWING LIMITED PROFILES. JOIN WUMA MATCH TO UNLOCK FULL PROFILES &amp; REPORTS.</span>
+      <div className="w-full max-w-full bg-gradient-to-r from-[#D4A853] via-[#C29956] to-[#9B7A5B] py-3 px-4 sm:px-6 flex items-center justify-center gap-2 text-[10px] sm:text-[11px] font-sans font-bold uppercase tracking-widest text-white relative z-20 shadow-sm text-center">
+        <Info className="w-4 h-4 text-black shrink-0 hidden sm:block" />
+        <span className="text-white break-words text-wrap">YOU ARE VIEWING LIMITED PROFILES. JOIN WUMA MATCH TO UNLOCK FULL PROFILES &amp; REPORTS.</span>
       </div>
 
       <div className="section-container mt-12 mb-2">
@@ -76,18 +77,12 @@ export const MembersPage: React.FC = () => {
               <label className="text-[10px] font-sans font-bold uppercase tracking-wider text-brand-charcoal/40">
                 Preferred Gender
               </label>
-              <div className="relative">
-                <select
-                  value={gender}
-                  onChange={(e) => setGender(e.target.value)}
-                  className="w-full h-11 bg-white border border-zinc-200 rounded-lg pl-3 pr-8 font-inter text-[14px] leading-[20px] font-normal text-[#2D3748] focus:outline-none focus:border-brand-teal appearance-none cursor-pointer"
-                >
-                  <option>All Genders</option>
-                  <option>Male</option>
-                  <option>Female</option>
-                </select>
-                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-charcoal/40 pointer-events-none" />
-              </div>
+              <CustomSelect
+                value={gender}
+                onChange={setGender}
+                options={['All Genders', 'Male', 'Female']}
+                className="border-zinc-200"
+              />
             </div>
 
             {/* Min Age */}
@@ -95,19 +90,12 @@ export const MembersPage: React.FC = () => {
               <label className="text-[10px] font-sans font-bold uppercase tracking-wider text-brand-charcoal/40">
                 Min Age
               </label>
-              <div className="relative">
-                <select
-                  value={minAge}
-                  onChange={(e) => setMinAge(e.target.value)}
-                  className="w-full h-11 bg-white border border-zinc-200 rounded-lg pl-3 pr-8 font-inter text-[14px] leading-[20px] font-normal text-[#2D3748] focus:outline-none focus:border-brand-teal appearance-none cursor-pointer"
-                >
-                  <option>18</option>
-                  <option>25</option>
-                  <option>30</option>
-                  <option>35</option>
-                </select>
-                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-charcoal/40 pointer-events-none" />
-              </div>
+              <CustomSelect
+                value={minAge}
+                onChange={setMinAge}
+                options={['18', '25', '30', '35']}
+                className="border-zinc-200"
+              />
             </div>
 
             {/* Max Age */}
@@ -115,19 +103,12 @@ export const MembersPage: React.FC = () => {
               <label className="text-[10px] font-sans font-bold uppercase tracking-wider text-brand-charcoal/40">
                 Max Age
               </label>
-              <div className="relative">
-                <select
-                  value={maxAge}
-                  onChange={(e) => setMaxAge(e.target.value)}
-                  className="w-full h-11 bg-white border border-zinc-200 rounded-lg pl-3 pr-8 font-inter text-[14px] leading-[20px] font-normal text-[#2D3748] focus:outline-none focus:border-brand-teal appearance-none cursor-pointer"
-                >
-                  <option>35</option>
-                  <option>40</option>
-                  <option>45</option>
-                  <option>50</option>
-                </select>
-                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-charcoal/40 pointer-events-none" />
-              </div>
+              <CustomSelect
+                value={maxAge}
+                onChange={setMaxAge}
+                options={['35', '40', '45', '50']}
+                className="border-zinc-200"
+              />
             </div>
 
             {/* Residence Country */}
@@ -135,24 +116,12 @@ export const MembersPage: React.FC = () => {
               <label className="text-[10px] font-sans font-bold uppercase tracking-wider text-brand-charcoal/40">
                 Residence Country
               </label>
-              <div className="relative">
-                <select
-                  value={country}
-                  onChange={(e) => setCountry(e.target.value)}
-                  className="w-full h-11 bg-white border border-zinc-200 rounded-lg pl-3 pr-8 font-inter text-[14px] leading-[20px] font-normal text-[#2D3748] focus:outline-none focus:border-brand-teal appearance-none cursor-pointer"
-                >
-                  <option>All Countries</option>
-                  <option>Australia</option>
-                  <option>Canada</option>
-                  <option>United States</option>
-                  <option>United Kingdom</option>
-                  <option>Germany</option>
-                  <option>Singapore</option>
-                  <option>France</option>
-                  <option>United Arab Emirates</option>
-                </select>
-                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-charcoal/40 pointer-events-none" />
-              </div>
+              <CustomSelect
+                value={country}
+                onChange={setCountry}
+                options={['All Countries', 'Australia', 'Canada', 'United States', 'United Kingdom', 'Germany', 'Singapore', 'France', 'United Arab Emirates']}
+                className="border-zinc-200"
+              />
             </div>
 
             {/* Buttons Group: Search and Reset */}

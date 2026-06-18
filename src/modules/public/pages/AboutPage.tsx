@@ -82,7 +82,7 @@ export const AboutPage: React.FC = () => {
                   whileTap={{ scale: 0.97 }}
                   className="group inline-flex h-11 items-center justify-center gap-2 bg-brand-teal text-white px-6 font-bold text-[10px] tracking-widest uppercase rounded-lg hover:bg-brand-teal/90 transition-colors duration-300 shadow-sm"
                 >
-                  <span>APPLY FOR MEMBERSHIP</span>
+                  <span>BOOK A CONSULTANCY</span>
                   <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5] transition-transform duration-300 group-hover:rotate-45" />
                 </motion.a>
               </div>
@@ -176,7 +176,7 @@ export const AboutPage: React.FC = () => {
                 whileTap={{ scale: 0.97 }}
                 className="group inline-flex h-11 items-center justify-center gap-2 bg-brand-teal text-white px-6 font-bold text-[10px] tracking-widest uppercase rounded-lg hover:bg-brand-teal/90 transition-colors duration-300 shadow-sm w-full sm:w-auto"
               >
-                <span>APPLY FOR MEMBERSHIP</span>
+                <span>BOOK A CONSULTANCY</span>
                 <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5] transition-transform duration-300 group-hover:rotate-45" />
               </motion.a>
 
@@ -186,7 +186,7 @@ export const AboutPage: React.FC = () => {
                 whileTap={{ scale: 0.97 }}
                 className="group inline-flex h-11 items-center justify-center gap-2 border border-brand-teal text-brand-teal bg-white px-6 font-bold text-[10px] tracking-widest uppercase rounded-lg hover:bg-brand-teal/5 transition-colors duration-300 w-full sm:w-auto"
               >
-                <span>BOOK A CALL</span>
+                <span>REQUEST A CONSULTATION</span>
                 <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5] transition-transform duration-300 group-hover:rotate-45" />
               </motion.a>
             </div>

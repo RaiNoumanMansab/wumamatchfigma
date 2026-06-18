@@ -91,7 +91,7 @@ export const StoriesPage: React.FC = () => {
         <div className="section-container relative z-10 text-center">
           <div className="max-w-3xl mx-auto">
             <span className="block text-xs font-bold tracking-[0.25em] text-brand-gold uppercase font-sans">
-              {t('stories.eyebrow') || 'REAL LIFE STORIES'}
+              {t('stories.eyebrow') || 'REAL SUCCESS STORIES'}
             </span>
 
             <h1 className="mt-5 font-serif text-3xl font-medium leading-tight tracking-tight text-brand-charcoal sm:mt-6 sm:text-4xl lg:text-5xl mb-4">
@@ -228,7 +228,11 @@ export const StoriesPage: React.FC = () => {
 
       {/* Call to Action (CTA) Section with Black Background */}
 
-      <CTASection />
+      <CTASection 
+        heading="Want To Be Next Story"
+        description="Begin with a conversation. Our matchmakers will guide the rest."
+        buttonText="Apply for Membership"
+      />
     </div>
   );
 };

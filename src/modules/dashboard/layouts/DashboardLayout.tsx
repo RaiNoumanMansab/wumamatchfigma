@@ -17,7 +17,9 @@ export const DashboardLayout: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
 
+  // Width is only relevant for desktop margins
   const sidebarWidth = isSidebarOpen ? 260 : 80;
 
   const navItems = [
@@ -31,10 +33,20 @@ export const DashboardLayout: React.FC = () => {
 
   return (
     <div className="dashboard-ui min-h-screen bg-[#F2F2EE] flex">
+      {/* Mobile Overlay */}
+      {isMobileOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-20 md:hidden"
+          onClick={() => setIsMobileOpen(false)}
+        />
+      )}
+
       {/* Sidebar */}
       <aside
         style={{ width: sidebarWidth }}
-        className="bg-white border-r border-[#E0E0E0] flex flex-col shrink-0 fixed inset-y-0 left-0 transition-all duration-300 z-30"
+        className={`bg-white border-r border-[#E0E0E0] flex flex-col shrink-0 fixed inset-y-0 left-0 transition-transform duration-300 z-30 ${
+          isMobileOpen ? 'translate-x-0' : '-translate-x-full'
+        } md:translate-x-0`}
       >
         {/* Logo Area */}
         <div
@@ -73,6 +85,7 @@ export const DashboardLayout: React.FC = () => {
               <Link
                 key={path}
                 to={path}
+                onClick={() => setIsMobileOpen(false)}
                 title={!isSidebarOpen ? label : undefined}
                 className={`flex items-center rounded-[12px] text-[13px] transition-colors ${
                   isSidebarOpen ? 'px-4 py-3.5 gap-3' : 'justify-center p-3'
@@ -112,13 +125,19 @@ export const DashboardLayout: React.FC = () => {
 
       {/* Main Content Area */}
       <div
-        style={{ marginLeft: sidebarWidth }}
-        className="flex-1 flex flex-col min-h-screen transition-all duration-300"
+        className="flex-1 flex flex-col min-h-screen transition-all duration-300 w-full"
+        style={{ marginLeft: window.innerWidth >= 768 ? sidebarWidth : 0 }}
       >
         {/* Top Header */}
-        <header className="h-[80px] bg-white border-b border-[#E5E5E5] flex items-center justify-between px-8 shrink-0 sticky top-0 z-20">
+        <header className="h-[70px] sm:h-[80px] bg-white border-b border-[#E5E5E5] flex items-center justify-between px-4 sm:px-8 shrink-0 sticky top-0 z-10">
           <button 
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            onClick={() => {
+              if (window.innerWidth >= 768) {
+                setIsSidebarOpen(!isSidebarOpen);
+              } else {
+                setIsMobileOpen(!isMobileOpen);
+              }
+            }}
             className="text-brand-charcoal hover:text-brand-teal transition-colors"
           >
             <List size={24} className={`transition-transform duration-300 ${!isSidebarOpen ? 'rotate-90' : 'rotate-0'}`} />
@@ -141,7 +160,7 @@ export const DashboardLayout: React.FC = () => {
                 alt="User" 
                 className="w-10 h-10 rounded-full object-cover"
               />
-              <div className="flex flex-col">
+              <div className="hidden sm:flex flex-col">
                 <span className="text-[13px] font-semibold text-brand-charcoal leading-tight">John Doe</span>
                 <span className="text-[11px] text-brand-charcoal/60 leading-tight">User</span>
               </div>
@@ -150,7 +169,7 @@ export const DashboardLayout: React.FC = () => {
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 p-8">
+        <main className="flex-1 p-4 sm:p-8 overflow-x-hidden">
           <Outlet />
         </main>
       </div>
