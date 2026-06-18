@@ -1,4 +1,4 @@
-import { ShieldCheck, Lock, ArrowUpRight, ChevronDown, Crown } from 'lucide-react';
+import { ShieldCheck, Lock, ArrowUpRight, Crown } from 'lucide-react';
 import { CustomSelect } from '../../../components/ui/CustomSelect';
 
 export const FeaturedProfilesPage: React.FC = () => {

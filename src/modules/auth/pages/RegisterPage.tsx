@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CloudUpload, X, MapPin } from 'lucide-react';
 import { CustomSelect } from '../../../components/ui/CustomSelect';
 
 export const RegisterPage: React.FC = () => {
@@ -23,8 +23,10 @@ export const RegisterPage: React.FC = () => {
 
   // Step 3
   const [nationality, setNationality] = useState('American');
+  const [currentLocation, setCurrentLocation] = useState('');
   const [education, setEducation] = useState("Bachelor's");
   const [agreed, setAgreed] = useState(false);
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
 
   const genderOptions = ['Men', 'Women', 'Everyone'];
   const eduOptions = ['High School', 'Intermediate', "Bachelor's", 'Masters'];
@@ -65,17 +67,44 @@ export const RegisterPage: React.FC = () => {
 
 
   return (
-    <div className="min-h-screen bg-[#EEEEE9] flex items-center justify-center font-sans p-4 md:p-8">
-      <div className="w-full max-w-4xl flex flex-col items-center">
+    <div className="min-h-screen bg-[#EEEEE9] flex font-sans p-4 md:p-8">
+      <AnimatePresence>
+        {previewImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            onClick={() => setPreviewImage(null)}
+          >
+            <button
+              onClick={() => setPreviewImage(null)}
+              className="absolute top-4 right-4 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <motion.img
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              src={previewImage}
+              alt="Preview"
+              className="max-w-full max-h-full rounded-2xl object-contain shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <div className="w-full max-w-4xl m-auto flex flex-col items-center">
         {/* Dual Cards Grid */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           
           {/* Left Card: Brand Panel */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-white rounded-3xl p-8 sm:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-brand-teal/5 flex flex-col items-center justify-center text-center min-h-[450px]"
+            className="sticky top-4 md:top-8 bg-white rounded-3xl p-8 sm:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-brand-teal/5 flex flex-col items-center justify-center text-center min-h-[450px]"
           >
             {/* Brand Logo */}
             <div className="flex justify-center">
@@ -274,6 +303,20 @@ export const RegisterPage: React.FC = () => {
                         </div>
 
                         <div>
+                          <label className="block text-xs font-semibold text-brand-charcoal mb-1">Current Location</label>
+                          <div className="relative">
+                            <input
+                              type="text"
+                              value={currentLocation}
+                              onChange={(e) => setCurrentLocation(e.target.value)}
+                              placeholder="Search Your Location"
+                              className="w-full px-4 py-2.5 rounded-xl border border-[#E5E7EB] bg-white focus:ring-1 focus:ring-brand-teal outline-none transition-all text-brand-charcoal text-sm placeholder-[#9CA3AF] h-11 pr-10"
+                            />
+                            <MapPin strokeWidth={1.5} className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-charcoal" />
+                          </div>
+                        </div>
+
+                        <div>
                           <label className="block text-xs font-semibold text-brand-charcoal mb-1.5">Education</label>
                           <div className="grid grid-cols-2 gap-2 sm:flex sm:gap-2">
                             {eduOptions.map(e => (
@@ -290,44 +333,60 @@ export const RegisterPage: React.FC = () => {
                         </div>
 
                         <div className="pt-2">
-                          <h3 className="text-sm font-bold text-brand-charcoal mb-1">Add your Photos</h3>
-                          <p className="text-xs text-[#5C6574] mb-4">Upload at least 3 photos to complete your profile.</p>
+                          <h2 className="text-xl font-bold text-[#1E293B] mb-2">Add your Photos</h2>
+                          <p className="text-[13px] text-[#64748B] mb-5">Upload up to 8 photos. A minimum of 3 photos is required to continue.</p>
                           
-                          <div className="grid grid-cols-3 gap-3">
+                          {/* Upload Box */}
+                          <div className="w-full py-6 rounded-2xl border-2 border-dashed border-[#CBD5E1] flex items-center justify-center text-[#64748B] cursor-pointer hover:border-brand-teal hover:text-brand-teal hover:bg-brand-teal/5 transition-all bg-white mb-6">
+                            <div className="flex items-center gap-3">
+                              <CloudUpload strokeWidth={1.5} className="w-6 h-6" />
+                              <span className="text-[14px] font-medium">Click to upload images</span>
+                            </div>
+                          </div>
+
+                          {/* Uploaded Photos Preview */}
+                          <div className="flex gap-4 mb-8">
                             {[1, 2, 3].map(num => (
-                              <div key={num} className="aspect-[4/5] rounded-xl border-2 border-dashed border-[#E5E7EB] flex flex-col items-center justify-center text-[#9CA3AF] cursor-pointer hover:border-brand-teal hover:text-brand-teal transition-colors bg-white">
-                                <span className="text-xl font-light mb-1">+</span>
-                                <span className="text-[10px]">Photo {num}</span>
+                              <div 
+                                key={num} 
+                                onClick={() => setPreviewImage(`https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300`)}
+                                className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shadow-sm border border-black/5 bg-gray-100 shrink-0 cursor-pointer hover:opacity-90 transition-opacity"
+                              >
+                                <img 
+                                  src={`https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300`} 
+                                  alt="Uploaded preview" 
+                                  className="w-full h-full object-cover" 
+                                />
                               </div>
                             ))}
                           </div>
                         </div>
 
-                        <div className="flex items-start gap-2 pt-2">
+                        <div className="flex items-center gap-3 pt-2 mb-8">
                           <input 
                             type="checkbox" 
                             checked={agreed}
                             onChange={e => setAgreed(e.target.checked)}
-                            className="w-4 h-4 mt-0.5 rounded border-[#D1D5DB] text-brand-teal focus:ring-brand-teal"
+                            className="w-5 h-5 rounded border-[#CBD5E1] text-brand-teal focus:ring-brand-teal cursor-pointer"
                           />
-                          <span className="text-[10px] text-[#5C6574] leading-relaxed">
+                          <span className="text-[13px] text-[#64748B]">
                             I agree to the <a href="#" className="text-brand-teal hover:underline font-medium">Terms of Service</a> and <a href="#" className="text-brand-teal hover:underline font-medium">Privacy Policy</a>
                           </span>
                         </div>
 
-                        <div className="flex items-center gap-3 mt-4 pt-2">
+                        <div className="flex items-center gap-4 mt-8">
                           <button
                             type="button"
                             onClick={() => setStep(2)}
-                            className="w-1/3 bg-brand-teal/10 text-brand-teal font-bold tracking-wider text-[10px] py-3.5 rounded-xl hover:bg-brand-teal/20 transition-colors h-12 flex items-center justify-center uppercase"
+                            className="w-[120px] bg-[#F4FAFA] border border-brand-teal/20 text-brand-teal font-bold tracking-widest text-[11px] py-3.5 rounded-xl hover:bg-brand-teal/10 hover:border-brand-teal/40 transition-colors h-12 flex items-center justify-center uppercase"
                           >
-                            <ArrowLeft className="w-3.5 h-3.5 mr-1.5" /> Back
+                            <ArrowLeft className="w-4 h-4 mr-1.5" /> Back
                           </button>
                           <button
                             type="submit"
-                            className="flex-1 bg-[#0CB9B4] text-white font-bold tracking-wider text-[10px] py-3.5 rounded-xl hover:bg-[#0aa39e] transition-colors h-12 flex items-center justify-center shadow-sm uppercase"
+                            className="flex-1 bg-[#0CB9B4] text-white font-bold tracking-widest text-[11px] py-3.5 rounded-xl hover:bg-[#0aa39e] transition-colors h-12 flex items-center justify-center shadow-sm uppercase"
                           >
-                            Continue <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                            Register <ArrowRight className="w-4 h-4 ml-1.5" />
                           </button>
                         </div>
                       </motion.div>

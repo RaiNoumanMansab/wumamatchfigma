@@ -6,7 +6,7 @@ export const MembershipPage: React.FC = () => {
     {
       id: 1,
       badge: ['Active'],
-      badgeColors: ['bg-[#4CAF50] text-white'],
+      badgeColors: ['bg-[#E6F7F6] text-[#0E8B86] text-[10px] font-bold px-3 py-1 capitalize'],
       tier: 'Free',
       tierLabel: 'ESSENTIAL',
       price: '$0',
@@ -30,7 +30,10 @@ export const MembershipPage: React.FC = () => {
     {
       id: 2,
       badge: ['Active', 'Popular'],
-      badgeColors: ['bg-[#4CAF50] text-white', 'bg-white/20 text-white border border-white/30'],
+      badgeColors: [
+        'bg-[#E6F7F6] text-[#0E8B86] text-[10px] font-bold px-3 py-1 capitalize', 
+        'bg-white/20 text-white border border-white/30 text-[8px] font-bold tracking-widest uppercase px-2.5 py-0.5'
+      ],
       tier: 'Founding Member',
       tierLabel: 'PREMIUM',
       price: 'From $11.99/mo',
@@ -56,7 +59,7 @@ export const MembershipPage: React.FC = () => {
     {
       id: 3,
       badge: ['Active'],
-      badgeColors: ['bg-[#4CAF50] text-white'],
+      badgeColors: ['bg-[#E6F7F6] text-[#0E8B86] text-[10px] font-bold px-3 py-1 capitalize'],
       tier: 'SVIP',
       tierLabel: 'ELITE',
       price: '$600',
@@ -98,7 +101,7 @@ export const MembershipPage: React.FC = () => {
               {/* Badges */}
               <div className="flex items-center gap-2 mb-3">
                 {plan.badge.map((b, i) => (
-                  <span key={b} className={`px-2.5 py-0.5 rounded-full text-[8px] font-bold tracking-widest uppercase ${plan.badgeColors[i]}`}>
+                  <span key={b} className={`rounded-full ${plan.badgeColors[i]}`}>
                     {b}
                   </span>
                 ))}

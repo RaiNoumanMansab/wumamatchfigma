@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Info, ChevronDown, ArrowUpRight } from 'lucide-react';
+import { Info, ArrowUpRight } from 'lucide-react';
 import { CustomSelect } from '../../../components/ui/CustomSelect';
 import { useLocalization } from '../../../lib/i18n';
 import { MembersSection } from '../../../components/sections/MembersSection';
