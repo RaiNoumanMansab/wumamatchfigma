@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { CustomSelect } from '../../../components/ui/CustomSelect';
 
 export const RegisterPage: React.FC = () => {
