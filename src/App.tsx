@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar.tsx';
 import { HeroSection } from './components/sections/HeroSection.tsx';
 import { FeaturedSection } from './components/sections/FeaturedSection.tsx';
@@ -30,7 +30,8 @@ import { DashboardEventsPage } from './modules/dashboard/pages/DashboardEventsPa
 import { MembershipPage } from './modules/dashboard/pages/MembershipPage.tsx';
 import { ProfilePage } from './modules/dashboard/pages/ProfilePage.tsx';
 import { MessagesPage } from './modules/dashboard/pages/MessagesPage.tsx';
-import { NotFoundPage } from './modules/public/pages/NotFoundPage.tsx';
+import { ErrorPage } from './modules/public/pages/ErrorPage.tsx';
+import { globalRouter } from './lib/globalRouter';
 
 // Scroll management helper for React Router
 function ScrollToTopOrAnchor() {
@@ -73,6 +74,9 @@ function HomePage() {
 
 function App() {
   const location = useLocation();
+  const navigate = useNavigate();
+  globalRouter.navigate = navigate;
+
   const hideHeaderFooter = ['/login', '/register', '/forgot-password'].includes(location.pathname) || location.pathname.startsWith('/profile');
 
   return (
@@ -111,7 +115,8 @@ function App() {
             {/* Add other dashboard routes here as they are built */}
           </Route>
 
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="/error" element={<ErrorPage />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </main>
 

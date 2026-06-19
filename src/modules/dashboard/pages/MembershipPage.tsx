@@ -85,12 +85,17 @@ export const MembershipPage: React.FC = () => {
   return (
     <div className="w-full max-w-[var(--container-max-width)] mx-auto pb-6">
       {/* Page Title */}
-      <h1 className="font-sans font-medium text-[28px] leading-[36px] text-brand-charcoal mb-6">
-        Membership
-      </h1>
+      <div>
+        <h1 className="font-sans font-medium text-[28px] leading-[36px] 2xl:text-[38px] 2xl:leading-[46px] transition-all duration-300 text-brand-charcoal mb-2">
+          Membership
+        </h1>
+        <p className="font-sans font-normal text-[13px] sm:text-[14px] 2xl:text-[18px] transition-all duration-300 text-brand-charcoal/70 mb-6">
+          View and manage your current membership plan and benefits.
+        </p>
+      </div>
 
       {/* Plans Grid — 1223px wide per Figma */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {plans.map((plan) => (
           <div
             key={plan.id}

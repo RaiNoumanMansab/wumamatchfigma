@@ -131,11 +131,16 @@ export const MessagesPage: React.FC = () => {
   const activeUser = users[1]; // Lindsey Curtis
 
   return (
-    <div className="w-full max-w-[var(--container-max-width)] mx-auto pb-6 h-[calc(100vh-100px)] min-h-[750px] flex flex-col">
+    <div className="w-full max-w-[var(--container-max-width)] mx-auto pb-6 h-[calc(100vh-20px)] md:h-[calc(100vh-100px)] min-h-[600px] md:min-h-[750px] flex flex-col">
       {/* Page Title */}
-      <h1 className="font-sans font-medium text-[28px] leading-[36px] text-brand-charcoal mb-6 shrink-0">
-        Messages
-      </h1>
+      <div className="shrink-0 mb-6">
+        <h1 className="font-sans font-medium text-[28px] leading-[36px] 2xl:text-[38px] 2xl:leading-[46px] transition-all duration-300 text-brand-charcoal mb-2">
+          Messages
+        </h1>
+        <p className="font-sans font-normal text-[13px] sm:text-[14px] 2xl:text-[18px] transition-all duration-300 text-brand-charcoal/70">
+          Stay connected and continue conversations with your matches.
+        </p>
+      </div>
 
       <div className="flex flex-col lg:flex-row gap-6 flex-1 min-h-0">
         {/* ─── LEFT SIDEBAR: CHATS LIST ─── */}
@@ -187,7 +192,7 @@ export const MessagesPage: React.FC = () => {
                     <h3 className="text-[14px] font-semibold text-brand-charcoal truncate">{user.name}</h3>
                     <span className="text-[10px] text-brand-charcoal/40 shrink-0">{user.time}</span>
                   </div>
-                  <p className="text-[11px] text-brand-charcoal/50 truncate">{user.role}</p>
+                  <p className="font-sans font-normal text-[12px] leading-[16px] text-[#2D3748] truncate">{user.role}</p>
                 </div>
               </div>
             ))}

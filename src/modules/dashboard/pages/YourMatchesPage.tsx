@@ -50,12 +50,17 @@ export const YourMatchesPage: React.FC = () => {
   return (
     <div className="w-full max-w-[var(--container-max-width)] mx-auto pb-12">
       {/* Page Title */}
-      <h1 className="font-sans font-medium text-[28px] leading-[36px] text-brand-charcoal mb-8">
-        Your Matches
-      </h1>
+      <div>
+        <h1 className="font-sans font-medium text-[28px] leading-[36px] 2xl:text-[38px] 2xl:leading-[46px] transition-all duration-300 text-brand-charcoal mb-2">
+          Your Matches
+        </h1>
+        <p className="font-sans font-normal text-[13px] sm:text-[14px] 2xl:text-[18px] transition-all duration-300 text-brand-charcoal/70 mb-8">
+          Discover and connect with your carefully selected mutual matches.
+        </p>
+      </div>
 
       {/* Matches Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
         {matches.map((match) => (
           <div key={match.id} className="bg-white rounded-[20px] border border-[#4A4541] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
             {/* Top Section */}
@@ -84,25 +89,25 @@ export const YourMatchesPage: React.FC = () => {
 
             {/* Content Section */}
             <div className="px-8 pb-8 pt-4 text-center flex flex-col items-center flex-1">
-              <h3 className="font-serif text-[20px] font-medium text-brand-charcoal mb-1.5">
+              <h3 className="font-sans text-[18px] font-semibold text-brand-charcoal mb-1">
                 {match.age} Yrs • {match.location}
               </h3>
               <p className="text-[10px] font-bold text-[#C19C74] uppercase tracking-widest mb-4">
                 {match.job}
               </p>
 
-              <p className="text-[12px] font-light leading-relaxed text-brand-charcoal/80 mb-6">
+              <p className="font-sans font-normal text-[12px] leading-[16px] text-[#2D3748] mb-6">
                 {match.description}
               </p>
 
               <div className="flex items-center justify-center gap-12 w-full mb-8">
                 <div className="flex flex-col items-center">
                   <span className="text-[9px] font-bold text-brand-charcoal/50 uppercase tracking-widest mb-1.5">HEIGHT</span>
-                  <span className="text-[11px] font-medium text-brand-charcoal">{match.height}</span>
+                  <span className="font-sans font-normal text-[12px] leading-[16px] text-[#2D3748]">{match.height}</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <span className="text-[9px] font-bold text-brand-charcoal/50 uppercase tracking-widest mb-1.5">EDUCATION</span>
-                  <span className="text-[11px] font-medium text-brand-charcoal">{match.education}</span>
+                  <span className="font-sans font-normal text-[12px] leading-[16px] text-[#2D3748]">{match.education}</span>
                 </div>
               </div>
 

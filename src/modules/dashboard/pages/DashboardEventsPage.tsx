@@ -54,9 +54,14 @@ export const DashboardEventsPage: React.FC = () => {
   return (
     <div className="w-full max-w-[var(--container-max-width)] mx-auto pb-12">
       {/* Page Title */}
-      <h1 className="font-sans font-medium text-[28px] leading-[36px] text-brand-charcoal mb-6">
-        Events
-      </h1>
+      <div>
+        <h1 className="font-sans font-medium text-[28px] leading-[36px] 2xl:text-[38px] 2xl:leading-[46px] transition-all duration-300 text-brand-charcoal mb-2">
+          Events
+        </h1>
+        <p className="font-sans font-normal text-[13px] sm:text-[14px] 2xl:text-[18px] transition-all duration-300 text-brand-charcoal/70 mb-6">
+          Explore upcoming exclusive events tailored for our community.
+        </p>
+      </div>
 
       {/* Filter Tabs */}
       <div className="flex items-center gap-3 mb-8">
@@ -76,7 +81,7 @@ export const DashboardEventsPage: React.FC = () => {
       </div>
 
       {/* Events Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
         {filtered.map((event) => (
           <div
             key={event.id}
@@ -101,7 +106,7 @@ export const DashboardEventsPage: React.FC = () => {
 
             {/* Card Body */}
             <div className="p-6">
-              <h3 className="font-sans text-[16px] font-semibold text-brand-charcoal mb-3">
+              <h3 className="font-sans text-[18px] font-semibold text-brand-charcoal mb-3">
                 {event.title}
               </h3>
 
@@ -116,7 +121,7 @@ export const DashboardEventsPage: React.FC = () => {
                 </div>
               </div>
 
-              <p className="text-[12px] font-light leading-relaxed text-brand-charcoal/70 line-clamp-3">
+              <p className="font-sans font-normal text-[12px] leading-[16px] text-[#2D3748] line-clamp-3">
                 {event.description}
               </p>
             </div>

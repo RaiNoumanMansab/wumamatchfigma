@@ -1,4 +1,4 @@
-import { ShieldCheck, Lock, ArrowUpRight, Crown } from 'lucide-react';
+import { ShieldCheck, ArrowUpRight, Crown } from 'lucide-react';
 import { CustomSelect } from '../../../components/ui/CustomSelect';
 
 export const FeaturedProfilesPage: React.FC = () => {
@@ -44,9 +44,14 @@ export const FeaturedProfilesPage: React.FC = () => {
   return (
     <div className="w-full max-w-[var(--container-max-width)] mx-auto pb-12">
       {/* Page Title */}
-      <h1 className="font-sans font-medium text-[28px] leading-[36px] text-brand-charcoal mb-8">
-        Featured Profile
-      </h1>
+      <div>
+        <h1 className="font-sans font-medium text-[28px] leading-[36px] 2xl:text-[38px] 2xl:leading-[46px] transition-all duration-300 text-brand-charcoal mb-2">
+          Featured Profile
+        </h1>
+        <p className="font-sans font-normal text-[13px] sm:text-[14px] 2xl:text-[18px] transition-all duration-300 text-brand-charcoal/70 mb-8">
+          We are building the future of human matchmaking.
+        </p>
+      </div>
 
       {/* Filter Bar */}
       <div className="bg-white rounded-[20px] border border-[#E5E5E5] p-4 mb-8 shadow-sm">
@@ -78,7 +83,7 @@ export const FeaturedProfilesPage: React.FC = () => {
 
           {/* Max Age */}
           <div className="col-span-1 lg:w-[100px] shrink-0 space-y-1.5">
-            <label className="block text-[10px] font-bold text-brand-charcoal/60 uppercase tracking-widest">
+            <label className="block text-[9px] md:text-[10px] font-bold text-brand-charcoal/60 uppercase tracking-widest">
               MAX AGE
             </label>
             <input 
@@ -90,7 +95,7 @@ export const FeaturedProfilesPage: React.FC = () => {
 
           {/* Residence Country */}
           <div className="col-span-2 sm:col-span-1 lg:flex-1 space-y-1.5">
-            <label className="block text-[10px] font-bold text-brand-charcoal/60 uppercase tracking-widest">
+            <label className="block text-[9px] md:text-[10px] font-bold text-brand-charcoal/60 uppercase tracking-widest">
               RESIDENCE COUNTRY
             </label>
             <CustomSelect
@@ -115,7 +120,7 @@ export const FeaturedProfilesPage: React.FC = () => {
       </div>
 
       {/* Profiles Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
         {profiles.map((profile) => (
           <div key={profile.id} className="bg-white rounded-[20px] border border-[#4A4541] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
             {/* Top Section with blur */}
@@ -131,15 +136,8 @@ export const FeaturedProfilesPage: React.FC = () => {
                   <img 
                     src={`https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300`} 
                     alt="Profile" 
-                    className="w-full h-full object-cover blur-sm scale-110"
+                    className="w-full h-full object-cover"
                   />
-                  {/* Overlay Text */}
-                  <div className="absolute inset-0 bg-white/40 flex flex-col items-center justify-center text-[#D4A853]">
-                    <Lock size={18} className="mb-1" />
-                    <span className="text-[9px] font-bold tracking-widest uppercase">
-                      JOIN TO VIEW
-                    </span>
-                  </div>
                 </div>
 
                 {/* Badge overlapping bottom of image */}
@@ -154,25 +152,25 @@ export const FeaturedProfilesPage: React.FC = () => {
 
             {/* Content Section */}
             <div className="p-6 text-center flex flex-col items-center bg-[#FBFBFB]">
-              <h3 className="font-serif text-xl font-medium text-brand-charcoal mb-1 blur-sm select-none">
+              <h3 className="font-serif text-xl font-medium text-brand-charcoal mb-1">
                 {profile.age} Yrs • {profile.location}
               </h3>
-              <p className="text-[11px] font-bold text-[#D4A853] uppercase tracking-widest mb-4 blur-[2px] select-none">
+              <p className="text-[11px] font-bold text-[#D4A853] uppercase tracking-widest mb-4">
                 {profile.job}
               </p>
 
-              <p className="text-[13px] font-light leading-relaxed text-brand-charcoal/80 mb-6 line-clamp-3">
+              <p className="font-sans font-normal text-[12px] leading-[16px] text-[#2D3748] mb-6 line-clamp-3">
                 {profile.description}
               </p>
 
               <div className="flex items-center justify-between w-full mb-6 px-2">
                 <div className="flex flex-col items-center">
                   <span className="text-[10px] font-bold text-brand-charcoal/50 uppercase tracking-widest mb-1">HEIGHT</span>
-                  <span className="text-[12px] font-medium text-brand-charcoal blur-[3px] select-none">{profile.height}</span>
+                  <span className="font-sans font-normal text-[12px] leading-[16px] text-[#2D3748]">{profile.height}</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <span className="text-[10px] font-bold text-brand-charcoal/50 uppercase tracking-widest mb-1">EDUCATION</span>
-                  <span className="text-[12px] font-medium text-brand-charcoal blur-[3px] select-none">{profile.education}</span>
+                  <span className="font-sans font-normal text-[12px] leading-[16px] text-[#2D3748]">{profile.education}</span>
                 </div>
               </div>
 

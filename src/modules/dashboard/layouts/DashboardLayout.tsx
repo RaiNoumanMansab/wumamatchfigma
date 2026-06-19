@@ -44,11 +44,11 @@ export const DashboardLayout: React.FC = () => {
       <aside
         className={`bg-white border-r border-[#E0E0E0] flex flex-col shrink-0 fixed inset-y-0 left-0 transition-all duration-300 z-30 ${
           isMobileOpen ? 'translate-x-0' : '-translate-x-full'
-        } md:translate-x-0 ${isSidebarOpen ? 'w-[260px]' : 'w-[260px] md:w-[80px]'}`}
+        } md:translate-x-0 ${isSidebarOpen ? 'w-[260px] md:w-[clamp(220px,20vw,280px)] 2xl:w-[320px]' : 'w-[260px] md:w-[80px] xl:w-[90px] 2xl:w-[100px]'}`}
       >
         {/* Logo Area */}
         <div
-          className={`h-[72px] flex items-center border-b border-[#E0E0E0] ${
+          className={`h-[70px] sm:h-[80px] flex items-center border-b border-[#E0E0E0] ${
             isSidebarOpen ? 'px-4' : 'justify-center px-0'
           }`}
         >
@@ -64,8 +64,8 @@ export const DashboardLayout: React.FC = () => {
 
             {isSidebarOpen && (
               <div className="flex flex-col justify-center leading-[1.15]">
-                <span className="font-sans font-bold text-[14px] text-[#161C2D]">WuMa</span>
-                <span className="font-sans font-bold text-[14px] text-[#161C2D]">Matchmaking</span>
+                <span className="font-sans font-bold text-[14px] 2xl:text-[18px] text-[#161C2D] transition-all">WuMa</span>
+                <span className="font-sans font-bold text-[14px] 2xl:text-[18px] text-[#161C2D] transition-all">Matchmaking</span>
               </div>
             )}
           </Link>
@@ -88,7 +88,7 @@ export const DashboardLayout: React.FC = () => {
                 to={path}
                 onClick={() => setIsMobileOpen(false)}
                 title={!isSidebarOpen ? label : undefined}
-                className={`flex items-center rounded-[12px] text-[13px] transition-colors ${
+                className={`flex items-center rounded-[12px] text-[13px] 2xl:text-[16px] transition-all duration-300 ${
                   isSidebarOpen ? 'px-4 py-3.5 gap-3' : 'justify-center p-3'
                 } ${
                   isActive
@@ -96,7 +96,7 @@ export const DashboardLayout: React.FC = () => {
                     : 'text-[#4F5E71] hover:bg-[#F9F5EE] hover:text-[#161C2D] font-medium'
                 }`}
               >
-                <Icon size={18} strokeWidth={isActive ? 2.5 : 2} className="shrink-0" />
+                <Icon size={18} strokeWidth={isActive ? 2.5 : 2} className="shrink-0 2xl:w-[22px] 2xl:h-[22px]" />
                 {isSidebarOpen && <span className="whitespace-nowrap">{label}</span>}
               </Link>
             );
@@ -124,10 +124,9 @@ export const DashboardLayout: React.FC = () => {
         </div>
       </aside>
 
-      {/* Main Content Area */}
       <div
-        className={`flex-1 flex flex-col min-h-screen transition-all duration-300 w-full ${
-          isSidebarOpen ? 'md:ml-[260px]' : 'md:ml-[80px]'
+        className={`flex-1 flex flex-col min-h-screen transition-all duration-300 ${
+          isSidebarOpen ? 'md:ml-[clamp(220px,20vw,280px)] 2xl:ml-[320px]' : 'md:ml-[80px] xl:ml-[90px] 2xl:ml-[100px]'
         }`}
       >
         {/* Top Header */}
