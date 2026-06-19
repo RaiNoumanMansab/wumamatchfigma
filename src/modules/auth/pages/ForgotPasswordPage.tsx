@@ -7,17 +7,17 @@ export const ForgotPasswordPage: React.FC = () => {
   const [email, setEmail] = useState('');
 
   return (
-    <div className="min-h-screen bg-[#EEEEE9] flex items-center justify-center font-sans p-4 md:p-8">
-      <div className="w-full max-w-4xl flex flex-col items-center">
+    <div className="min-h-screen bg-[#EEEEE9] flex font-sans p-4 md:p-8">
+      <div className="w-full max-w-4xl m-auto flex flex-col items-center">
         {/* Dual Cards Grid */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           
           {/* Left Card: Brand Panel */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-white rounded-3xl p-8 sm:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-brand-teal/5 flex flex-col items-center justify-center text-center min-h-[450px]"
+            className="sticky top-4 md:top-8 bg-white rounded-3xl p-8 sm:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-brand-teal/5 flex flex-col items-center justify-center text-center min-h-[450px]"
           >
             {/* Brand Logo */}
             <div className="flex justify-center">
