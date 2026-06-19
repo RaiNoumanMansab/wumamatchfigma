@@ -6,10 +6,11 @@ import {
   Calendar, 
   User, 
   Tag, 
-  LogOut, 
-  List, 
+  LogOut,
   HelpCircle, 
-  Bell 
+  Bell,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 
@@ -19,16 +20,14 @@ export const DashboardLayout: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
-  // Width is only relevant for desktop margins
-  const sidebarWidth = isSidebarOpen ? 260 : 80;
 
   const navItems = [
-    { icon: Users, label: 'Featured Profiles', path: '/user/featured' },
-    { icon: Smile, label: 'Your Matches', path: '/user/matches' },
-    { icon: MessageSquare, label: 'Messages', path: '/user/messages' },
-    { icon: Calendar, label: 'Events', path: '/user/events' },
-    { icon: User, label: 'Profile', path: '/user/profile' },
-    { icon: Tag, label: 'Membership', path: '/user/membership' },
+    { icon: Users, label: 'Featured Profiles', path: '/profile/featured' },
+    { icon: Smile, label: 'Your Matches', path: '/profile/matches' },
+    { icon: MessageSquare, label: 'Messages', path: '/profile/messages' },
+    { icon: Calendar, label: 'Events', path: '/profile/events' },
+    { icon: User, label: 'Profile', path: '/profile' },
+    { icon: Tag, label: 'Membership', path: '/profile/membership' },
   ];
 
   return (
@@ -43,10 +42,9 @@ export const DashboardLayout: React.FC = () => {
 
       {/* Sidebar */}
       <aside
-        style={{ width: sidebarWidth }}
-        className={`bg-white border-r border-[#E0E0E0] flex flex-col shrink-0 fixed inset-y-0 left-0 transition-transform duration-300 z-30 ${
+        className={`bg-white border-r border-[#E0E0E0] flex flex-col shrink-0 fixed inset-y-0 left-0 transition-all duration-300 z-30 ${
           isMobileOpen ? 'translate-x-0' : '-translate-x-full'
-        } md:translate-x-0`}
+        } md:translate-x-0 ${isSidebarOpen ? 'w-[260px]' : 'w-[260px] md:w-[80px]'}`}
       >
         {/* Logo Area */}
         <div
@@ -80,7 +78,10 @@ export const DashboardLayout: React.FC = () => {
           }`}
         >
           {navItems.map(({ icon: Icon, label, path }) => {
-            const isActive = location.pathname.startsWith(path);
+            const isActive = path === '/profile' 
+              ? location.pathname === '/profile' 
+              : location.pathname.startsWith(path);
+              
             return (
               <Link
                 key={path}
@@ -125,8 +126,9 @@ export const DashboardLayout: React.FC = () => {
 
       {/* Main Content Area */}
       <div
-        className="flex-1 flex flex-col min-h-screen transition-all duration-300 w-full"
-        style={{ marginLeft: window.innerWidth >= 768 ? sidebarWidth : 0 }}
+        className={`flex-1 flex flex-col min-h-screen transition-all duration-300 w-full ${
+          isSidebarOpen ? 'md:ml-[260px]' : 'md:ml-[80px]'
+        }`}
       >
         {/* Top Header */}
         <header className="h-[70px] sm:h-[80px] bg-white border-b border-[#E5E5E5] flex items-center justify-between px-4 sm:px-8 shrink-0 sticky top-0 z-10">
@@ -138,9 +140,9 @@ export const DashboardLayout: React.FC = () => {
                 setIsMobileOpen(!isMobileOpen);
               }
             }}
-            className="text-brand-charcoal hover:text-brand-teal transition-colors"
+            className="w-8 h-8 flex items-center justify-center rounded-full border border-brand-charcoal/30 text-brand-charcoal hover:text-brand-teal hover:border-brand-teal transition-colors"
           >
-            <List size={24} className={`transition-transform duration-300 ${!isSidebarOpen ? 'rotate-90' : 'rotate-0'}`} />
+            {isSidebarOpen ? <ChevronLeft size={16} strokeWidth={1.5} /> : <ChevronRight size={16} strokeWidth={1.5} />}
           </button>
 
           <div className="flex items-center gap-6">

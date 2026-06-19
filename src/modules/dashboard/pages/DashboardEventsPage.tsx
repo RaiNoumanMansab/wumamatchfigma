@@ -52,9 +52,9 @@ export const DashboardEventsPage: React.FC = () => {
     : events.filter(e => e.status === activeFilter);
 
   return (
-    <div className="w-full max-w-[1229px] mx-auto pb-12">
+    <div className="w-full max-w-[var(--container-max-width)] mx-auto pb-12">
       {/* Page Title */}
-      <h1 className="font-sans text-[26px] font-medium text-brand-charcoal mb-6">
+      <h1 className="font-sans font-medium text-[28px] leading-[36px] text-brand-charcoal mb-6">
         Events
       </h1>
 
@@ -80,7 +80,7 @@ export const DashboardEventsPage: React.FC = () => {
         {filtered.map((event) => (
           <div
             key={event.id}
-            className="bg-white rounded-[20px] border border-[#4A4541] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer group"
+            className="bg-white rounded-[20px] border border-[#E5E5E5] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer group"
           >
             {/* Image */}
             <div className="relative h-[180px] overflow-hidden">

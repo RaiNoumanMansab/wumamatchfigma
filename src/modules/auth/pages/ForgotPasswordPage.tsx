@@ -17,7 +17,7 @@ export const ForgotPasswordPage: React.FC = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="sticky top-4 md:top-8 bg-white rounded-3xl p-8 sm:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-brand-teal/5 flex flex-col items-center justify-center text-center min-h-[450px]"
+            className="relative md:sticky top-4 md:top-8 bg-white rounded-3xl p-6 sm:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-brand-teal/5 flex flex-col items-center justify-center text-center min-h-[200px] md:min-h-[450px]"
           >
             {/* Brand Logo */}
             <div className="flex justify-center">
@@ -36,7 +36,7 @@ export const ForgotPasswordPage: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="flex flex-col gap-4 justify-between"
           >
-            <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-brand-teal/5 flex-1 flex flex-col justify-between">
+            <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.02)] border border-brand-teal/5 flex-1 flex flex-col justify-between">
               <div>
                 <h1 className="text-2xl font-bold text-brand-charcoal mb-2">Forgot Password</h1>
                 <p className="text-[#5C6574] text-xs leading-relaxed mb-8">

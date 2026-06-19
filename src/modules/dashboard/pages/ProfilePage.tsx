@@ -33,12 +33,12 @@ export const ProfilePage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabType>('OVERVIEW');
 
   return (
-    <div className="w-full">
-      <h1 className="text-[26px] font-semibold text-brand-charcoal mb-6">My Profile</h1>
+    <div className="w-full max-w-[var(--container-max-width)] mx-auto">
+      <h1 className="font-sans font-medium text-[28px] leading-[36px] text-brand-charcoal mb-6">My Profile</h1>
 
-      <div className="flex gap-6 items-start">
+      <div className="flex flex-col lg:flex-row gap-6 items-start">
         {/* Left Column — 3 separate cards */}
-        <div className="w-[285px] shrink-0 space-y-5">
+        <div className="w-full lg:w-[285px] shrink-0 space-y-5">
           {/* Profile Summary Card */}
           <div className="bg-white rounded-[14px] border border-[#E8E8E4] shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden">
             <div className="relative h-[96px] bg-brand-teal">
@@ -118,15 +118,15 @@ export const ProfilePage: React.FC = () => {
 
         {/* Right Column */}
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-8 border-b border-[#E5E5E5] mb-6">
+          <div className="flex items-center gap-5 sm:gap-8 border-b border-[#E5E5E5] mb-6 overflow-x-auto scrollbar-hide">
             {TABS.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`pb-3 text-[11px] font-bold tracking-[0.12em] uppercase whitespace-nowrap transition-colors relative ${
+                className={`pb-3 font-sans font-medium text-[14px] leading-[20px] tracking-[0.7px] uppercase whitespace-nowrap transition-colors relative ${
                   activeTab === tab
                     ? 'text-brand-teal'
-                    : 'text-brand-charcoal/45 hover:text-brand-charcoal/65'
+                    : 'text-brand-charcoal hover:text-brand-charcoal/80'
                 }`}
               >
                 {tab}
@@ -154,7 +154,7 @@ export const ProfilePage: React.FC = () => {
                 <h3 className="text-[15px] font-semibold text-brand-charcoal mb-5">
                   Background Details
                 </h3>
-                <div className="grid grid-cols-2 gap-x-10 gap-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-5">
                   {BACKGROUND_DETAILS.map(({ label, value }) => (
                     <div key={label}>
                       <p className="text-[9px] font-bold tracking-[0.14em] uppercase text-brand-charcoal/40 mb-1">

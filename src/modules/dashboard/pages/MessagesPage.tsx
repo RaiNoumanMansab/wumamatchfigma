@@ -131,15 +131,15 @@ export const MessagesPage: React.FC = () => {
   const activeUser = users[1]; // Lindsey Curtis
 
   return (
-    <div className="w-full max-w-[1229px] mx-auto pb-6 h-[calc(100vh-100px)] min-h-[750px] flex flex-col">
+    <div className="w-full max-w-[var(--container-max-width)] mx-auto pb-6 h-[calc(100vh-100px)] min-h-[750px] flex flex-col">
       {/* Page Title */}
-      <h1 className="font-sans text-[26px] font-medium text-brand-charcoal mb-6 shrink-0">
+      <h1 className="font-sans font-medium text-[28px] leading-[36px] text-brand-charcoal mb-6 shrink-0">
         Messages
       </h1>
 
-      <div className="flex gap-6 flex-1 min-h-0">
+      <div className="flex flex-col lg:flex-row gap-6 flex-1 min-h-0">
         {/* ─── LEFT SIDEBAR: CHATS LIST ─── */}
-        <div className="w-[320px] shrink-0 bg-white rounded-[20px] flex flex-col overflow-hidden">
+        <div className="w-full lg:w-[320px] h-[350px] lg:h-auto shrink-0 bg-white rounded-[20px] flex flex-col overflow-hidden border border-[#E8E8E4]">
           {/* Header */}
           <div className="p-6 pb-4 flex items-center justify-between shrink-0">
             <h2 className="font-sans text-[22px] font-medium text-brand-charcoal">Chats</h2>
@@ -195,7 +195,7 @@ export const MessagesPage: React.FC = () => {
         </div>
 
         {/* ─── RIGHT MAIN CONTENT: CHAT WINDOW ─── */}
-        <div className="flex-1 bg-white rounded-[20px] flex flex-col min-w-0">
+        <div className="flex-1 bg-white rounded-[20px] flex flex-col min-w-0 border border-[#E8E8E4] min-h-[400px] lg:min-h-0">
           {/* Chat Header */}
           <div className="px-8 py-5 border-b border-[#E5E5E5]/60 flex items-center gap-4 shrink-0">
             <div className="relative shrink-0">

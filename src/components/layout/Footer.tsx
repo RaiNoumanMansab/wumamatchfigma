@@ -4,29 +4,29 @@ import { useLocalization } from '../../lib/i18n';
 
 const InstagramIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg className="w-4 h-4 text-brand-teal shrink-0" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" {...props}>
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
   </svg>
 );
 
 const LinkedinIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg className="w-4 h-4 text-brand-teal shrink-0" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" {...props}>
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-    <rect width="4" height="12" x="2" y="9"/>
-    <circle cx="4" cy="4" r="2"/>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect width="4" height="12" x="2" y="9" />
+    <circle cx="4" cy="4" r="2" />
   </svg>
 );
 
 const FacebookIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg className="w-4 h-4 text-brand-teal shrink-0" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" {...props}>
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
   </svg>
 );
 
 const XIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg className="w-4 h-4 text-brand-teal shrink-0" fill="currentColor" viewBox="0 0 24 24" {...props}>
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   </svg>
 );
 
@@ -107,12 +107,13 @@ export const Footer: React.FC = () => {
                 {t('footer.navigation')}
               </h4>
               <div className="grid grid-cols-2 gap-x-4 gap-y-3">
-                <a href="#home" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">{t('nav.home')}</a>
-                <a href="#process" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">{t('nav.process')}</a>
-                <a href="#testimonials" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">{t('nav.testimonials')}</a>
-                <a href="#privacy" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">{t('footer.privacyNotice')}</a>
+                <a href="/stories" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">{t('nav.stories')}</a>
+                <a href="/members" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">{t('nav.members')}</a>
+                <a href="/events" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">{t('nav.events')}</a>
+                <a href="/blog" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">{t('nav.blog')}</a>
                 <a href="/careers" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">Careers</a>
                 <a href="/contact" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">Contact Us</a>
+                <a href="#privacy" className="text-xs sm:text-sm text-brand-charcoal/78 font-medium hover:text-brand-teal transition-colors duration-300">{t('footer.privacyNotice')}</a>
               </div>
             </div>
           </div>

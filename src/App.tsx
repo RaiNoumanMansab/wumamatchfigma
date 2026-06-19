@@ -73,7 +73,7 @@ function HomePage() {
 
 function App() {
   const location = useLocation();
-  const hideHeaderFooter = ['/login', '/register', '/forgot-password'].includes(location.pathname) || location.pathname.startsWith('/user');
+  const hideHeaderFooter = ['/login', '/register', '/forgot-password'].includes(location.pathname) || location.pathname.startsWith('/profile');
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -84,7 +84,7 @@ function App() {
       {!hideHeaderFooter && <Navbar />}
 
       {/* Main Sections / Dedicated Views */}
-      <main className="flex-grow bg-brand-cream">
+      <main className={`flex-grow flex flex-col ${location.pathname.startsWith('/profile') ? 'bg-[#F2F2EE]' : 'bg-brand-cream'}`}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/members" element={<MembersPage />} />
@@ -101,13 +101,13 @@ function App() {
           <Route path="/careers/:id" element={<CareerDetailPage />} />
           
           {/* Dashboard Routes */}
-          <Route path="/user" element={<DashboardLayout />}>
+          <Route path="/profile" element={<DashboardLayout />}>
+            <Route index element={<ProfilePage />} />
             <Route path="featured" element={<FeaturedProfilesPage />} />
             <Route path="matches" element={<YourMatchesPage />} />
             <Route path="events" element={<DashboardEventsPage />} />
             <Route path="messages" element={<MessagesPage />} />
             <Route path="membership" element={<MembershipPage />} />
-            <Route path="profile" element={<ProfilePage />} />
             {/* Add other dashboard routes here as they are built */}
           </Route>
 

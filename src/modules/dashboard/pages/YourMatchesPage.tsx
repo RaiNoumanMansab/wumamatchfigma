@@ -48,9 +48,9 @@ export const YourMatchesPage: React.FC = () => {
   ];
 
   return (
-    <div className="w-full max-w-[1229px] mx-auto pb-12">
+    <div className="w-full max-w-[var(--container-max-width)] mx-auto pb-12">
       {/* Page Title */}
-      <h1 className="font-sans text-[26px] font-medium text-brand-charcoal mb-8">
+      <h1 className="font-sans font-medium text-[28px] leading-[36px] text-brand-charcoal mb-8">
         Your Matches
       </h1>
 

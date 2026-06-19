@@ -21,7 +21,7 @@ export const MembershipPage: React.FC = () => {
       ],
       button: 'Subscribed',
       buttonStyle: 'bg-brand-teal text-white hover:bg-[#0aa39e]',
-      cardStyle: 'bg-white border border-[#4A4541]',
+      cardStyle: 'bg-white border border-[#D8D2C4]',
       statsStyle: 'bg-[#F4F1EA]',
       textColor: 'text-brand-charcoal',
       featureColor: 'text-brand-charcoal/80',
@@ -74,7 +74,7 @@ export const MembershipPage: React.FC = () => {
       ],
       button: 'Apply Now',
       buttonStyle: 'bg-brand-teal text-white hover:bg-[#0aa39e]',
-      cardStyle: 'bg-white border border-[#4A4541]',
+      cardStyle: 'bg-white border border-[#D8D2C4]',
       statsStyle: 'bg-[#F4F1EA]',
       textColor: 'text-brand-charcoal',
       featureColor: 'text-brand-charcoal/80',
@@ -83,9 +83,9 @@ export const MembershipPage: React.FC = () => {
   ];
 
   return (
-    <div className="w-full max-w-[1229px] mx-auto pb-6">
+    <div className="w-full max-w-[var(--container-max-width)] mx-auto pb-6">
       {/* Page Title */}
-      <h1 className="font-sans text-[26px] font-medium text-brand-charcoal mb-6">
+      <h1 className="font-sans font-medium text-[28px] leading-[36px] text-brand-charcoal mb-6">
         Membership
       </h1>
 
